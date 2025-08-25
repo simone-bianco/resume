@@ -1,0 +1,32 @@
+@import '../js/assets/styles.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+    @tailwind base;
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.border-1 {
+    border-width: 1px;
+}
+
+.border-b-1 {
+    border-bottom-width: 1px;
+}
+
+.w-72 {
+    width: 18rem;
+}
