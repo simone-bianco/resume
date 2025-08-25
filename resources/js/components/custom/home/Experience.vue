@@ -73,7 +73,7 @@ const experiences = ref([
                 </template>
 
                 <template #content="slotProps">
-                    <Card class="experience-card" v-animateonscroll="experienceAnimation">
+                    <Card class="experience-card mt-5" v-animateonscroll="experienceAnimation">
                         <template #title>
                             {{ t(slotProps.item.titleKey) }}
                         </template>

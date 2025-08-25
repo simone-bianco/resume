@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * @property int $id
@@ -45,9 +43,9 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @property-read int|null $media_count
  * @mixin \Eloquent
  */
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable
 {
-    use HasFactory, Notifiable, InteractsWithMedia;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.

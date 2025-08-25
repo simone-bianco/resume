@@ -15,6 +15,11 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="55b8b440-4650-44af-b909-8ee87e8af861" timeout="30000" />
+    </phpcs_settings>
+  </component>
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
@@ -179,6 +184,7 @@
       <path value="$PROJECT_DIR$/vendor/php-http/multipart-stream-builder" />
       <path value="$PROJECT_DIR$/vendor/openai-php/client" />
       <path value="$PROJECT_DIR$/vendor/maestroerror/laragent" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-cookie-consent" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />

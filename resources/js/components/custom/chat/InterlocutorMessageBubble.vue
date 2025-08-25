@@ -45,8 +45,8 @@ defineProps<{
 }
 
 .bubble-danger {
-    background-color: var(--red-800);
-    color: var(--red-100);
-    border: 1px solid var(--red-600);
+    background-color: var(--p-primary-400);
+    color: var(--p-primary-400);
+    border: 1px solid var(--p-primary-400);
 }
 </style>

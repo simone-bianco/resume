@@ -6,9 +6,11 @@
 
 import axios from 'axios';
 
-window.axios = axios;
+// Ensure TypeScript recognizes the axios property on window
+// Use a minimal cast to avoid global type augmentation
+;(window as any).axios = axios;
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+;(window as any).axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

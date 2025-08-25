@@ -102,4 +102,11 @@ const skillsData = [
     text-overflow: ellipsis;
 }
 .skill-card:hover { border-color: var(--primary-color); }
+
+@media (min-width: 574px) and (max-width: 730px) {
+    .skill-card {
+        width: 280px;
+        height: 220px;
+    }
+}
 </style>

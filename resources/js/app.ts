@@ -13,7 +13,6 @@ import ToastService from 'primevue/toastservice';
 import StyleClass from 'primevue/styleclass';
 import Tooltip from 'primevue/tooltip';
 import messages from './i18n/messages';
-import { autoAnimatePlugin } from '@formkit/auto-animate/vue';
 import preset from '@/theme/preset';
 
 import 'primeicons/primeicons.css';
@@ -57,11 +56,11 @@ createInertiaApp({
         app.use(ToastService);
         app.use(i18n);
         app.directive('animateonscroll', AnimateOnScroll);
-        app.use(autoAnimatePlugin);
 
         // Set i18n locale from Inertia props if available
-        if (props.initialPage.props.locale) {
-            i18n.global.locale.value = props.initialPage.props.locale;
+        const initialLocale = (props.initialPage.props as any)?.locale as string | undefined;
+        if (typeof initialLocale === 'string' && initialLocale.length > 0) {
+            (i18n.global.locale as any).value = initialLocale;
         }
 
         // Register components

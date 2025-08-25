@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="02864e46-6541-4536-83e1-7ec92517e586" name="ocean">
+        <fileTransfer rootFolder="/var/www/simone-bianco-resume" accessType="SFTP" host="128.199.48.56" port="22" sshConfigId="1c41a67c-bf38-42a0-92dd-098635b768b1" sshConfig="www-data@128.199.48.56:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="fc7766f7-6c8f-4756-b10b-ae88be3973c5" name="root-ocean">
+        <fileTransfer accessType="SFTP" host="128.199.48.56" port="22" sshConfigId="a30714a8-9b02-4d48-9a82-35aa04cf074b" sshConfig="root@128.199.48.56:22" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

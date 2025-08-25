@@ -1,6 +1,6 @@
 export interface ChatMessage {
-    id: string,
-    author: string,
-    type: string,
-    content: string
+    id: number | string;
+    author: 'user' | 'assistant' | string;
+    type: 'text' | 'thinking' | 'error' | string;
+    content: string;
 }

@@ -14,12 +14,22 @@ function triggerOpenChat() {
 <template>
     <div class="flex items-center gap-3">
         <div
-            class="chat-bubble"
             role="button"
             tabindex="0"
             :aria-label="t('chatBubble.text')"
             @click="triggerOpenChat"
             @keydown.enter="triggerOpenChat"
+            class="chat-bubble
+                relative inline-block cursor-pointer select-none text-center
+                border border-[var(--bubble-border)]
+                bg-[var(--bubble-bg)] text-[var(--bubble-fg)]
+                px-5 py-3
+                text-sm text-left font-semibold
+                max-w-[180px]
+                rounded-tr-lg rounded-br-lg rounded-bl-lg
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400
+                focus-visible:ring-offset-2 focus-visible:ring-offset-surface-950
+            "
         >
             {{ t('chatBubble.text') }}
         </div>
@@ -30,37 +40,24 @@ function triggerOpenChat() {
 </template>
 
 <style scoped>
-/* Usiamo @apply per creare un componente con le utility di Tailwind, ma tenendo il template pulito */
+/*
+ * La classe .chat-bubble ora contiene solo stili che non hanno
+ * un'utility class equivalente in Tailwind, come le variabili e l'animazione.
+*/
 .chat-bubble {
-    /* Variabili semantiche locali mappate ai token globali */
+    /* Variabili semantiche locali */
     --bubble-bg: var(--surface-900);
     --bubble-fg: var(--surface-0);
     --bubble-border: var(--surface-700);
-
-    @apply relative inline-block cursor-pointer select-none text-center;
-    @apply px-5 py-3; /* padding */
-    @apply text-sm text-left font-semibold; /* text style */
-    @apply max-w-[180px]; /* max width */
-
-    /* Forma del fumetto (3 angoli su 4 arrotondati) */
-    @apply rounded-tr-lg rounded-br-lg rounded-bl-lg;
-
-    /* Colori del fumetto con variabili locali (mantengono in sync la coda) */
-    background-color: var(--bubble-bg);
-    color: var(--bubble-fg);
-    @apply border;
-    border-color: var(--bubble-border);
 
     /* Animazione */
     animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-/* Stile per accessibilità (focus da tastiera) */
-.chat-bubble:focus-visible {
-    @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-surface-950;
-}
-
-/* La coda del fumetto rimane con clip-path perché è il metodo più robusto */
+/*
+ * Gli pseudo-elementi come ::after non possono essere stilizzati dal template.
+ * Per questo motivo, le direttive @apply per la "coda" del fumetto DEVONO rimanere qui.
+*/
 .chat-bubble::after {
     content: '';
     @apply absolute top-1/2 left-full -translate-y-1/2;
@@ -68,7 +65,6 @@ function triggerOpenChat() {
     height: 16px;
     background-color: var(--bubble-bg);
     clip-path: polygon(0 0, 100% 50%, 0 100%);
-    /* Aggiungiamo un bordo anche alla coda per coerenza */
     border-right: 1px solid var(--bubble-border);
 }
 

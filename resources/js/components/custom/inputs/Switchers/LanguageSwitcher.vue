@@ -11,7 +11,13 @@ const { locale } = useI18n();
 
 // Get available languages from Inertia props
 const page = usePage();
-const languagesMap = computed<Record<string, string>>(() => page.props.languages || { en: 'English', it: 'Italiano' });
+const languagesMap = computed<Record<string, string>>(() => {
+    const langs = (page.props as any)?.languages as Record<string, string> | undefined;
+    if (langs && typeof langs === 'object' && Object.keys(langs).length > 0) {
+        return langs;
+    }
+    return { en: 'English', it: 'Italiano' };
+});
 const availableLanguages = computed<string[]>(() => {
     return Object.keys(languagesMap.value);
 });

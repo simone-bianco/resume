@@ -16,13 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Artisan::call('purge:mc-databases', [
-            '--force' => true,
-        ]);
-
-        $user = User::factory()->create([
+        User::factory()->create([
             'name' => 'Simone Bianco',
-            'email' => 'simone.bianco@dnafactory.it',
+            'email' => 'simone9292@live.com',
             'username' => 'sbianco',
             'first_name' => 'Simone',
             'last_name' => 'Bianco',

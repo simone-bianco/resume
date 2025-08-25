@@ -12,6 +12,9 @@ export default {
             'Eccellente capacità di lavorare in team e forte orientamento ' +
             'al raggiungimento degli obiettivi di progetto.',
         contactLabel: 'Contattami!',
+        imageAlt: 'Simone Bianco',
+        githubAriaLabel: 'Github',
+        linkedinAriaLabel: 'Linkedin'
     },
     menu: {
         home: 'Home',
@@ -46,7 +49,7 @@ export default {
         },
     },
     experience: {
-        sectionTitle: 'Esperienza Lavorativa',
+        sectionTitle: 'Esperienza Lavorativa e Educazione',
         dnafactory: {
             company: 'DNAFactory',
             title: 'Sviluppatore Backend',

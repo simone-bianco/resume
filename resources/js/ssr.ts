@@ -25,7 +25,7 @@ createServer((page) =>
             // Create i18n instance with initial configuration
             const i18n = createI18n({
                 legacy: false, // Use Composition API
-                locale: page.props.locale || 'en', // Use locale from page props or default to 'en'
+                locale: ((page.props as any)?.locale as string) || 'en', // Use locale from page props or default to 'en'
                 fallbackLocale: 'en', // Set fallback locale
                 messages
             });
@@ -34,15 +34,20 @@ createServer((page) =>
 
             // Use plugins
             app.use(plugin);
-            app.use(ZiggyVue, {
-                ...page.props.ziggy,
-                location: new URL(page.props.ziggy.location),
-            });
+            const ziggyProps = ((page.props as any)?.ziggy ?? {}) as Record<string, any>;
+            const ziggyLocation = typeof ziggyProps.location === 'string' && ziggyProps.location.length > 0
+                ? ziggyProps.location
+                : 'http://localhost';
+            app.use(ZiggyVue as any, {
+                ...ziggyProps,
+                location: new URL(ziggyLocation),
+            } as any);
             app.use(i18n);
 
             // Set i18n locale from page props if available
-            if (page.props.locale) {
-                i18n.global.locale.value = page.props.locale;
+            const ssrLocale = ((page.props as any)?.locale as string) || '';
+            if (ssrLocale) {
+                (i18n.global.locale as any).value = ssrLocale;
             }
 
             return app;

@@ -12,6 +12,9 @@ export default {
             'Excellent ability to work in a team and a strong focus ' +
             'on achieving project goals.',
         contactLabel: 'Contattami!',
+        imageAlt: 'Simone Bianco',
+        githubAriaLabel: 'Github',
+        linkedinAriaLabel: 'Linkedin'
     },
     menu: {
         home: 'Home',
