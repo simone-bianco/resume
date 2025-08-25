@@ -37,6 +37,7 @@
         "vue-tsc": "^2.0.24"
     },
     "dependencies": {
+        "@formkit/auto-animate": "^0.8.2",
         "@he-tree/vue": "^2.9.4",
         "@inertiajs/vue3": "^2.0.0",
         "@playwright/test": "^1.54.2",

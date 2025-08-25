@@ -51,7 +51,7 @@ const pt = {
 
 <template>
     <div class="relative flex min-h-screen flex-col bg-surface-950">
-        <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 sm:px-6 bg-surface-950/80 backdrop-blur-sm border-surface-800">
+        <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between p-4 sm:px-6 bg-surface-950/80 backdrop-blur-sm border-surface-800">
             <div>
             </div>
 

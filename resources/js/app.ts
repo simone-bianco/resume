@@ -13,11 +13,14 @@ import ToastService from 'primevue/toastservice';
 import StyleClass from 'primevue/styleclass';
 import Tooltip from 'primevue/tooltip';
 import messages from './i18n/messages';
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue';
+import preset from '@/theme/preset';
 
 import 'primeicons/primeicons.css';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 import AnimateOnScroll from 'primevue/animateonscroll';
+import { definePreset } from '@primeuix/themes';
 
 const i18n = createI18n({
     legacy: false, // Use Composition API
@@ -25,6 +28,9 @@ const i18n = createI18n({
     fallbackLocale: 'en', // Set fallback locale
     messages
 });
+
+const SBPreset = definePreset(Aura, preset);
+
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -41,7 +47,7 @@ createInertiaApp({
         app.use(ZiggyVue);
         app.use(PrimeVue, {
             theme: {
-                preset: Aura,
+                preset: SBPreset,
                 ripple: false,
                 options: {
                     darkModeSelector: '.dark'
@@ -51,6 +57,7 @@ createInertiaApp({
         app.use(ToastService);
         app.use(i18n);
         app.directive('animateonscroll', AnimateOnScroll);
+        app.use(autoAnimatePlugin);
 
         // Set i18n locale from Inertia props if available
         if (props.initialPage.props.locale) {
