@@ -27,8 +27,8 @@ const menuItems = computed(() => [
         command: () => router.get(route('home')),
     },
     {
-        label: t('menu.projects'),
-        command: () => router.get(route('projects')),
+        label: t('menu.thesis'),
+        command: () => router.get(route('thesis')),
     },
     {
         label: t('menu.resume'),

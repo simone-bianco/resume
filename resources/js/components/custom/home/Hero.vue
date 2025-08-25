@@ -35,25 +35,25 @@ const heroImageAnimation = {
                   class="hero-card relative z-10 w-11/12 md:w-7/12 shadow-2xl rounded-2xl bg-surface-800 -mt-16 md:mt-0 md:order-1">
                 <template #content>
                     <div class="p-6 md:p-8">
-                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-surface-0 mb-1">
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">
                             {{ t('hero.name') }}
                         </h1>
                         <p class="text-md sm:text-lg text-primary-400 font-medium mb-4">
                             {{ t('hero.title') }}
                         </p>
-                        <p class="text-sm sm:text-base text-surface-300 max-w-lg mb-6">
+                        <p class="text-sm sm:text-base max-w-lg mb-6">
                             {{ t('hero.bio') }}
                         </p>
                         <div class="flex items-center gap-3">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/simone-bianco" target="_blank" rel="noopener noreferrer">
                                 <Button icon="pi pi-github" severity="secondary" text rounded
                                         :aria-label="t('hero.githubAriaLabel')" />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
                                 <Button icon="pi pi-linkedin" severity="secondary" text rounded
                                         :aria-label="t('hero.linkedinAriaLabel')" />
                             </a>
-                            <a href="mailto:email@esempio.com">
+                            <a href="mailto:simone9292@live.com">
                                 <Button :label="t('hero.contactLabel')" icon="pi pi-envelope" severity="primary"
                                         size="small" />
                             </a>
