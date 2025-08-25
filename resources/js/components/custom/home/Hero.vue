@@ -29,10 +29,11 @@ const heroImageAnimation = {
                         :alt="t('hero.imageAlt')"
                         image-class="hero-image"
                     />
+
                 </div>
             </div>
             <Card v-animateonscroll="heroCardAnimation"
-                  class="hero-card relative z-10 w-11/12 md:w-7/12 shadow-2xl rounded-2xl bg-surface-800 -mt-16 md:mt-0 md:order-1">
+                  class="hero-card sb-fancy-card relative z-10 w-11/12 md:w-7/12 rounded-2xl bg-surface-800 -mt-16 md:mt-0 md:order-1">
                 <template #content>
                     <div class="p-6 md:p-8">
                         <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">
@@ -41,7 +42,7 @@ const heroImageAnimation = {
                         <p class="text-md sm:text-lg text-primary-400 font-medium mb-4">
                             {{ t('hero.title') }}
                         </p>
-                        <p class="text-sm sm:text-base max-w-lg mb-6">
+                        <p class="text-sm sm:text-base max-w-lg mb-6 text-[var(--text-color)]">
                             {{ t('hero.bio') }}
                         </p>
                         <div class="flex items-center gap-3">
@@ -65,15 +66,16 @@ const heroImageAnimation = {
     </section>
 </template>
 
-<style>
+<style scoped>
 .hero-card,
 .hero-image {
     transition: transform var(--hover-transition-duration) cubic-bezier(0.25, 0.8, 0.25, 1),
     box-shadow var(--hover-transition-duration) cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-</style>
 
-<style scoped>
+/* Base text color inside the hero card on dark tile */
+.hero-card { color: var(--surface-0); }
+
 .hero-image-container {
     perspective: 1500px;
     transform-style: preserve-3d;
@@ -87,10 +89,6 @@ const heroImageAnimation = {
     border-radius: 1rem;
 }
 
-.hero-card:hover {
-    transform: scale(var(--hover-card-scale));
-    box-shadow: 0 0 30px 10px rgba(var(--primary-color-rgb), 0.2);
-}
 
 .hero-image-container:hover>div {
     box-shadow: 0 0 50px 20px rgba(var(--primary-color-rgb), 0.3);
@@ -99,6 +97,6 @@ const heroImageAnimation = {
 
 /* Usiamo :deep() per applicare la trasformazione on-hover */
 .hero-image-container:hover :deep(.hero-image) {
-    transform: scale(var(--hover-image-scale)) rotateY(var(--hover-image-rotate-y));
+    transform: scale(var(--hover-image-scale)) ;
 }
 </style>

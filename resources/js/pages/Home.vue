@@ -3,6 +3,8 @@ import GuestLayout from '@/layouts/GuestLayout.vue';
 import Hero from '@/components/custom/home/Hero.vue';
 import Skills from '@/components/custom/home/Skills.vue';
 import Experience from '@/components/custom/home/Experience.vue';
+import ChatManager from '@/components/custom/chat/ChatManager.vue';
+
 </script>
 
 <template>
@@ -12,6 +14,8 @@ import Experience from '@/components/custom/home/Experience.vue';
         <Skills />
 
         <Experience />
+
+        <ChatManager />
     </GuestLayout>
 </template>
 

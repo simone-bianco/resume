@@ -1,0 +1,176 @@
+<script setup lang="ts">
+import { ref, nextTick } from 'vue';
+import { useI18n } from 'vue-i18n';
+import axios from 'axios';
+// @ts-ignore
+import { route } from 'ziggy-js';
+import Button from 'primevue/button';
+import Textarea from 'primevue/textarea';
+import UserMessageBubble from './UserMessageBubble.vue'; // <-- Importa il nuovo componente
+import InterlocutorMessageBubble from './InterlocutorMessageBubble.vue'; // <-- Importa il nuovo componente
+
+const { t } = useI18n();
+const emit = defineEmits(['close-chat']);
+
+defineProps({
+    chatHeight: {
+        type: String,
+        default: '600px'
+    }
+});
+
+// === La logica e lo stato rimangono qui, nel componente "contenitore" ===
+const userInput = ref('');
+const isLoading = ref(false);
+const isMinimized = ref(false);
+const messages = ref([
+    { id: 1, author: 'ai', type: 'text', content: t('chat.welcome') }
+]);
+
+let writingTimeout: number;
+
+async function sendMessage() {
+    const text = userInput.value.trim();
+    if (!text || isLoading.value) return;
+
+    isLoading.value = true;
+    messages.value.push({ id: Date.now(), author: 'me', type: 'text', content: text });
+    userInput.value = '';
+    await scrollToBottom();
+
+    const thinkingMessageId = Date.now() + 1;
+    messages.value.push({ id: thinkingMessageId, author: 'ai', type: 'thinking', content: t('chat.thinking') });
+    await scrollToBottom();
+
+    writingTimeout = setTimeout(() => {
+        const msg = messages.value.find(m => m.id === thinkingMessageId);
+        if (msg) msg.content = t('chat.writing');
+    }, 1000);
+
+    try {
+        const response = await axios.post(route('chat'), { message: text });
+        clearTimeout(writingTimeout);
+
+        const msgIndex = messages.value.findIndex(m => m.id === thinkingMessageId);
+        if (msgIndex !== -1) {
+            messages.value[msgIndex] = { id: thinkingMessageId, author: 'ai', type: 'text', content: response.data.content };
+        }
+    } catch (error) {
+        clearTimeout(writingTimeout);
+        console.error("Errore nella chiamata API della chat:", error);
+
+        const msgIndex = messages.value.findIndex(m => m.id === thinkingMessageId);
+        if (msgIndex !== -1) {
+            messages.value[msgIndex] = { id: thinkingMessageId, author: 'ai', type: 'error', content: t('chat.error') };
+        }
+    } finally {
+        isLoading.value = false;
+        await scrollToBottom();
+    }
+}
+
+const chatHistory = ref<HTMLElement | null>(null);
+async function scrollToBottom() {
+    await nextTick();
+    if (chatHistory.value) {
+        chatHistory.value.scrollTop = chatHistory.value.scrollHeight;
+    }
+}
+</script>
+
+<template>
+    <div
+        class="chat-window"
+        :class="{ 'is-minimized': isMinimized }"
+        :style="{ height: isMinimized ? 'auto' : chatHeight }"
+    >
+        <header class="chat-header" @click="isMinimized = !isMinimized">
+            <div class="chat-title">{{ t('chat.title') }}</div>
+            <Button
+                :icon="isMinimized ? 'pi pi-window-maximize' : 'pi pi-window-minimize'"
+                severity="secondary" text rounded @click.stop="isMinimized = !isMinimized"
+            />
+            <Button
+                icon="pi pi-times"
+                severity="secondary" text rounded @click.stop="$emit('close-chat')"
+            />
+        </header>
+
+        <template v-if="!isMinimized">
+            <div ref="chatHistory" class="chat-history">
+                <div v-for="msg in messages" :key="msg.id">
+                    <UserMessageBubble v-if="msg.author === 'me'" :message="msg" />
+                    <InterlocutorMessageBubble v-else :message="msg" />
+                </div>
+            </div>
+
+            <footer class="chat-footer">
+                <Textarea
+                    v-model="userInput"
+                    :placeholder="t('chat.placeholder')"
+                    autoResize rows="1" maxlength="300"
+                    class="flex-grow !shadow-none"
+                    @keydown.enter.prevent="sendMessage"
+                />
+                <Button icon="pi pi-send" :disabled="isLoading || !userInput.trim()" @click="sendMessage" />
+            </footer>
+        </template>
+    </div>
+</template>
+
+<style scoped>
+/* Gli stili per le bolle sono stati spostati nei loro componenti. Qui rimane solo lo stile del "contenitore" */
+.chat-window {
+    width: 350px;
+    max-height: 80vh;
+    border: 1px solid var(--surface-700);
+    background: var(--surface-800);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 300ms ease-in-out;
+}
+.chat-window.is-minimized {
+    height: auto;
+    max-height: 52px;
+}
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-bottom: 1px solid var(--surface-700);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.chat-title {
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.chat-footer {
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+    gap: 0.5rem;
+    border-top: 1px solid var(--surface-700);
+}
+:deep(.p-inputtextarea) {
+    background: transparent !important;
+    border: none !important;
+    color: var(--surface-0);
+    min-height: 24px;
+    max-height: 100px;
+    line-height: 1.5;
+}
+</style>

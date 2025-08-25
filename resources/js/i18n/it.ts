@@ -6,9 +6,9 @@ export default {
             'Sviluppatore software backend con oltre 5 anni di ' +
             'esperienza nella creazione di applicazioni scalabili e ' +
             'microservizi. Specializzato nel framework Laravel ' +
-            'con esperienza in Vue.js e un solido background in ' +
-            'architetture REST. Conoscenza di tecniche all\'avanguardia ' +
-            'per l\'ingegneria dei prompt e l\'uso di tool di coding AI. ' +
+            'con conoscenze di Vue.js e un solido background in ' +
+            'architetture REST. Adozione di tecniche all\'avanguardia ' +
+            'dell\'ingegneria dei prompt e integrazione di tool di coding AI. ' +
             'Eccellente capacità di lavorare in team e forte orientamento ' +
             'al raggiungimento degli obiettivi di progetto.',
         contactLabel: 'Contattami!',
@@ -21,8 +21,8 @@ export default {
     },
     skills: {
         languages: {
-            title: 'Linguaggi di Programmazione',
-            items: 'PHP, Python, Javascript, Typescript, SQL',
+            title: 'Coding',
+            items: 'PHP, Javascript, Typescript, HTML, SQL, Python',
         },
         frameworks: {
             title: 'Framework',
@@ -87,4 +87,15 @@ export default {
             desc2: 'C++, HTML, PHP, CSS, Javascript, Java, MySQL',
         },
     },
+    chatBubble: {
+        text: 'Benvenuto! Clicca qui per chattare con il mio avatar virtuale!'
+    },
+    chat: {
+        title: 'Chat',
+        welcome: 'Ciao, piacere di conoscerti! Vuoi chiedermi qualcosa?',
+        error: 'Mi dispiace, si è verificato un errore imprevisto 😔',
+        thinking: 'Sto pensando...',
+        writing: 'Sto scrivendo...',
+        placeholder: 'Scrivi un messaggio per chattare',
+    }
 };

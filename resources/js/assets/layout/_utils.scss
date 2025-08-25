@@ -23,3 +23,23 @@
         top: 100px;
     }
 }
+
+
+/* Fancy card hover utility */
+.sb-fancy-card {
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid var(--surface-700);
+    overflow: hidden;
+    transition: transform var(--hover-transition-duration, 400ms) cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow var(--hover-transition-duration, 400ms) cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color var(--hover-transition-duration, 400ms) ease;
+}
+
+.sb-fancy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(var(--primary-color-rgb, 34, 211, 238), 0.2);
+    border-color: var(--primary-color);
+}
+
+.sb-fancy-card .p-card-body { position: relative; z-index: 1; }

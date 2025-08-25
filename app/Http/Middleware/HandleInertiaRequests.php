@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -52,7 +53,8 @@ class HandleInertiaRequests extends Middleware
                 'error' => $request->session()->get('error'),
                 'info' => $request->session()->get('info'),
             ],
-            'data' => []
+            'data' => [],
+            'currentRoute' => Route::currentRouteName(),
         ];
 
         return $data;

@@ -20,8 +20,8 @@ export default {
     },
     skills: {
         languages: {
-            title: 'Programming Languages',
-            items: 'PHP, Python, Javascript, Typescript, SQL',
+            title: 'Coding',
+            items: 'PHP, Javascript, Typescript, HTML, SQL, Python',
         },
         frameworks: {
             title: 'Frameworks',
@@ -86,4 +86,7 @@ export default {
             desc2: 'C++, HTML, PHP, CSS, Javascript, Java, MySQL',
         },
     },
+    chatBubble: {
+        text: 'Welcome! Click to chat with my virtual assistant!'
+    }
 };

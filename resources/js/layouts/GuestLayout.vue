@@ -19,16 +19,29 @@ watch(
     { immediate: true }
 );
 
+// Current route name shared from server for robust active highlighting
+const currentRouteName = computed(() => (page.props as any)?.currentRoute);
+
+// Key to force Menubar re-render on route change
+const menuKey = computed(() => (page as any).url);
+
+
 const menuItems = computed(() => [
     {
+        key: 'home',
+        routeName: 'home',
         label: t('menu.home'),
         command: () => router.get(route('home')),
     },
     {
+        key: 'resume',
+        routeName: 'resume',
         label: t('menu.resume'),
         command: () => window.open(route('resume'), '_blank'),
     },
     {
+        key: 'thesis',
+        routeName: 'thesis',
         label: t('menu.thesis'),
         command: () => window.open(route('thesis'), '_blank'),
     },
@@ -38,8 +51,17 @@ const pt = {
     root: { class: 'dark:bg-transparent dark:border-none p-0' },
     menu: { class: 'flex gap-2' },
     itemContent: { class: 'py-2' },
-    action: {
-        class: 'text-surface-400 hover:text-surface-100 transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium'
+    action: (options: any) => {
+        const itemRoute = options?.item?.routeName;
+        const isActive = itemRoute
+            ? (currentRouteName.value ? currentRouteName.value === itemRoute : route().current(itemRoute))
+            : false;
+        const base = 'transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium';
+        const state = isActive ? 'text-surface-0 bg-surface-800' : 'text-surface-400 hover:text-surface-100';
+        return {
+            class: `${base} ${state}`,
+            'aria-current': isActive ? 'page' : undefined
+        };
     },
     submenuIcon: { class: 'hidden' },
 };
@@ -52,7 +74,7 @@ const pt = {
             </div>
 
             <div class="hidden sm:flex">
-                <Menubar :model="menuItems" :pt="pt" />
+                <Menubar :key="menuKey" :model="menuItems" :pt="pt" />
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3">

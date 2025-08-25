@@ -29,7 +29,7 @@ const skillsData = [
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
 
                 <Card v-for="(skill, index) in skillsData" :key="skill.titleKey"
-                      class="skill-card" v-animateonscroll="skillAnimations[index]">
+                      class="skill-card sb-fancy-card" v-animateonscroll="skillAnimations[index]">
                     <template #content>
                         <div class="skill-icon-wrapper">
                             <i :class="skill.icon"></i>
@@ -51,7 +51,10 @@ const skillsData = [
     border-radius: 1rem;
     text-align: center;
     border: 1px solid var(--surface-700);
-    transition: transform 300ms ease, box-shadow 300ms ease;
+    transition: transform var(--hover-transition-duration, 400ms) cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow var(--hover-transition-duration, 400ms) cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color var(--hover-transition-duration, 400ms) ease;
+    color: var(--text-color);
 }
 
 .skill-card :deep(.p-card-body),
@@ -63,10 +66,6 @@ const skillsData = [
     padding: 1.5rem;
 }
 
-.skill-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(var(--primary-color-rgb), 0.1);
-}
 
 .skill-icon-wrapper {
     margin-bottom: 1rem;
@@ -77,7 +76,7 @@ const skillsData = [
     align-items: center;
     justify-content: center;
     background-color: var(--surface-900);
-    color: var(--primary-400);
+    color: var(--primary-color);
     flex-shrink: 0;
 }
 
@@ -88,12 +87,12 @@ const skillsData = [
 .skill-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--surface-0);
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
 .skill-description {
-    color: var(--surface-400);
+    color: var(--text-color);
     font-size: 0.95rem;
     line-height: 1.6;
     display: -webkit-box;
@@ -102,4 +101,5 @@ const skillsData = [
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.skill-card:hover { border-color: var(--primary-color); }
 </style>

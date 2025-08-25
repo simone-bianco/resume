@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import Timeline from 'primevue/timeline';
-import Card from 'primevue/card';
+import { Divider, Card, Timeline } from 'primevue';
 
 const { t } = useI18n();
 
@@ -63,7 +62,7 @@ const experiences = ref([
     <section class="px-4 py-16 sm:py-24">
         <div class="container mx-auto max-w-6xl">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-surface-0 mb-4">{{ t('experience.sectionTitle') }}</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold text-[var(--text-color)] mb-4">{{ t('experience.sectionTitle') }}</h2>
             </div>
 
             <Timeline :value="experiences" align="alternate" class="customized-timeline">
@@ -79,7 +78,12 @@ const experiences = ref([
                             {{ t(slotProps.item.titleKey) }}
                         </template>
                         <template #subtitle>
-                            <span class="font-bold">{{ t(slotProps.item.companyKey) }}</span> | {{ t(slotProps.item.dateKey) }}
+                            <div class="experience-subtitle">
+                                <span class="company">{{ t(slotProps.item.companyKey) }}</span>
+                                <span class="separator">|</span>
+                                <span class="date">{{ t(slotProps.item.dateKey) }}</span>
+                            </div>
+                            <Divider />
                         </template>
                         <template #content>
                             <ul class="description-list">
@@ -101,33 +105,20 @@ const experiences = ref([
     border-radius: 1rem;
     border: 1px solid var(--surface-700);
     overflow: hidden;
+    color: var(--text-color);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
-    box-shadow 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 400ms ease;
 }
 
-.experience-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, var(--primary-400), var(--primary-600));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 400ms ease;
-}
 
 .experience-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(var(--primary-color-rgb), 0.2);
+    border-color: var(--primary-color);
 }
 
-.experience-card:hover::before {
-    opacity: 1;
-}
 
 .experience-card :deep(.p-card-body) {
     position: relative;
@@ -135,11 +126,11 @@ const experiences = ref([
 }
 
 .description-list {
-    list-style-type: disc;
+    list-style: none;
     padding-left: 1.5rem;
     margin: 0;
     text-align: left;
-    color: var(--surface-400);
+    color: var(--text-color);
 }
 
 .description-list li {
@@ -167,5 +158,22 @@ const experiences = ref([
     :deep(.customized-timeline .p-timeline-event-opposite) {
         flex: 0;
     }
+}
+.experience-card :deep(.p-card-subtitle) {
+    color: var(--text-color);
+}
+
+/* Custom bullets for description list (default left) */
+.description-list li { position: relative; padding-left: 0.75rem; }
+.description-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.34em;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: var(--primary-color);
+    opacity: 0.9;
 }
 </style>
