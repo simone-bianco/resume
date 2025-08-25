@@ -37,6 +37,7 @@ const menuItems = computed(() => [
 const pt = {
     root: { class: 'dark:bg-transparent dark:border-none p-0' },
     menu: { class: 'flex gap-2' },
+    itemContent: { class: 'py-2' },
     action: {
         class: 'text-surface-400 hover:text-surface-100 transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium'
     },
@@ -46,7 +47,7 @@ const pt = {
 
 <template>
     <div class="relative flex min-h-screen flex-col bg-surface-950">
-        <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between p-4 sm:px-6 bg-surface-950/80 backdrop-blur-sm border-surface-800">
+        <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-1 sm:px-6 bg-surface-950/80 backdrop-blur-sm border-surface-800">
             <div>
             </div>
 

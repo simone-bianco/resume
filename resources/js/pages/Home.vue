@@ -7,7 +7,7 @@ import Experience from '@/components/custom/home/Experience.vue';
 
 <template>
     <GuestLayout>
-        <Hero class="mt-10 md:mt-20" />
+        <Hero class="mt-10 md:mt-24" />
 
         <Skills />
 
