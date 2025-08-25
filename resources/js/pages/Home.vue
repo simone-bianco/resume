@@ -9,9 +9,9 @@ import Experience from '@/components/custom/home/Experience.vue';
     <GuestLayout>
         <Hero class="mt-10 md:mt-20" />
 
-        <Skills class="" />
+        <Skills />
 
-        <Experience class="" />
+        <Experience />
     </GuestLayout>
 </template>
 

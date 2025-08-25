@@ -11,7 +11,6 @@ const experienceAnimation = {
     leaveClass: 'animate-leave fade-out-0'
 };
 
-// AGGIORNATO: Aggiunti i dati sulla formazione e ordinati cronologicamente
 const experiences = ref([
     {
         titleKey: 'experience.dnafactory.title',
@@ -25,9 +24,8 @@ const experiences = ref([
             'experience.dnafactory.desc13',
         ],
         icon: 'pi pi-briefcase',
-        color: 'var(--primary-500)'
+        color: '#FCC018'
     },
-    // --- NUOVO BLOCCO: MASTER'S DEGREE ---
     {
         titleKey: 'experience.masters.title',
         companyKey: 'experience.masters.institution',
@@ -37,7 +35,7 @@ const experiences = ref([
             'experience.masters.desc2',
         ],
         icon: 'pi pi-graduation-cap',
-        color: '#4CAF50' // Un colore verde per distinguere la formazione
+        color: '#4CAF50'
     },
     {
         titleKey: 'experience.freelance.title',
@@ -45,9 +43,8 @@ const experiences = ref([
         dateKey: 'experience.freelance.date',
         descriptionKeys: [ 'experience.freelance.desc1' ],
         icon: 'pi pi-user',
-        color: 'var(--surface-500)'
+        color: '#182bfc'
     },
-    // --- NUOVO BLOCCO: DIPLOMA ---
     {
         titleKey: 'experience.diploma.title',
         companyKey: 'experience.diploma.institution',
@@ -57,7 +54,7 @@ const experiences = ref([
             'experience.diploma.desc2',
         ],
         icon: 'pi pi-book',
-        color: '#FF9800' // Un colore arancione
+        color: '#FF9800'
     }
 ]);
 </script>
@@ -99,7 +96,6 @@ const experiences = ref([
 </template>
 
 <style scoped>
-/* Stili "Elevated" per le card dell'esperienza (copiati e adattati da Skills.vue) */
 .experience-card {
     position: relative;
     border-radius: 1rem;
@@ -138,7 +134,6 @@ const experiences = ref([
     z-index: 2;
 }
 
-/* Stili specifici per il contenuto della card-esperienza */
 .description-list {
     list-style-type: disc;
     padding-left: 1.5rem;
@@ -151,7 +146,6 @@ const experiences = ref([
     margin-bottom: 0.5rem;
 }
 
-/* Stili per la Timeline */
 .marker-icon {
     display: flex;
     width: 2.5rem;
@@ -163,7 +157,6 @@ const experiences = ref([
     z-index: 1;
 }
 
-/* Stili per la responsività della Timeline (adattati dal tuo esempio) */
 @media screen and (max-width: 960px) {
     :deep(.customized-timeline .p-timeline-event:nth-child(even)) {
         flex-direction: row !important;

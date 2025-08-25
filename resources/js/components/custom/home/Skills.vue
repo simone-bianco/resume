@@ -45,28 +45,22 @@ const skillsData = [
 </template>
 
 <style scoped>
-/* =========== NUOVO STILE DA ZERO =========== */
-
 .skill-card {
-    /* [REQUISITO] Dimensioni fisse e non negoziabili */
     width: 320px;
     height: 240px;
-
-    /* Stili base e transizione per l'hover */
     border-radius: 1rem;
     text-align: center;
     border: 1px solid var(--surface-700);
     transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
-/* [CONTROLLO CONTENUTO] Forziamo il contenuto a riempire la card e a disporsi in colonna */
 .skill-card :deep(.p-card-body),
 .skill-card :deep(.p-card-content) {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem; /* Padding leggermente ridotto per dare più spazio */
+    padding: 1.5rem;
 }
 
 .skill-card:hover {
@@ -84,7 +78,7 @@ const skillsData = [
     justify-content: center;
     background-color: var(--surface-900);
     color: var(--primary-400);
-    flex-shrink: 0; /* Impedisce all'icona di rimpicciolirsi */
+    flex-shrink: 0;
 }
 
 .skill-icon-wrapper i {
@@ -102,11 +96,9 @@ const skillsData = [
     color: var(--surface-400);
     font-size: 0.95rem;
     line-height: 1.6;
-
-    /* [CONTROLLO OVERFLOW] Taglia il testo se supera le 2 righe per evitare che rompa il layout */
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* Massimo 2 righe */
+    -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
 }

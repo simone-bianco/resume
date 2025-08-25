@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, watch, ref } from 'vue';
+import { computed, watch } from 'vue';
 import { usePage } from '@inertiajs/vue3';
-import { router } from '@inertiajs/vue3'; // Importa il router di Inertia
+import { router } from '@inertiajs/vue3';
 import { useI18n } from 'vue-i18n';
 import { route } from 'ziggy-js';
 import LanguageSwitcher from '@/components/custom/inputs/Switchers/LanguageSwitcher.vue';
@@ -15,36 +15,31 @@ const { setDarkMode } = useLayout();
 watch(
     () => (page.props as any)?.theme?.dark,
     // (isDarkMode) => setDarkMode(isDarkMode ?? false),
-    (isDarkMode) => setDarkMode(true),
+    () => setDarkMode(true),
     { immediate: true }
 );
 
-// Definiamo le voci di menu come una proprietà "computed"
-// così si aggiornano automaticamente al cambio di lingua.
 const menuItems = computed(() => [
     {
         label: t('menu.home'),
         command: () => router.get(route('home')),
     },
     {
-        label: t('menu.thesis'),
-        command: () => router.get(route('thesis')),
+        label: t('menu.resume'),
+        command: () => window.open(route('resume'), '_blank'),
     },
     {
-        label: t('menu.resume'),
-        command: () => router.get(route('resume')),
+        label: t('menu.thesis'),
+        command: () => window.open(route('thesis'), '_blank'),
     },
 ]);
 
-// Opzionale: Stile per integrare la Menubar con Tailwind CSS (Pass Through)
-// Questo rimuove lo stile di default di PrimeVue per un look più pulito.
 const pt = {
     root: { class: 'dark:bg-transparent dark:border-none p-0' },
     menu: { class: 'flex gap-2' },
     action: {
         class: 'text-surface-400 hover:text-surface-100 transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium'
     },
-    // Rimuoviamo l'icona del sottomenu se non ci sono sottomenu
     submenuIcon: { class: 'hidden' },
 };
 </script>
