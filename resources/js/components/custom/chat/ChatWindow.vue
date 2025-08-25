@@ -1,31 +1,33 @@
 <script setup lang="ts">
-import { ref, nextTick } from 'vue';
+import { ref, nextTick, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import axios from 'axios';
-// @ts-ignore
 import { route } from 'ziggy-js';
 import Button from 'primevue/button';
 import Textarea from 'primevue/textarea';
-import UserMessageBubble from './UserMessageBubble.vue'; // <-- Importa il nuovo componente
-import InterlocutorMessageBubble from './InterlocutorMessageBubble.vue'; // <-- Importa il nuovo componente
+import UserMessageBubble from './UserMessageBubble.vue';
+import InterlocutorMessageBubble from './InterlocutorMessageBubble.vue';
+import { ChatMessage } from '@/types/dto';
 
 const { t } = useI18n();
-const emit = defineEmits(['close-chat']);
 
-defineProps({
-    chatHeight: {
-        type: String,
-        default: '600px'
-    }
+const props = withDefaults(defineProps<{
+    chatHeight?: string,
+    chatHistory?: ChatMessage[]
+}>(), {
+    chatHistory: () => [],
+    chatHeight: '600px',
 });
 
-// === La logica e lo stato rimangono qui, nel componente "contenitore" ===
 const userInput = ref('');
 const isLoading = ref(false);
 const isMinimized = ref(false);
-const messages = ref([
-    { id: 1, author: 'ai', type: 'text', content: t('chat.welcome') }
-]);
+
+const messages = ref(
+    props.chatHistory && props.chatHistory.length > 0
+        ? [...props.chatHistory]
+        : [{ id: 1, author: 'assistant', type: 'text', content: t('chat.welcome') }]
+);
 
 let writingTimeout: number;
 
@@ -34,12 +36,12 @@ async function sendMessage() {
     if (!text || isLoading.value) return;
 
     isLoading.value = true;
-    messages.value.push({ id: Date.now(), author: 'me', type: 'text', content: text });
+    messages.value.push({ id: Date.now(), author: 'user', type: 'text', content: text });
     userInput.value = '';
     await scrollToBottom();
 
     const thinkingMessageId = Date.now() + 1;
-    messages.value.push({ id: thinkingMessageId, author: 'ai', type: 'thinking', content: t('chat.thinking') });
+    messages.value.push({ id: thinkingMessageId, author: 'assistant', type: 'thinking', content: t('chat.thinking') });
     await scrollToBottom();
 
     writingTimeout = setTimeout(() => {
@@ -53,15 +55,14 @@ async function sendMessage() {
 
         const msgIndex = messages.value.findIndex(m => m.id === thinkingMessageId);
         if (msgIndex !== -1) {
-            messages.value[msgIndex] = { id: thinkingMessageId, author: 'ai', type: 'text', content: response.data.content };
+            messages.value[msgIndex] = { id: thinkingMessageId, author: 'assistant', type: 'text', content: response.data.content };
         }
     } catch (error) {
         clearTimeout(writingTimeout);
-        console.error("Errore nella chiamata API della chat:", error);
 
         const msgIndex = messages.value.findIndex(m => m.id === thinkingMessageId);
         if (msgIndex !== -1) {
-            messages.value[msgIndex] = { id: thinkingMessageId, author: 'ai', type: 'error', content: t('chat.error') };
+            messages.value[msgIndex] = { id: thinkingMessageId, author: 'assistant', type: 'error', content: t('chat.error') };
         }
     } finally {
         isLoading.value = false;
@@ -69,13 +70,17 @@ async function sendMessage() {
     }
 }
 
-const chatHistory = ref<HTMLElement | null>(null);
+const chatHistoryElement = ref<HTMLElement | null>(null);
 async function scrollToBottom() {
     await nextTick();
-    if (chatHistory.value) {
-        chatHistory.value.scrollTop = chatHistory.value.scrollHeight;
+    if (chatHistoryElement.value) {
+        chatHistoryElement.value.scrollTop = chatHistoryElement.value.scrollHeight;
     }
 }
+
+onMounted(() => {
+    scrollToBottom();
+});
 </script>
 
 <template>
@@ -85,7 +90,7 @@ async function scrollToBottom() {
         :style="{ height: isMinimized ? 'auto' : chatHeight }"
     >
         <header class="chat-header" @click="isMinimized = !isMinimized">
-            <div class="chat-title">{{ t('chat.title') }}</div>
+            <h3 class="chat-title">{{ t('chat.title') }}</h3>
             <Button
                 :icon="isMinimized ? 'pi pi-window-maximize' : 'pi pi-window-minimize'"
                 severity="secondary" text rounded @click.stop="isMinimized = !isMinimized"
@@ -97,9 +102,9 @@ async function scrollToBottom() {
         </header>
 
         <template v-if="!isMinimized">
-            <div ref="chatHistory" class="chat-history">
+            <div ref="chatHistoryElement" class="chat-history">
                 <div v-for="msg in messages" :key="msg.id">
-                    <UserMessageBubble v-if="msg.author === 'me'" :message="msg" />
+                    <UserMessageBubble v-if="msg.author === 'user'" :message="msg" />
                     <InterlocutorMessageBubble v-else :message="msg" />
                 </div>
             </div>
@@ -119,7 +124,6 @@ async function scrollToBottom() {
 </template>
 
 <style scoped>
-/* Gli stili per le bolle sono stati spostati nei loro componenti. Qui rimane solo lo stile del "contenitore" */
 .chat-window {
     width: 350px;
     max-height: 80vh;

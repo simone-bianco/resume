@@ -64,6 +64,8 @@ return [
         ],
     ],
 
+    'secret_prompt' => env('SECRET_PROMPT', ''),
+
     /**
      * Fallback provider to use when any provider fails.
      */

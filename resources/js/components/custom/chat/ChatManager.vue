@@ -2,12 +2,20 @@
 import { ref } from 'vue';
 import ChatBubble from './ChatBubble.vue';
 import ChatWindow from './ChatWindow.vue';
+import { ChatMessage } from '@/types/dto';
 
-defineProps({
-    bubbleBottom: { type: String, default: '2rem' },
-    bubbleRight: { type: String, default: '2rem' },
-    windowBottom: { type: String, default: '2rem' },
-    windowRight: { type: String, default: '2rem' }
+const props = withDefaults(defineProps<{
+    bubbleBottom?: string,
+    bubbleRight?: string,
+    windowBottom?: string,
+    windowRight?: string,
+    chatHistory?: ChatMessage[]
+}>(), {
+    chatHistory: () => [],
+    bubbleBottom: '2rem',
+    bubbleRight: '2rem',
+    windowBottom: '2rem',
+    windowRight: '2rem',
 });
 
 const isChatOpen = ref(false);
@@ -25,6 +33,7 @@ const isChatOpen = ref(false);
             v-else
             class="fixed-chat-element"
             :style="{ bottom: windowBottom, right: windowRight }"
+            :chat-history="props.chatHistory"
             @close-chat="isChatOpen = false"
         />
     </div>

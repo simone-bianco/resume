@@ -88,5 +88,13 @@ export default {
     },
     chatBubble: {
         text: 'Welcome! Click to chat with my virtual assistant!'
+    },
+    chat: {
+        title: 'Chat',
+        welcome: 'Hello, nice to meet you! Would you like to ask me something?',
+        error: 'I\'m sorry, an unexpected error occurred 😔',
+        thinking: 'Thinking...',
+        writing: 'Typing...',
+        placeholder: 'Type a message to chat',
     }
 };

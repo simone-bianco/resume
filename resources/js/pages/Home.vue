@@ -4,6 +4,11 @@ import Hero from '@/components/custom/home/Hero.vue';
 import Skills from '@/components/custom/home/Skills.vue';
 import Experience from '@/components/custom/home/Experience.vue';
 import ChatManager from '@/components/custom/chat/ChatManager.vue';
+import { ChatMessage } from '@/types/dto';
+
+const props = withDefaults(defineProps<{ chatHistory?: ChatMessage[] }>(), {
+    chatHistory: () => []
+});
 
 </script>
 
@@ -15,7 +20,7 @@ import ChatManager from '@/components/custom/chat/ChatManager.vue';
 
         <Experience />
 
-        <ChatManager />
+        <ChatManager :chatHistory="props.chatHistory" />
     </GuestLayout>
 </template>
 

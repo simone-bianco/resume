@@ -8,7 +8,6 @@ const emit = defineEmits(['open-chat']);
 
 function triggerOpenChat() {
     emit('open-chat');
-    console.log('ChatBubble cliccata! Evento "open-chat" emesso.');
 }
 </script>
 

@@ -22,7 +22,7 @@ class ChatController extends Controller
         if (!$message) {
             return response()->json([
                 'id' => Str::uuid(),
-                'author' => '🤖 Simone Bianco',
+                'author' => 'assistant',
                 'type' => 'text',
                 'content' => 'Scrivi un messaggio per chattare 😁'
             ]);
@@ -34,7 +34,7 @@ class ChatController extends Controller
 
         return response()->json([
             'id' => Str::uuid(),
-            'author' => '🤖 Simone Bianco',
+            'author' => 'assistant',
             'type' => 'text',
             'content' => $response
         ]);

@@ -80,7 +80,7 @@ const experiences = ref([
                         <template #subtitle>
                             <div class="experience-subtitle">
                                 <span class="company">{{ t(slotProps.item.companyKey) }}</span>
-                                <span class="separator">|</span>
+                                <span class="separator"> | </span>
                                 <span class="date">{{ t(slotProps.item.dateKey) }}</span>
                             </div>
                             <Divider />

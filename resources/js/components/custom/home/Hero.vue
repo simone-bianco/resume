@@ -3,6 +3,7 @@ import Card from 'primevue/card';
 import Image from 'primevue/image';
 import Button from 'primevue/button';
 import { useI18n } from 'vue-i18n';
+import { Divider } from 'primevue';
 
 const { t } = useI18n();
 
@@ -42,6 +43,7 @@ const heroImageAnimation = {
                         <p class="text-md sm:text-lg text-primary-400 font-medium mb-4">
                             {{ t('hero.title') }}
                         </p>
+                        <Divider />
                         <p class="text-sm sm:text-base max-w-lg mb-6 text-[var(--text-color)]">
                             {{ t('hero.bio') }}
                         </p>

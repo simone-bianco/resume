@@ -9,7 +9,7 @@ class AvatarChatAgent extends Agent
 {
     protected $model = 'gpt-5';
 
-    protected $history = 'in_memory';
+    protected $history = \LarAgent\History\SessionChatHistory::class;
 
     protected $provider = 'default';
 
@@ -19,7 +19,7 @@ class AvatarChatAgent extends Agent
     {
         $today = Carbon::now()->format('d/m/Y H:i');
         $age = Carbon::now()->diff(Carbon::parse('1992-09-09'))->years;
-        $secretPrompt = env('SECRET_PROMPT', '');
+        $secretPrompt = config('laragent.secret_prompt', '');
         return <<<ISTRUZIONI
 ### Contesto
 Data odierna: $today
