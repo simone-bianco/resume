@@ -39,7 +39,7 @@ const menuItems = computed(() => [
 // Opzionale: Stile per integrare la Menubar con Tailwind CSS (Pass Through)
 // Questo rimuove lo stile di default di PrimeVue per un look più pulito.
 const pt = {
-    root: { class: 'bg-transparent dark:border-none p-0' },
+    root: { class: 'dark:bg-transparent dark:border-none p-0' },
     menu: { class: 'flex gap-2' },
     action: {
         class: 'text-surface-400 hover:text-surface-100 transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium'
@@ -50,8 +50,8 @@ const pt = {
 </script>
 
 <template>
-    <div class="relative flex min-h-screen flex-col bg-surface-900">
-        <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 sm:px-6 bg-surface-900/80 backdrop-blur-sm border-b border-surface-800">
+    <div class="relative flex min-h-screen flex-col bg-surface-950">
+        <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 sm:px-6 bg-surface-950/80 backdrop-blur-sm border-surface-800">
             <div>
             </div>
 
