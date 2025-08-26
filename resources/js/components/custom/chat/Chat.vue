@@ -279,15 +279,15 @@ async function resetChat() {
                     </div>
 
                     <footer class="chat-footer">
-                <Textarea
-                    v-model="userInput"
-                    :placeholder="t('chat.placeholder')"
-                    rows="3"
-                    maxlength="300"
-                    class="flex-grow !shadow-none"
-                    autofocus
-                    @keydown.enter.exact.prevent="sendMessage"
-                />
+                        <Textarea
+                            v-model="userInput"
+                            :placeholder="t('chat.placeholder')"
+                            rows="3"
+                            maxlength="300"
+                            class="flex-grow !shadow-none"
+                            autofocus
+                            @keydown.enter.exact.prevent="sendMessage"
+                        />
                         <Button
                             icon="pi pi-send"
                             :disabled="isLoading || !userInput.trim()"
@@ -363,7 +363,7 @@ async function resetChat() {
 }
 .chat-footer {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding: 0.75rem;
     gap: 0.5rem;
     border-top: 1px solid var(--surface-700);
