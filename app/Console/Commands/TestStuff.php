@@ -28,6 +28,7 @@ class TestStuff extends Command
      */
     public function handle()
     {
+        dd(asset('apple-touch-icon.png'));
         $recap = ChatRecapAgent::for(Str::uuid())
             ->message('si è parlato di stack')
             ->respond();
