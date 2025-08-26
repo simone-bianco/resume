@@ -340,12 +340,10 @@ async function resetChat() {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    /* Custom ultra-thin scrollbar */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: var(--surface-600) transparent; /* thumb color | track color */
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-600) transparent;
 }
 
-/* WebKit-based browsers */
 :deep(.chat-history::-webkit-scrollbar) {
     width: 4px;
     height: 4px;
@@ -358,7 +356,6 @@ async function resetChat() {
     border-radius: 9999px;
     border: none;
 }
-/* Hide scrollbar arrows/buttons */
 :deep(.chat-history::-webkit-scrollbar-button) {
     display: none;
     width: 0;
@@ -372,13 +369,8 @@ async function resetChat() {
     border-top: 1px solid var(--surface-700);
 }
 
-/* Stili per schermi con larghezza massima di 410px */
 @media (max-width: 410px) {
     .chat-window {
-        /*
-          Usiamo !important per sovrascrivere gli stili inline :style
-          passati come props da ChatManager.vue (windowBottom, windowRight).
-        */
         width: 100% !important;
         height: 100vh !important;
         max-height: 100vh !important;
@@ -392,11 +384,9 @@ async function resetChat() {
     }
 }
 
-
 .chat-close-button {
     display: none;
 }
-
 
 @media (max-width: 410px) {
     .chat-close-button {
@@ -413,40 +403,29 @@ async function resetChat() {
     z-index: 1000;
 }
 
-/* Desktop-only: move chat a bit left (open + minimized) */
 @media (min-width: 411px) {
     .chat-window-container {
         right: 10vw !important;
     }
 }
 
-/* --- INIZIO MODIFICA REVISITATA --- */
-/*
-  Stile consolidato per la Textarea.
-  Disabilitato autoResize e gestito l'altezza e la scrollbar via CSS.
-*/
 :deep(.p-inputtextarea) {
     background: transparent !important;
     border: none !important;
     color: var(--surface-0);
-    resize: none; /* Impedisce il ridimensionamento manuale */
+    resize: none;
 
-    /* Altezza di default a 3 righe, più padding e bordi */
-    /* Uso delle variabili CSS di PrimeVue per il padding se presenti nel tema */
     line-height: 1.5em; /* Assicura che 1em sia l'altezza di una riga */
     min-height: calc(1.5em * var(--rows, 3) + var(--input-padding-y, 0.75rem) * 2 + var(--input-border-width, 1px) * 2);
 
-    /* Altezza massima a 4 righe, più padding e bordi, poi scroll */
     max-height: calc(1.5em * 4 + var(--input-padding-y, 0.75rem) * 2 + var(--input-border-width, 1px) * 2);
 
-    overflow-y: auto !important; /* Mostra scrollbar solo se necessario */
+    overflow-y: auto !important;
 
-    /* Stile scrollbar per Firefox */
     scrollbar-width: thin;
     scrollbar-color: var(--surface-600) transparent;
 }
 
-/* Stile scrollbar per browser WebKit (Chrome, Safari, Edge) */
 :deep(.p-inputtextarea::-webkit-scrollbar) {
     width: 4px;
     height: 4px;
@@ -464,5 +443,4 @@ async function resetChat() {
     width: 0;
     height: 0;
 }
-/* --- FINE MODIFICA REVISITATA --- */
 </style>
