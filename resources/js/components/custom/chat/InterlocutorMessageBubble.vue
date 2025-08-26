@@ -24,8 +24,8 @@ defineProps<{
     display: flex;
     align-items: flex-end;
     gap: 0.5rem;
-    max-width: 85%;
-    align-self: flex-start; /* Si posiziona sulla sinistra */
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .message-bubble {
@@ -34,6 +34,7 @@ defineProps<{
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    max-width: 85%;
     background-color: var(--surface-700);
     color: var(--surface-0);
     border-bottom-left-radius: 0.25rem;

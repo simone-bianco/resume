@@ -11,7 +11,7 @@ export default {
             'techniques for prompt engineering and coding AI tools. ' +
             'Excellent ability to work in a team and a strong focus ' +
             'on achieving project goals.',
-        contactLabel: 'Contattami!',
+        contactLabel: 'Contact me!',
         imageAlt: 'Simone Bianco',
         githubAriaLabel: 'Github',
         linkedinAriaLabel: 'Linkedin'

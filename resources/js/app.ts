@@ -14,7 +14,6 @@ import StyleClass from 'primevue/styleclass';
 import Tooltip from 'primevue/tooltip';
 import messages from './i18n/messages';
 import preset from '@/theme/preset';
-
 import 'primeicons/primeicons.css';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';

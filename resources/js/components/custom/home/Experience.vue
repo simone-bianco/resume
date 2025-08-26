@@ -65,7 +65,7 @@ const experiences = ref([
                 <h2 class="text-3xl sm:text-4xl font-bold text-[var(--text-color)] mb-4">{{ t('experience.sectionTitle') }}</h2>
             </div>
 
-            <Timeline :value="experiences" align="alternate" class="customized-timeline">
+            <Timeline :value="experiences" align="alternate" class="customized-timeline timeline-view">
                 <template #marker="slotProps">
                     <span class="marker-icon" :style="{ backgroundColor: slotProps.item.color }">
                         <i :class="slotProps.item.icon"></i>
@@ -95,6 +95,30 @@ const experiences = ref([
                     </Card>
                 </template>
             </Timeline>
+            <div class="cards-only">
+                <div v-for="(exp, idx) in experiences" :key="idx">
+                    <Card class="experience-card mt-5" v-animateonscroll="experienceAnimation">
+                        <template #title>
+                            {{ t(exp.titleKey) }}
+                        </template>
+                        <template #subtitle>
+                            <div class="experience-subtitle">
+                                <span class="company">{{ t(exp.companyKey) }}</span>
+                                <span class="separator"> | </span>
+                                <span class="date">{{ t(exp.dateKey) }}</span>
+                            </div>
+                            <Divider />
+                        </template>
+                        <template #content>
+                            <ul class="description-list">
+                                <li v-for="descKey in exp.descriptionKeys" :key="descKey">
+                                    {{ t(descKey) }}
+                                </li>
+                            </ul>
+                        </template>
+                    </Card>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -175,5 +199,36 @@ const experiences = ref([
     border-radius: 9999px;
     background-color: var(--primary-color);
     opacity: 0.9;
+}
+
+/* Responsive behavior: at 410px and below show only cards (hide timeline) */
+.cards-only { display: none; }
+
+@media screen and (max-width: 410px) {
+    :deep(.timeline-view) { display: none !important; }
+    .cards-only { display: block; }
+}
+
+/* From 460px and below: reduce padding and fonts inside cards; tighten description list indent */
+@media screen and (max-width: 460px) {
+    .experience-card :deep(.p-card-body) {
+        padding: 0.9rem 1rem; /* slightly reduced */
+    }
+    .experience-card :deep(.p-card-title) {
+        font-size: 1.05rem; /* slightly smaller */
+    }
+    .experience-card :deep(.p-card-subtitle),
+    .experience-card .experience-subtitle {
+        font-size: 0.9rem; /* slightly smaller */
+    }
+    /* Further reduce list indentation on small screens */
+    .experience-card .description-list {
+        padding-left: 0.6rem; /* was 1.5rem */
+    }
+    .experience-card .description-list li {
+        font-size: 0.92rem; /* slightly smaller */
+        line-height: 1.35;
+        padding-left: 0.5rem; /* was 0.75rem */
+    }
 }
 </style>

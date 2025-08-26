@@ -73,11 +73,11 @@ const pt = {
             <div>
             </div>
 
-            <div class="hidden sm:flex">
-                <Menubar :key="menuKey" :model="menuItems" :pt="pt" />
+            <div class="flex menubar">
+                <Menubar :key="menuKey" :model="menuItems" :pt="pt" :breakpoint="'275px'" />
             </div>
 
-            <div class="flex items-center gap-2 sm:gap-3">
+            <div class="flex items-center gap-2">
                 <LanguageSwitcher />
             </div>
         </div>
@@ -87,3 +87,11 @@ const pt = {
         </div>
     </div>
 </template>
+
+<style>
+@media (max-width: 380px) {
+    .menubar {
+        font-size: x-small;
+    }
+}
+</style>

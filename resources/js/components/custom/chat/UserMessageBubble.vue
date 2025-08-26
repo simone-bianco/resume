@@ -16,8 +16,7 @@ defineProps<{
 .message-wrapper {
     display: flex;
     justify-content: flex-end;
-    max-width: 85%;
-    align-self: flex-end;
+    width: 100%;
 }
 
 .message-bubble {
@@ -26,6 +25,7 @@ defineProps<{
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    max-width: 85%;
 
     /* --- CORREZIONE QUI --- */
     /*

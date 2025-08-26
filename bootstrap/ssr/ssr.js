@@ -547,7 +547,7 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-B53-IMdH.js"), "./Pages/Test.vue": () => import("./assets/Test-BNQjLm0-.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-DYcPssYh.js"), "./Pages/Test.vue": () => import("./assets/Test-BNQjLm0-.js") })
     ),
     setup({ App, props, plugin }) {
       const i18n = createI18n({

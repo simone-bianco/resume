@@ -113,6 +113,16 @@ async function scrollToBottom() {
     }
 }
 
+// scroll al load
+onMounted(() => {
+    nextTick(() => {
+        if (chatHistoryElement.value) {
+            chatHistoryElement.value.scrollTop =
+                chatHistoryElement.value.scrollHeight;
+        }
+    })
+})
+
 </script>
 
 <template>
@@ -123,10 +133,9 @@ async function scrollToBottom() {
     >
         <div class="chat-close-button">
             <Button
-                severity="secondary"
-                text
-                rounded
-                label="AAAAAAAAasd"
+                icon="pi pi-times"
+                severity="danger"
+                rounded aria-label="Cancel"
                 @click.stop="$emit('close-chat')"
             />
         </div>
@@ -267,13 +276,13 @@ async function scrollToBottom() {
 }
 
 
-@media (max-width: 412px) {
+@media (max-width: 410px) {
     .chat-close-button {
         display: flex;
         z-index: 500;
         position: fixed;
-        top: 30px;
-        right: 20px;
+        top: 70px;
+        right: 15px;
     }
 }
 

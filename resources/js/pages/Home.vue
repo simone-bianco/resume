@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<{ chatHistory?: ChatMessage[] }>(), {
 
         <Experience />
 
-        <ChatManager :chatHistory="props.chatHistory" />
+        <ChatManager :chatHistory="props.chatHistory" class="mb-10" />
     </GuestLayout>
 </template>
 
