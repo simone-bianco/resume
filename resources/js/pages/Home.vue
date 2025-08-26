@@ -3,7 +3,7 @@ import GuestLayout from '@/layouts/GuestLayout.vue';
 import Hero from '@/components/custom/home/Hero.vue';
 import Skills from '@/components/custom/home/Skills.vue';
 import Experience from '@/components/custom/home/Experience.vue';
-import ChatManager from '@/components/custom/chat/ChatManager.vue';
+import Chat from '@/components/custom/chat/Chat.vue';
 import { ChatMessage } from '@/types/dto';
 
 const props = withDefaults(defineProps<{ chatHistory?: ChatMessage[] }>(), {
@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<{ chatHistory?: ChatMessage[] }>(), {
 
         <Experience />
 
-        <ChatManager :chatHistory="props.chatHistory" class="mb-10" />
+        <Chat :chatHistory="props.chatHistory" class="mb-10" />
     </GuestLayout>
 </template>
 

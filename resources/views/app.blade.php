@@ -17,6 +17,7 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+        @include('cookie-consent::index')
 
         <script>
             document.addEventListener('touchstart', function (event) {

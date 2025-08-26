@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import ChatBubble from './ChatBubble.vue';
-import ChatWindow from './ChatWindow.vue';
+import Chat from './Chat.vue';
 import { ChatMessage } from '@/types/dto';
 
 const props = withDefaults(defineProps<{
@@ -29,7 +29,7 @@ const isChatOpen = ref(false);
             :style="{ bottom: bubbleBottom, right: bubbleRight }"
             @open-chat="isChatOpen = true"
         />
-        <ChatWindow
+        <Chat
             v-else
             class="fixed-chat-element"
             :style="{ bottom: windowBottom, right: windowRight }"
