@@ -185,6 +185,8 @@
       <path value="$PROJECT_DIR$/vendor/openai-php/client" />
       <path value="$PROJECT_DIR$/vendor/maestroerror/laragent" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-cookie-consent" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/irazasyed/telegram-bot-sdk" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />

@@ -3,7 +3,9 @@
 namespace App\Console\Commands;
 
 use App\AiAgents\AvatarChatAgent;
+use App\AiAgents\ChatRecapAgent;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class TestStuff extends Command
 {
@@ -26,6 +28,10 @@ class TestStuff extends Command
      */
     public function handle()
     {
+        $recap = ChatRecapAgent::for(Str::uuid())
+            ->message('si è parlato di stack')
+            ->respond();
+        dd($recap);
         AvatarChatAgent::for('8ZbB8QowQHhoWVrrdeLTzf6jGbOHUy6kuaaW14uq')->respond('ciao');
         dd(AvatarChatAgent::for('8ZbB8QowQHhoWVrrdeLTzf6jGbOHUy6kuaaW14uq')->chatHistory()->getMessages());
     }

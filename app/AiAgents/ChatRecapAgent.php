@@ -20,6 +20,9 @@ Sei un riassuntore di conversazioni in chat di un colloquio, devi riassumere la 
 - Punti chiave (bullet points)
 - Recapiti forniti (bullet points)
 - Tue considerazioni (testo breve)
+
+### REGOLE FONDAMENTALI
+* **NON SI INVENTA**: Non ti inventare informazioni non esistenti, meglio un report riassuntivo che uno falso
 ISTRUZIONI;
     }
 

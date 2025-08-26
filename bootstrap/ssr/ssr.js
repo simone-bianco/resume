@@ -347,12 +347,13 @@ const k = { install(t4, e2) {
 const en = {
   hero: {
     name: "Simone Bianco",
-    title: "Backend Developer",
-    bio: "Backend software developer with over 5 years of experience in building scalable applications and microservices. Specialized in the Laravel framework with experience in Vuejs, and a strong background in REST architectures. Knowledge of state of art techniques for prompt engineering and coding AI tools. Excellent ability to work in a team and a strong focus on achieving project goals.",
+    title: "Backend Software Engineer",
+    bio: "Backend software engineer with over 5 years of experience in building scalable applications and microservices. Specialized in the Laravel framework with experience in Vuejs, and a strong background in REST architectures. Knowledge of state of art techniques for prompt engineering and coding AI tools. Excellent ability to work in a team and a strong focus on achieving project goals.",
     contactLabel: "Contact me!",
     imageAlt: "Simone Bianco",
     githubAriaLabel: "Github",
-    linkedinAriaLabel: "Linkedin"
+    linkedinAriaLabel: "Linkedin",
+    apprenticeshipNotice: "I fall within the categories envisaged by Legislative Decree 81/2015 for hiring under a professional apprenticeship contract for unemployed individuals, which grants contribution relief to the employer."
   },
   menu: {
     home: "Home",
@@ -374,7 +375,7 @@ const en = {
     },
     tools: {
       title: "Tools & Platforms",
-      items: "Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack, Teamwork"
+      items: "Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack"
     },
     architectures: {
       title: "Architectures",
@@ -389,7 +390,7 @@ const en = {
     sectionTitle: "Job Experience",
     dnafactory: {
       company: "DNAFactory",
-      title: "Backend Developer",
+      title: "Backend Software Engineer",
       date: "June 2019 - July 2025",
       desc1: "Microservices development with Laravel",
       desc2: "SaaS development with VILT stack and Multitenancy",
@@ -433,7 +434,7 @@ const en = {
   chat: {
     title: "Chat",
     welcome: "Hello, nice to meet you! Would you like to ask me something?",
-    error: "I'm sorry, an unexpected error occurred 😔",
+    error: "I'm sorry, probably chat tokens limit was reached 😔",
     thinking: "Thinking...",
     writing: "Typing...",
     placeholder: "Type a message to chat"
@@ -442,12 +443,13 @@ const en = {
 const it = {
   hero: {
     name: "Simone Bianco",
-    title: "Sviluppatore Backend",
-    bio: "Sviluppatore software backend con oltre 5 anni di esperienza nella creazione di applicazioni scalabili e microservizi. Specializzato nel framework Laravel con conoscenze di Vue.js e un solido background in architetture REST. Adozione di tecniche all'avanguardia dell'ingegneria dei prompt e integrazione di tool di coding AI. Eccellente capacità di lavorare in team e forte orientamento al raggiungimento degli obiettivi di progetto.",
+    title: "Ingegnere Software Backend",
+    bio: "Ingegnere del software backend con oltre 5 anni di esperienza nella creazione di applicazioni scalabili e microservizi. Specializzato nel framework Laravel con conoscenze di Vue.js e un solido background in architetture REST. Adozione di tecniche all'avanguardia dell'ingegneria dei prompt e integrazione di tool di coding AI. Eccellente capacità di lavorare in team e forte orientamento al raggiungimento degli obiettivi di progetto.",
     contactLabel: "Contattami!",
     imageAlt: "Simone Bianco",
     githubAriaLabel: "Github",
-    linkedinAriaLabel: "Linkedin"
+    linkedinAriaLabel: "Linkedin",
+    apprenticeshipNotice: "Rientro nelle categorie previste dal D.Lgs. 81/2015 per l'assunzione con contratto di apprendistato professionalizzante per disoccupati, che offre sgravi contributivi all'azienda."
   },
   menu: {
     home: "Home",
@@ -470,7 +472,7 @@ const it = {
     },
     tools: {
       title: "Strumenti e Piattaforme",
-      items: "Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack, Teamwork"
+      items: "Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack"
     },
     architectures: {
       title: "Architetture",
@@ -485,7 +487,7 @@ const it = {
     sectionTitle: "Esperienza Lavorativa e Educazione",
     dnafactory: {
       company: "DNAFactory",
-      title: "Sviluppatore Backend",
+      title: "Ingegnere Software Backend",
       date: "Giugno 2019 - Luglio 2025",
       desc1: "Sviluppo di microservizi con Laravel",
       desc2: "Sviluppo SaaS con stack VILT e Multitenancy",
@@ -510,7 +512,7 @@ const it = {
       desc2: 'Tesi sperimentale in Big Data: "Progettazione e Implementazione di un Sistema di Raccomandazione Ibrido" in collaborazione con DNAFactory'
     },
     freelance: {
-      title: "Sviluppatore Web",
+      title: "Ingegnere Web",
       company: "Freelance",
       date: "2017 - 2022",
       desc1: "Sviluppo di applicazioni web"
@@ -529,7 +531,7 @@ const it = {
   chat: {
     title: "Chat",
     welcome: "Ciao, piacere di conoscerti! Vuoi chiedermi qualcosa?",
-    error: "Mi dispiace, si è verificato un errore imprevisto 😔",
+    error: "Mi dispiace, forse è finito il budget allocato alla chat 😔",
     thinking: "Sto pensando...",
     writing: "Sto scrivendo...",
     placeholder: "Scrivi un messaggio per chattare"
@@ -547,7 +549,7 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-D19d_VZo.js"), "./Pages/Test.vue": () => import("./assets/Test-BNQjLm0-.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-DSoQo402.js"), "./Pages/Test.vue": () => import("./assets/Test-BNQjLm0-.js") })
     ),
     setup({ App, props, plugin }) {
       const i18n = createI18n({

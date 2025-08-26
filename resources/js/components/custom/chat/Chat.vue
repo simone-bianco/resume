@@ -203,103 +203,100 @@ async function resetChat() {
         await scrollToBottom();
     }
 }
-
 </script>
 
 <template>
     <div v-bind="$attrs">
-    <ChatBubble
-        v-show="chatWindowState === ChatState.closed"
-        class="fixed-chat-element"
-        :style="{ bottom: bubbleBottom, right: bubbleRight }"
-        @open-chat="chatWindowState = ChatState.open"
-    />
-    <div
-        class="fixed-chat-element chat-window-container"
-        v-show="chatWindowState !== ChatState.closed"
-        :style="{ bottom: windowBottom, right: windowRight }"
-    >
+        <ChatBubble
+            v-show="chatWindowState === ChatState.closed"
+            class="fixed-chat-element"
+            :style="{ bottom: bubbleBottom, right: bubbleRight }"
+            @open-chat="chatWindowState = ChatState.open"
+        />
         <div
-            class="chat-window"
-            :class="{ 'is-minimized': isMinimized }"
-            :style="{ height: isMinimized ? 'auto' : chatHeight }"
+            class="fixed-chat-element chat-window-container"
+            v-show="chatWindowState !== ChatState.closed"
+            :style="{ bottom: windowBottom, right: windowRight }"
         >
-            <div class="chat-close-button">
-                <Button
-                    class="mr-2"
-                    icon="pi pi-refresh"
-                    severity="warn"
-                    rounded
-                    @click.stop="resetChat"
-                />
-                <Button
-                    icon="pi pi-times"
-                    severity="danger"
-                    rounded aria-label="Cancel"
-                    @click.stop="chatWindowState = ChatState.closed"
-                />
-            </div>
-            <header class="chat-header" @click="toggleMinimize">
-                <span class="chat-title">{{ t('chat.title') }}</span>
-                <Button
-                    :icon="
+            <div
+                class="chat-window"
+                :class="{ 'is-minimized': isMinimized }"
+                :style="{ height: isMinimized ? 'auto' : chatHeight }"
+            >
+                <div class="chat-close-button">
+                    <Button
+                        class="mr-2"
+                        icon="pi pi-refresh"
+                        severity="warn"
+                        rounded
+                        @click.stop="resetChat"
+                    />
+                    <Button
+                        icon="pi pi-times"
+                        severity="danger"
+                        rounded aria-label="Cancel"
+                        @click.stop="chatWindowState = ChatState.closed"
+                    />
+                </div>
+                <header class="chat-header" @click="toggleMinimize">
+                    <span class="chat-title">{{ t('chat.title') }}</span>
+                    <Button
+                        :icon="
                     isMinimized
                         ? 'pi pi-window-maximize'
                         : 'pi pi-window-minimize'
                 "
-                    severity="secondary"
-                    text
-                    rounded
-                    @click.stop="toggleMinimize"
-                />
-                <Button
-                    icon="pi pi-refresh"
-                    severity="secondary"
-                    text
-                    rounded
-                    @click.stop="resetChat"
-                />
-                <Button
-                    icon="pi pi-times"
-                    severity="secondary"
-                    text
-                    rounded
-                    @click.stop="chatWindowState = ChatState.closed"
-                />
-            </header>
+                        severity="secondary"
+                        text
+                        rounded
+                        @click.stop="toggleMinimize"
+                    />
+                    <Button
+                        icon="pi pi-refresh"
+                        severity="secondary"
+                        text
+                        rounded
+                        @click.stop="resetChat"
+                    />
+                    <Button
+                        icon="pi pi-times"
+                        severity="secondary"
+                        text
+                        rounded
+                        @click.stop="chatWindowState = ChatState.closed"
+                    />
+                </header>
 
-            <template v-if="!isMinimized">
-                <div ref="chatHistoryElement" class="chat-history">
-                    <div v-for="msg in messages" :key="msg.id">
-                        <UserMessageBubble
-                            v-if="msg.author === 'user'"
-                            :message="msg"
-                        />
-                        <InterlocutorMessageBubble v-else-if="msg.content?.length > 0" :message="msg" />
+                <template v-if="!isMinimized">
+                    <div ref="chatHistoryElement" class="chat-history">
+                        <div v-for="msg in messages" :key="msg.id">
+                            <UserMessageBubble
+                                v-if="msg.author === 'user'"
+                                :message="msg"
+                            />
+                            <InterlocutorMessageBubble v-else-if="msg.content?.length > 0" :message="msg" />
+                        </div>
                     </div>
-                </div>
 
-                <footer class="chat-footer">
+                    <footer class="chat-footer">
                 <Textarea
-                    ref="chatTextarea"
                     v-model="userInput"
                     :placeholder="t('chat.placeholder')"
-                    autoResize
-                    rows="1"
+                    rows="3"
                     maxlength="300"
                     class="flex-grow !shadow-none"
                     autofocus
-                    @keydown.enter.prevent="sendMessage"
+                    @keydown.enter.exact.prevent="sendMessage"
                 />
-                    <Button
-                        icon="pi pi-send"
-                        :disabled="isLoading || !userInput.trim()"
-                        @click="sendMessage"
-                    />
-                </footer>
-            </template>
+                        <Button
+                            icon="pi pi-send"
+                            :disabled="isLoading || !userInput.trim()"
+                            @click="sendMessage"
+                        />
+                    </footer>
+                </template>
+            </div>
         </div>
-    </div>
     </div>
 </template>
 
@@ -374,16 +371,7 @@ async function resetChat() {
     gap: 0.5rem;
     border-top: 1px solid var(--surface-700);
 }
-:deep(.p-inputtextarea) {
-    background: transparent !important;
-    border: none !important;
-    color: var(--surface-0);
-    min-height: 24px;
-    max-height: 100px;
-    line-height: 1.5;
-}
 
-/* --- INIZIO MODIFICA --- */
 /* Stili per schermi con larghezza massima di 410px */
 @media (max-width: 410px) {
     .chat-window {
@@ -431,4 +419,50 @@ async function resetChat() {
         right: 10vw !important;
     }
 }
+
+/* --- INIZIO MODIFICA REVISITATA --- */
+/*
+  Stile consolidato per la Textarea.
+  Disabilitato autoResize e gestito l'altezza e la scrollbar via CSS.
+*/
+:deep(.p-inputtextarea) {
+    background: transparent !important;
+    border: none !important;
+    color: var(--surface-0);
+    resize: none; /* Impedisce il ridimensionamento manuale */
+
+    /* Altezza di default a 3 righe, più padding e bordi */
+    /* Uso delle variabili CSS di PrimeVue per il padding se presenti nel tema */
+    line-height: 1.5em; /* Assicura che 1em sia l'altezza di una riga */
+    min-height: calc(1.5em * var(--rows, 3) + var(--input-padding-y, 0.75rem) * 2 + var(--input-border-width, 1px) * 2);
+
+    /* Altezza massima a 4 righe, più padding e bordi, poi scroll */
+    max-height: calc(1.5em * 4 + var(--input-padding-y, 0.75rem) * 2 + var(--input-border-width, 1px) * 2);
+
+    overflow-y: auto !important; /* Mostra scrollbar solo se necessario */
+
+    /* Stile scrollbar per Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-600) transparent;
+}
+
+/* Stile scrollbar per browser WebKit (Chrome, Safari, Edge) */
+:deep(.p-inputtextarea::-webkit-scrollbar) {
+    width: 4px;
+    height: 4px;
+}
+:deep(.p-inputtextarea::-webkit-scrollbar-track) {
+    background: transparent;
+}
+:deep(.p-inputtextarea::-webkit-scrollbar-thumb) {
+    background-color: var(--surface-600);
+    border-radius: 9999px;
+    border: none;
+}
+:deep(.p-inputtextarea::-webkit-scrollbar-button) {
+    display: none;
+    width: 0;
+    height: 0;
+}
+/* --- FINE MODIFICA REVISITATA --- */
 </style>

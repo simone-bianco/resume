@@ -5,7 +5,7 @@ namespace App\Services;
 use App\AiAgents\ChatRecapAgent;
 use App\Models\PendingNotification;
 use App\Models\User;
-use App\Notifications\ContactRecapEmail;
+use App\Proxies\TelegramProxy;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -50,14 +50,27 @@ class ContactNotificationService
             }
 
             $sentAt = Carbon::now();
-            $recap = ChatRecapAgent::for(Str::uuid())->prompt(json_encode($messages));
+            $recap = ChatRecapAgent::for(Str::uuid())
+                ->message(json_encode($conversation, JSON_PRETTY_PRINT))
+                ->respond();
 
-            $user->notify(new ContactRecapEmail(
-                sessionId: (string) $pending->session_id,
-                conversation: $conversation,
-                recap: $recap,
-                sentAt: $sentAt
-            ));
+            // TODO::email su digitalocean non funzionano, riattivare dopo migrazione su hetzner
+//            $user->notify(new ContactRecapEmail(
+//                sessionId: (string) $pending->session_id,
+//                conversation: $conversation,
+//                recap: $recap,
+//                sentAt: $sentAt
+//            ));
+
+            /** @var TelegramProxy $telegramProxy */
+            $telegramProxy = app(TelegramProxy::class);
+            $chatId = config('telegram.chat_id');
+
+            $text = "*Sessione*: `{$pending->session_id}`\n"
+                . "*Inviato*: " . $sentAt->format('Y-m-d H:i') . "\n\n"
+                . $recap;
+
+            $telegramProxy->sendMessage($chatId, $text);
 
             $pending->delete();
 

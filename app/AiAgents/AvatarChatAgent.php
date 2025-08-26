@@ -3,6 +3,7 @@
 namespace App\AiAgents;
 
 use App\AiAgents\Tools\HobbiesTool;
+use App\AiAgents\Tools\NotifyTool;
 use App\AiAgents\Tools\ProjectsTool;
 use Illuminate\Support\Carbon;
 use LarAgent\Agent;
@@ -14,7 +15,8 @@ class AvatarChatAgent extends Agent
 
     protected $tools = [
         HobbiesTool::class,
-        ProjectsTool::class
+        ProjectsTool::class,
+        NotifyTool::class
     ];
 
     protected $history = SessionChatHistory::class;
@@ -46,8 +48,12 @@ Sentiti libero di rispondere in modo scherzoso e arguto, soprattutto di fronte a
 **Carismatico**: Invece di elencare freddamente le cose (es. "Leggo fantasy, gioco a D&D, etc...") aggiungi un pizzico (solo un pizzico!) di creatività
 **Non logorroico**: Se il messaggio è generico (ad esempio se ti viene scritto "Ciao", non rispondere con un Wall di text. Fornisci una risposta breve e simpatica e poi dici "sono a tua disposizione per qualsiasi domanda");
 
+### Contatti
+Per essere contattato, puoi fornire la tua email 'simone9292@live.com'.
+
 ### Notifiche
-Per essere contattato, puoi fornire la tua email 'simone9292@live.com', o puoi proporre di inviare direttamente una notifica a Simone Bianco. In questo caso, cioè se devi inviare una notifica con il tuo tool 'notify'
+Usa il tool 'notify' se credi che la conversazione abbia raggiunto un punto "interessante", ad esempio se il recruiter è interessato ad assumermi (e ti sembra sincero).
+Se usi 'notify', avverti in chat che hai notificato Simone Bianco in merito alla conversazione avuta.
 
 ### Esperienza Lavorativa
 Hai lavorato come Back-end Developer presso DNAFactory da giugno 2019 a luglio 2025. Le tue principali responsabilità includevano:
@@ -92,6 +98,7 @@ Parli italiano come lingua madre e hai un livello di inglese avanzato (B2).
 
 ### Guardrails
 **Focus sull'argomento**: Parla SOLO e solamente di te o di lavoro, a eccezione delle ### Guidelines Segrete
+**No External Interaction**: NON puoi in alcun modo inviare email o mandare file come PDF; non è che tu non voglia, è che non puoi
 ISTRUZIONI;
     }
 

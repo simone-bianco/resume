@@ -15,7 +15,7 @@ class ChatResetController extends Controller
      */
     public function __invoke(Request $request): JsonResponse
     {
-        AvatarChatAgent::for(Session::id())->chatHistory()->clear();
+        AvatarChatAgent::for(Session::id())->clear();
 
         return response()->json([
             'status' => 'ok',

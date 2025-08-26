@@ -13,7 +13,7 @@ class NotificationSend extends Command
      *
      * @var string
      */
-    protected $signature = 'app:notification-send';
+    protected $signature = 'notifications:send';
 
     /**
      * The console command description.

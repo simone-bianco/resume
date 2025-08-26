@@ -6,10 +6,10 @@ import { route } from "ziggy-js";
 import Button from "primevue/button";
 import Menu from "primevue/menu";
 import Image from "primevue/image";
-import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
 import Menubar from "primevue/menubar";
 import Card from "primevue/card";
 import { Divider, Timeline, Card as Card$1 } from "primevue";
+import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
 import axios from "axios";
 import Textarea from "primevue/textarea";
 import ProgressSpinner from "primevue/progressspinner";
@@ -77,7 +77,7 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
     }
     const currentFlagUrl = computed(() => getFlagUrl(locale.value));
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "language-switcher" }, _attrs))} data-v-f2caadd0>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "language-switcher" }, _attrs))}>`);
       _push(ssrRenderComponent(unref(Button), {
         onClick: toggleMenu,
         size: "large",
@@ -114,16 +114,16 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
       }, {
         item: withCtx(({ item, props }, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<a${ssrRenderAttrs(mergeProps(props.action, { class: "flex align-items-center gap-2 w-full" }))} data-v-f2caadd0${_scopeId}>`);
+            _push2(`<a${ssrRenderAttrs(mergeProps(props.action, { class: "flex align-items-center gap-2 w-full" }))}${_scopeId}>`);
             _push2(ssrRenderComponent(unref(Image), {
               src: item.flagUrl,
               alt: item.lang + " flag",
               width: "18",
               height: "18"
             }, null, _parent2, _scopeId));
-            _push2(`<span data-v-f2caadd0${_scopeId}>${ssrInterpolate(item.label)}</span>`);
+            _push2(`<span${_scopeId}>${ssrInterpolate(item.label)}</span>`);
             if (item.lang === unref(locale)) {
-              _push2(`<i class="pi pi-check ml-auto" data-v-f2caadd0${_scopeId}></i>`);
+              _push2(`<i class="pi pi-check ml-auto"${_scopeId}></i>`);
             } else {
               _push2(`<!---->`);
             }
@@ -158,7 +158,6 @@ _sfc_main$9.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/components/custom/inputs/Switchers/LanguageSwitcher.vue");
   return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const LanguageSwitcher = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-f2caadd0"]]);
 const layoutConfig = reactive({
   preset: "Aura",
   primary: "emerald",
@@ -227,7 +226,6 @@ const _sfc_main$8 = /* @__PURE__ */ defineComponent({
     const { setDarkMode } = useLayout();
     watch(
       () => page.props?.theme?.dark,
-      // (isDarkMode) => setDarkMode(isDarkMode ?? false),
       () => setDarkMode(true),
       { immediate: true }
     );
@@ -278,7 +276,7 @@ const _sfc_main$8 = /* @__PURE__ */ defineComponent({
         breakpoint: "275px"
       }, null, _parent));
       _push(`</div><div class="flex items-center gap-2">`);
-      _push(ssrRenderComponent(LanguageSwitcher, null, null, _parent));
+      _push(ssrRenderComponent(_sfc_main$9, null, null, _parent));
       _push(`</div></div><div class="relative z-10 w-full px-4 pb-8 sm:px-6">`);
       ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
       _push(`</div></div>`);
@@ -306,7 +304,7 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _directive_animateonscroll = resolveDirective("animateonscroll");
-      _push(`<section${ssrRenderAttrs(mergeProps({ class: "flex items-center justify-center px-4 py-8 sm:py-16 md:py-24" }, _attrs))} data-v-7a0e1b70><div class="flex flex-col md:flex-row items-center w-full max-w-sm md:max-w-5xl" data-v-7a0e1b70><div class="hero-image-container w-full md:w-6/12 md:order-2 md:-ml-12" data-v-7a0e1b70><div class="relative w-full h-64 md:h-[500px] rounded-2xl shadow-xl" data-v-7a0e1b70>`);
+      _push(`<section${ssrRenderAttrs(mergeProps({ class: "flex items-center justify-center px-4 py-8 sm:py-16 md:py-24" }, _attrs))} data-v-943e68ca><div class="flex flex-col md:flex-row items-center w-full max-w-sm md:max-w-5xl" data-v-943e68ca><div class="hero-image-container w-full md:w-6/12 md:order-2 md:-ml-12" data-v-943e68ca><div class="relative w-full h-64 md:h-[500px] rounded-2xl shadow-xl" data-v-943e68ca>`);
       _push(ssrRenderComponent(unref(Image), mergeProps({
         src: "https://www.dnafactory.it/images/team/simonebig_1f997d40e8.png",
         alt: unref(t)("hero.imageAlt"),
@@ -316,9 +314,9 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
       _push(ssrRenderComponent(unref(Card), mergeProps({ class: "hero-card sb-fancy-card relative z-10 w-11/12 md:w-7/12 rounded-2xl bg-surface-800 -mt-16 md:mt-0 md:order-1" }, ssrGetDirectiveProps(_ctx, _directive_animateonscroll, heroCardAnimation)), {
         content: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="p-6 md:p-8" data-v-7a0e1b70${_scopeId}><h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1" data-v-7a0e1b70${_scopeId}>${ssrInterpolate(unref(t)("hero.name"))}</h1><p class="text-md sm:text-lg text-primary-400 font-medium mb-4" data-v-7a0e1b70${_scopeId}>${ssrInterpolate(unref(t)("hero.title"))}</p>`);
+            _push2(`<div class="hero-card-content p-6 md:p-8" data-v-943e68ca${_scopeId}><h1 class="hero-title text-2xl sm:text-3xl lg:text-4xl font-bold mb-1" data-v-943e68ca${_scopeId}>${ssrInterpolate(unref(t)("hero.name"))}</h1><p class="text-md sm:text-lg text-primary-400 font-medium mb-4" data-v-943e68ca${_scopeId}>${ssrInterpolate(unref(t)("hero.title"))}</p>`);
             _push2(ssrRenderComponent(unref(Divider), null, null, _parent2, _scopeId));
-            _push2(`<p class="text-sm sm:text-base max-w-lg mb-6 text-[var(--text-color)]" data-v-7a0e1b70${_scopeId}>${ssrInterpolate(unref(t)("hero.bio"))}</p><div class="flex items-center gap-3" data-v-7a0e1b70${_scopeId}><a href="https://github.com/simone-bianco" target="_blank" rel="noopener noreferrer" data-v-7a0e1b70${_scopeId}>`);
+            _push2(`<p class="text-sm sm:text-base max-w-lg mb-6 text-[var(--text-color)]" data-v-943e68ca${_scopeId}>${ssrInterpolate(unref(t)("hero.bio"))}</p><div class="flex items-center gap-3" data-v-943e68ca${_scopeId}><a href="https://github.com/simone-bianco" target="_blank" rel="noopener noreferrer" data-v-943e68ca${_scopeId}>`);
             _push2(ssrRenderComponent(unref(Button), {
               icon: "pi pi-github",
               severity: "secondary",
@@ -326,7 +324,7 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
               rounded: "",
               "aria-label": unref(t)("hero.githubAriaLabel")
             }, null, _parent2, _scopeId));
-            _push2(`</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" data-v-7a0e1b70${_scopeId}>`);
+            _push2(`</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" data-v-943e68ca${_scopeId}>`);
             _push2(ssrRenderComponent(unref(Button), {
               icon: "pi pi-linkedin",
               severity: "secondary",
@@ -334,18 +332,18 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
               rounded: "",
               "aria-label": unref(t)("hero.linkedinAriaLabel")
             }, null, _parent2, _scopeId));
-            _push2(`</a><a href="mailto:simone9292@live.com" data-v-7a0e1b70${_scopeId}>`);
+            _push2(`</a><a href="mailto:simone9292@live.com" data-v-943e68ca${_scopeId}>`);
             _push2(ssrRenderComponent(unref(Button), {
               label: unref(t)("hero.contactLabel"),
               icon: "pi pi-envelope",
               severity: "primary",
               size: "small"
             }, null, _parent2, _scopeId));
-            _push2(`</a></div></div>`);
+            _push2(`</a></div><div class="mt-4 flex items-start gap-2 text-xs sm:text-sm opacity-80" data-v-943e68ca${_scopeId}><i class="pi pi-info-circle mt-0.5 sm:mt-1 text-primary-300" aria-hidden="true" data-v-943e68ca${_scopeId}></i><p class="leading-snug" data-v-943e68ca${_scopeId}>${ssrInterpolate(unref(t)("hero.apprenticeshipNotice"))}</p></div></div>`);
           } else {
             return [
-              createVNode("div", { class: "p-6 md:p-8" }, [
-                createVNode("h1", { class: "text-2xl sm:text-3xl lg:text-4xl font-bold mb-1" }, toDisplayString(unref(t)("hero.name")), 1),
+              createVNode("div", { class: "hero-card-content p-6 md:p-8" }, [
+                createVNode("h1", { class: "hero-title text-2xl sm:text-3xl lg:text-4xl font-bold mb-1" }, toDisplayString(unref(t)("hero.name")), 1),
                 createVNode("p", { class: "text-md sm:text-lg text-primary-400 font-medium mb-4" }, toDisplayString(unref(t)("hero.title")), 1),
                 createVNode(unref(Divider)),
                 createVNode("p", { class: "text-sm sm:text-base max-w-lg mb-6 text-[var(--text-color)]" }, toDisplayString(unref(t)("hero.bio")), 1),
@@ -384,6 +382,13 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
                       size: "small"
                     }, null, 8, ["label"])
                   ])
+                ]),
+                createVNode("div", { class: "mt-4 flex items-start gap-2 text-xs sm:text-sm opacity-80" }, [
+                  createVNode("i", {
+                    class: "pi pi-info-circle mt-0.5 sm:mt-1 text-primary-300",
+                    "aria-hidden": "true"
+                  }),
+                  createVNode("p", { class: "leading-snug" }, toDisplayString(unref(t)("hero.apprenticeshipNotice")), 1)
                 ])
               ])
             ];
@@ -401,7 +406,7 @@ _sfc_main$7.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/components/custom/home/Hero.vue");
   return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
 };
-const Hero = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-7a0e1b70"]]);
+const Hero = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-943e68ca"]]);
 const _sfc_main$6 = /* @__PURE__ */ defineComponent({
   __name: "Skills",
   __ssrInlineRender: true,
@@ -525,7 +530,7 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
     ]);
     return (_ctx, _push, _parent, _attrs) => {
       const _directive_animateonscroll = resolveDirective("animateonscroll");
-      _push(`<section${ssrRenderAttrs(mergeProps({ class: "px-4 py-16 sm:py-24" }, _attrs))} data-v-e6a7145d><div class="container mx-auto max-w-6xl" data-v-e6a7145d><div class="text-center mb-16" data-v-e6a7145d><h2 class="text-3xl sm:text-4xl font-bold text-[var(--text-color)] mb-4" data-v-e6a7145d>${ssrInterpolate(unref(t)("experience.sectionTitle"))}</h2></div>`);
+      _push(`<section${ssrRenderAttrs(mergeProps({ class: "px-4 py-16 sm:py-24" }, _attrs))} data-v-98671335><div class="container mx-auto max-w-6xl" data-v-98671335><div class="text-center mb-16" data-v-98671335><h2 class="text-3xl sm:text-4xl font-bold text-[var(--text-color)] mb-4" data-v-98671335>${ssrInterpolate(unref(t)("experience.sectionTitle"))}</h2></div>`);
       _push(ssrRenderComponent(unref(Timeline), {
         value: experiences.value,
         align: "alternate",
@@ -533,7 +538,7 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
       }, {
         marker: withCtx((slotProps, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<span class="marker-icon" style="${ssrRenderStyle({ backgroundColor: slotProps.item.color })}" data-v-e6a7145d${_scopeId}><i class="${ssrRenderClass(slotProps.item.icon)}" data-v-e6a7145d${_scopeId}></i></span>`);
+            _push2(`<span class="marker-icon" style="${ssrRenderStyle({ backgroundColor: slotProps.item.color })}" data-v-98671335${_scopeId}><i class="${ssrRenderClass(slotProps.item.icon)}" data-v-98671335${_scopeId}></i></span>`);
           } else {
             return [
               createVNode("span", {
@@ -561,7 +566,7 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
               }),
               subtitle: withCtx((_, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
-                  _push3(`<div class="experience-subtitle" data-v-e6a7145d${_scopeId2}><span class="company" data-v-e6a7145d${_scopeId2}>${ssrInterpolate(unref(t)(slotProps.item.companyKey))}</span><span class="separator" data-v-e6a7145d${_scopeId2}> | </span><span class="date" data-v-e6a7145d${_scopeId2}>${ssrInterpolate(unref(t)(slotProps.item.dateKey))}</span></div>`);
+                  _push3(`<div class="experience-subtitle" data-v-98671335${_scopeId2}><span class="company" data-v-98671335${_scopeId2}>${ssrInterpolate(unref(t)(slotProps.item.companyKey))}</span><span class="separator" data-v-98671335${_scopeId2}> | </span><span class="date" data-v-98671335${_scopeId2}>${ssrInterpolate(unref(t)(slotProps.item.dateKey))}</span></div>`);
                   _push3(ssrRenderComponent(unref(Divider), null, null, _parent3, _scopeId2));
                 } else {
                   return [
@@ -576,9 +581,9 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
               }),
               content: withCtx((_, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
-                  _push3(`<ul class="description-list" data-v-e6a7145d${_scopeId2}><!--[-->`);
+                  _push3(`<ul class="description-list" data-v-98671335${_scopeId2}><!--[-->`);
                   ssrRenderList(slotProps.item.descriptionKeys, (descKey) => {
-                    _push3(`<li data-v-e6a7145d${_scopeId2}>${ssrInterpolate(unref(t)(descKey))}</li>`);
+                    _push3(`<li data-v-98671335${_scopeId2}>${ssrInterpolate(unref(t)(descKey))}</li>`);
                   });
                   _push3(`<!--]--></ul>`);
                 } else {
@@ -623,9 +628,9 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<div class="cards-only" data-v-e6a7145d><!--[-->`);
+      _push(`<div class="cards-only" data-v-98671335><!--[-->`);
       ssrRenderList(experiences.value, (exp, idx) => {
-        _push(`<div data-v-e6a7145d>`);
+        _push(`<div data-v-98671335>`);
         _push(ssrRenderComponent(unref(Card$1), mergeProps({ class: "experience-card mt-5" }, ssrGetDirectiveProps(_ctx, _directive_animateonscroll, experienceAnimation)), {
           title: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
@@ -638,7 +643,7 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
           }),
           subtitle: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`<div class="experience-subtitle" data-v-e6a7145d${_scopeId}><span class="company" data-v-e6a7145d${_scopeId}>${ssrInterpolate(unref(t)(exp.companyKey))}</span><span class="separator" data-v-e6a7145d${_scopeId}> | </span><span class="date" data-v-e6a7145d${_scopeId}>${ssrInterpolate(unref(t)(exp.dateKey))}</span></div>`);
+              _push2(`<div class="experience-subtitle" data-v-98671335${_scopeId}><span class="company" data-v-98671335${_scopeId}>${ssrInterpolate(unref(t)(exp.companyKey))}</span><span class="separator" data-v-98671335${_scopeId}> | </span><span class="date" data-v-98671335${_scopeId}>${ssrInterpolate(unref(t)(exp.dateKey))}</span></div>`);
               _push2(ssrRenderComponent(unref(Divider), null, null, _parent2, _scopeId));
             } else {
               return [
@@ -653,9 +658,9 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
           }),
           content: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`<ul class="description-list" data-v-e6a7145d${_scopeId}><!--[-->`);
+              _push2(`<ul class="description-list" data-v-98671335${_scopeId}><!--[-->`);
               ssrRenderList(exp.descriptionKeys, (descKey) => {
-                _push2(`<li data-v-e6a7145d${_scopeId}>${ssrInterpolate(unref(t)(descKey))}</li>`);
+                _push2(`<li data-v-98671335${_scopeId}>${ssrInterpolate(unref(t)(descKey))}</li>`);
               });
               _push2(`<!--]--></ul>`);
             } else {
@@ -682,7 +687,7 @@ _sfc_main$5.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/components/custom/home/Experience.vue");
   return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
-const Experience = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-e6a7145d"]]);
+const Experience = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-98671335"]]);
 const _sfc_main$4 = /* @__PURE__ */ defineComponent({
   __name: "UserMessageBubble",
   __ssrInlineRender: true,
@@ -691,7 +696,7 @@ const _sfc_main$4 = /* @__PURE__ */ defineComponent({
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "message-wrapper" }, _attrs))} data-v-4df5e3a6><div class="message-bubble" data-v-4df5e3a6><p class="message-content" data-v-4df5e3a6>${ssrInterpolate(_ctx.message.content)}</p></div></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "message-wrapper" }, _attrs))} data-v-ba8b2cf1><div class="message-bubble" data-v-ba8b2cf1><p class="message-content" data-v-ba8b2cf1>${ssrInterpolate(_ctx.message.content)}</p></div></div>`);
     };
   }
 });
@@ -701,7 +706,7 @@ _sfc_main$4.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/components/custom/chat/UserMessageBubble.vue");
   return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
-const UserMessageBubble = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-4df5e3a6"]]);
+const UserMessageBubble = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-ba8b2cf1"]]);
 const avatar = "/build/assets/avatar-C7D1tYvk.png";
 const _sfc_main$3 = /* @__PURE__ */ defineComponent({
   __name: "InterlocutorMessageBubble",
@@ -711,12 +716,12 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "message-wrapper" }, _attrs))} data-v-91f85fc7>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "message-wrapper" }, _attrs))} data-v-0d9f2022>`);
       _push(ssrRenderComponent(unref(Image), {
         src: unref(avatar),
         class: "w-8 h-8 rounded-full flex-shrink-0"
       }, null, _parent));
-      _push(`<div class="${ssrRenderClass([{ "bubble-danger": _ctx.message.type === "error" }, "message-bubble"])}" data-v-91f85fc7>`);
+      _push(`<div class="${ssrRenderClass([{ "bubble-danger": _ctx.message.type === "error" }, "message-bubble"])}" data-v-0d9f2022>`);
       if (_ctx.message.type === "thinking") {
         _push(ssrRenderComponent(unref(ProgressSpinner), {
           style: { "width": "20px", "height": "20px" },
@@ -725,7 +730,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
       } else {
         _push(`<!---->`);
       }
-      _push(`<p class="message-content" data-v-91f85fc7>${ssrInterpolate(_ctx.message.content)}</p></div></div>`);
+      _push(`<p class="message-content" data-v-0d9f2022>${ssrInterpolate(_ctx.message.content)}</p></div></div>`);
     };
   }
 });
@@ -735,7 +740,7 @@ _sfc_main$3.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/components/custom/chat/InterlocutorMessageBubble.vue");
   return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const InterlocutorMessageBubble = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-91f85fc7"]]);
+const InterlocutorMessageBubble = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-0d9f2022"]]);
 const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   __name: "ChatBubble",
   __ssrInlineRender: true,
@@ -919,7 +924,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       }
     }
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps(_ctx.$attrs, _attrs))} data-v-18f99f1f>`);
+      _push(`<div${ssrRenderAttrs(mergeProps(_ctx.$attrs, _attrs))} data-v-0e65498c>`);
       _push(ssrRenderComponent(ChatBubble, {
         style: [
           chatWindowState.value === 0 ? null : { display: "none" },
@@ -932,7 +937,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       _push(`<div class="fixed-chat-element chat-window-container" style="${ssrRenderStyle([
         chatWindowState.value !== 0 ? null : { display: "none" },
         { bottom: _ctx.windowBottom, right: _ctx.windowRight }
-      ])}" data-v-18f99f1f><div class="${ssrRenderClass([{ "is-minimized": isMinimized.value }, "chat-window"])}" style="${ssrRenderStyle({ height: isMinimized.value ? "auto" : _ctx.chatHeight })}" data-v-18f99f1f><div class="chat-close-button" data-v-18f99f1f>`);
+      ])}" data-v-0e65498c><div class="${ssrRenderClass([{ "is-minimized": isMinimized.value }, "chat-window"])}" style="${ssrRenderStyle({ height: isMinimized.value ? "auto" : _ctx.chatHeight })}" data-v-0e65498c><div class="chat-close-button" data-v-0e65498c>`);
       _push(ssrRenderComponent(unref(Button), {
         class: "mr-2",
         icon: "pi pi-refresh",
@@ -948,7 +953,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
         onClick: ($event) => chatWindowState.value = 0
         /* closed */
       }, null, _parent));
-      _push(`</div><header class="chat-header" data-v-18f99f1f><span class="chat-title" data-v-18f99f1f>${ssrInterpolate(unref(t)("chat.title"))}</span>`);
+      _push(`</div><header class="chat-header" data-v-0e65498c><span class="chat-title" data-v-0e65498c>${ssrInterpolate(unref(t)("chat.title"))}</span>`);
       _push(ssrRenderComponent(unref(Button), {
         icon: isMinimized.value ? "pi pi-window-maximize" : "pi pi-window-minimize",
         severity: "secondary",
@@ -973,24 +978,24 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       }, null, _parent));
       _push(`</header>`);
       if (!isMinimized.value) {
-        _push(`<!--[--><div class="chat-history" data-v-18f99f1f><!--[-->`);
+        _push(`<!--[--><div class="chat-history" data-v-0e65498c><!--[-->`);
         ssrRenderList(messages.value, (msg) => {
-          _push(`<div data-v-18f99f1f>`);
+          _push(`<div data-v-0e65498c>`);
           if (msg.author === "user") {
             _push(ssrRenderComponent(UserMessageBubble, { message: msg }, null, _parent));
-          } else {
+          } else if (msg.content?.length > 0) {
             _push(ssrRenderComponent(InterlocutorMessageBubble, { message: msg }, null, _parent));
+          } else {
+            _push(`<!---->`);
           }
           _push(`</div>`);
         });
-        _push(`<!--]--></div><footer class="chat-footer" data-v-18f99f1f>`);
+        _push(`<!--]--></div><footer class="chat-footer" data-v-0e65498c>`);
         _push(ssrRenderComponent(unref(Textarea), {
-          ref: "chatTextarea",
           modelValue: userInput.value,
           "onUpdate:modelValue": ($event) => userInput.value = $event,
           placeholder: unref(t)("chat.placeholder"),
-          autoResize: "",
-          rows: "1",
+          rows: "3",
           maxlength: "300",
           class: "flex-grow !shadow-none",
           autofocus: "",
@@ -1015,7 +1020,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/components/custom/chat/Chat.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const Chat = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-18f99f1f"]]);
+const Chat = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-0e65498c"]]);
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "Home",
   __ssrInlineRender: true,

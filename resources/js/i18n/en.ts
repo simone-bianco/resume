@@ -37,7 +37,7 @@ export default {
         },
         tools: {
             title: 'Tools & Platforms',
-            items: 'Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack, Teamwork',
+            items: 'Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack',
         },
         architectures: {
             title: 'Architectures',
