@@ -1,9 +1,9 @@
 export default {
     hero: {
         name: 'Simone Bianco',
-        title: 'Backend Developer',
+        title: 'Backend Software Engineer',
         bio:
-            'Backend software developer with over 5 years of ' +
+            'Backend software engineer with over 5 years of ' +
             'experience in building scalable applications and ' +
             'microservices. Specialized in the Laravel framework ' +
             'with experience in Vuejs, and a strong background in ' +
@@ -51,7 +51,7 @@ export default {
         sectionTitle: 'Job Experience',
         dnafactory: {
             company: 'DNAFactory',
-            title: 'Backend Developer',
+            title: 'Backend Software Engineer',
             date: 'June 2019 - July 2025',
             desc1: 'Microservices development with Laravel',
             desc2: 'SaaS development with VILT stack and Multitenancy',

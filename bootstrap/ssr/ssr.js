@@ -349,7 +349,7 @@ const en = {
     name: "Simone Bianco",
     title: "Backend Developer",
     bio: "Backend software developer with over 5 years of experience in building scalable applications and microservices. Specialized in the Laravel framework with experience in Vuejs, and a strong background in REST architectures. Knowledge of state of art techniques for prompt engineering and coding AI tools. Excellent ability to work in a team and a strong focus on achieving project goals.",
-    contactLabel: "Contattami!",
+    contactLabel: "Contact me!",
     imageAlt: "Simone Bianco",
     githubAriaLabel: "Github",
     linkedinAriaLabel: "Linkedin"
@@ -547,7 +547,7 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-DYcPssYh.js"), "./Pages/Test.vue": () => import("./assets/Test-BNQjLm0-.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Home.vue": () => import("./assets/Home-D19d_VZo.js"), "./Pages/Test.vue": () => import("./assets/Test-BNQjLm0-.js") })
     ),
     setup({ App, props, plugin }) {
       const i18n = createI18n({

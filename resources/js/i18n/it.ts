@@ -1,9 +1,9 @@
 export default {
     hero: {
         name: 'Simone Bianco',
-        title: 'Sviluppatore Backend',
+        title: 'Ingegnere Software Backend',
         bio:
-            'Sviluppatore software backend con oltre 5 anni di ' +
+            'Ingegnere del software backend con oltre 5 anni di ' +
             'esperienza nella creazione di applicazioni scalabili e ' +
             'microservizi. Specializzato nel framework Laravel ' +
             'con conoscenze di Vue.js e un solido background in ' +
@@ -52,7 +52,7 @@ export default {
         sectionTitle: 'Esperienza Lavorativa e Educazione',
         dnafactory: {
             company: 'DNAFactory',
-            title: 'Sviluppatore Backend',
+            title: 'Ingegnere Software Backend',
             date: 'Giugno 2019 - Luglio 2025',
             desc1: 'Sviluppo di microservizi con Laravel',
             desc2: 'Sviluppo SaaS con stack VILT e Multitenancy',
@@ -77,7 +77,7 @@ export default {
             desc2: 'Tesi sperimentale in Big Data: "Progettazione e Implementazione di un Sistema di Raccomandazione Ibrido" in collaborazione con DNAFactory',
         },
         freelance: {
-            title: 'Sviluppatore Web',
+            title: 'Ingegnere Web',
             company: 'Freelance',
             date: '2017 - 2022',
             desc1: 'Sviluppo di applicazioni web',
