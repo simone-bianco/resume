@@ -109,7 +109,7 @@ watch(
     }
 );
 
-let writingTimeout: ReturnType<typeof setTimeout>;
+let writingTimeout: ReturnType<typeof setTimeout> | undefined;
 
 async function sendMessage() {
     const text = userInput.value.trim();
@@ -174,6 +174,35 @@ async function sendMessage() {
     }
 }
 
+async function resetChat() {
+    if (isLoading.value) return;
+    try {
+        isLoading.value = true;
+        if (writingTimeout) {
+            clearTimeout(writingTimeout);
+        }
+        await axios.post(route('chat.reset'));
+        messages.value = [
+            {
+                id: Date.now(),
+                author: 'assistant',
+                type: 'text',
+                content: t('chat.welcome'),
+            },
+        ];
+        userInput.value = '';
+    } catch {
+        messages.value.push({
+            id: Date.now(),
+            author: 'assistant',
+            type: 'error',
+            content: t('chat.error'),
+        });
+    } finally {
+        isLoading.value = false;
+        await scrollToBottom();
+    }
+}
 
 </script>
 
@@ -197,6 +226,13 @@ async function sendMessage() {
         >
             <div class="chat-close-button">
                 <Button
+                    class="mr-2"
+                    icon="pi pi-refresh"
+                    severity="warn"
+                    rounded
+                    @click.stop="resetChat"
+                />
+                <Button
                     icon="pi pi-times"
                     severity="danger"
                     rounded aria-label="Cancel"
@@ -215,6 +251,13 @@ async function sendMessage() {
                     text
                     rounded
                     @click.stop="toggleMinimize"
+                />
+                <Button
+                    icon="pi pi-refresh"
+                    severity="secondary"
+                    text
+                    rounded
+                    @click.stop="resetChat"
                 />
                 <Button
                     icon="pi pi-times"

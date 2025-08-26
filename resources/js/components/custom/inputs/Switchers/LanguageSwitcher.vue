@@ -71,6 +71,15 @@ function switchLanguage(lang: string): void {
     // Update the locale in the i18n instance
     locale.value = lang;
 
+    // Inform non-Vue parts (e.g., cookie consent banner) about language change immediately
+    try {
+        window.dispatchEvent(new CustomEvent('language:changed', { detail: lang }));
+        // Also call updateTexts directly if available (defensive)
+        (window as any).laravelCookieConsent?.updateTexts?.(lang);
+    } catch {
+        // no-op
+    }
+
     // Determine tenant alias from Inertia props (authoritative)
     const props = page.props as any;
     const alias = props?.tenant?.alias as string | undefined;

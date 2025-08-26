@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\ChatResetController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Settings\LanguageController;
 use App\Http\Controllers\Settings\ThemeController;
@@ -24,6 +25,8 @@ Route::group([
         ->name('tenant.theme.update');
 
     Route::post('/chat', [ChatController::class, 'chat'])->name('chat');
+
+    Route::post('/chat/reset', ChatResetController::class)->name('chat.reset');
 
     Route::get('/test', function () {
         return Inertia::render('Test', []);
