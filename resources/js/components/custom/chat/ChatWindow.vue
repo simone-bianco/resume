@@ -121,6 +121,15 @@ async function scrollToBottom() {
         :class="{ 'is-minimized': isMinimized }"
         :style="{ height: isMinimized ? 'auto' : chatHeight }"
     >
+        <div class="chat-close-button">
+            <Button
+                severity="secondary"
+                text
+                rounded
+                label="AAAAAAAAasd"
+                @click.stop="$emit('close-chat')"
+            />
+        </div>
         <header class="chat-header" @click="isMinimized = !isMinimized">
             <span class="chat-title">{{ t('chat.title') }}</span>
             <Button
@@ -193,6 +202,7 @@ async function scrollToBottom() {
     height: auto;
     max-height: 52px;
 }
+
 .chat-header {
     display: flex;
     align-items: center;
@@ -240,8 +250,8 @@ async function scrollToBottom() {
           passati come props da ChatManager.vue (windowBottom, windowRight).
         */
         width: 100% !important;
-        height: 85vh !important;
-        max-height: 85vh !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
         bottom: 0 !important;
         right: 0 !important;
         border-radius: 0.75rem 0.75rem 0 0 !important; /* Arrotonda solo gli angoli superiori */
@@ -250,5 +260,22 @@ async function scrollToBottom() {
         border-bottom: none !important;
     }
 }
+
+
+.chat-close-button {
+    display: none;
+}
+
+
+@media (max-width: 412px) {
+    .chat-close-button {
+        display: flex;
+        z-index: 500;
+        position: fixed;
+        top: 30px;
+        right: 20px;
+    }
+}
+
 /* --- FINE MODIFICA --- */
 </style>
