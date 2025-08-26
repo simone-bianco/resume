@@ -36,8 +36,8 @@ const heroImageAnimation = {
             <Card v-animateonscroll="heroCardAnimation"
                   class="hero-card sb-fancy-card relative z-10 w-11/12 md:w-7/12 rounded-2xl bg-surface-800 -mt-16 md:mt-0 md:order-1">
                 <template #content>
-                    <div class="p-6 md:p-8">
-                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">
+                    <div class="hero-card-content p-6 md:p-8">
+                        <h1 class="hero-title text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">
                             {{ t('hero.name') }}
                         </h1>
                         <p class="text-md sm:text-lg text-primary-400 font-medium mb-4">
@@ -61,6 +61,12 @@ const heroImageAnimation = {
                                         size="small" />
                             </a>
                         </div>
+                        <div class="mt-4 flex items-start gap-2 text-xs sm:text-sm opacity-80">
+                            <i class="pi pi-info-circle mt-0.5 sm:mt-1 text-primary-300" aria-hidden="true"></i>
+                            <p class="leading-snug">
+                                {{ t('hero.apprenticeshipNotice') }}
+                            </p>
+                        </div>
                     </div>
                 </template>
             </Card>
@@ -75,7 +81,6 @@ const heroImageAnimation = {
     box-shadow var(--hover-transition-duration) cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Base text color inside the hero card on dark tile */
 .hero-card { color: var(--surface-0); }
 
 .hero-image-container {
@@ -83,12 +88,13 @@ const heroImageAnimation = {
     transform-style: preserve-3d;
 }
 
-/* Usiamo :deep() per raggiungere l'immagine dentro il componente PrimeVue */
 .hero-image-container :deep(.hero-image) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     border-radius: 1rem;
+    transform-origin: center top;
 }
 
 
@@ -97,8 +103,13 @@ const heroImageAnimation = {
     transition: box-shadow var(--hover-transition-duration) ease-out;
 }
 
-/* Usiamo :deep() per applicare la trasformazione on-hover */
 .hero-image-container:hover :deep(.hero-image) {
     transform: scale(var(--hover-image-scale)) ;
+}
+
+@media (max-width: 389px) {
+    .hero-card-content { padding: 0.75rem; }
+    .hero-title { font-size: 1.25rem; line-height: 1.75rem; }
+    .hero-image-container :deep(.hero-image) { object-position: 50% 15%; }
 }
 </style>

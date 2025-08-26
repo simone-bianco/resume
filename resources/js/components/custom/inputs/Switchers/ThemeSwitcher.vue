@@ -27,11 +27,8 @@ function tenantAwareThemeUrl(): string {
 }
 
 function toggleTheme() {
-  // Compute next theme value deterministically
   const next = !isDarkTheme.value;
-  // Optimistically apply UI
   setDarkMode(next);
-  // Persist to backend (guests: session; auth: user settings)
   router.post(
     tenantAwareThemeUrl(),
     { dark: next },

@@ -275,7 +275,7 @@ async function resetChat() {
                             v-if="msg.author === 'user'"
                             :message="msg"
                         />
-                        <InterlocutorMessageBubble v-else :message="msg" />
+                        <InterlocutorMessageBubble v-else-if="msg.content?.length > 0" :message="msg" />
                     </div>
                 </div>
 

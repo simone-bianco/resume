@@ -14,7 +14,8 @@ export default {
         contactLabel: 'Contattami!',
         imageAlt: 'Simone Bianco',
         githubAriaLabel: 'Github',
-        linkedinAriaLabel: 'Linkedin'
+        linkedinAriaLabel: 'Linkedin',
+        apprenticeshipNotice: 'Rientro nelle categorie previste dal D.Lgs. 81/2015 per l\'assunzione con contratto di apprendistato professionalizzante per disoccupati, che offre sgravi contributivi all\'azienda.'
     },
     menu: {
         home: 'Home',
@@ -96,7 +97,7 @@ export default {
     chat: {
         title: 'Chat',
         welcome: 'Ciao, piacere di conoscerti! Vuoi chiedermi qualcosa?',
-        error: 'Mi dispiace, si è verificato un errore imprevisto 😔',
+        error: 'Mi dispiace, forse è finito il budget allocato alla chat 😔',
         thinking: 'Sto pensando...',
         writing: 'Sto scrivendo...',
         placeholder: 'Scrivi un messaggio per chattare',

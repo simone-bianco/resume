@@ -6,10 +6,8 @@ import Button from 'primevue/button';
 import Menu from 'primevue/menu';
 import Image from 'primevue/image';
 
-// Get i18n instance
 const { locale } = useI18n();
 
-// Get available languages from Inertia props
 const page = usePage();
 const languagesMap = computed<Record<string, string>>(() => {
     const langs = (page.props as any)?.languages as Record<string, string> | undefined;
@@ -22,17 +20,13 @@ const availableLanguages = computed<string[]>(() => {
     return Object.keys(languagesMap.value);
 });
 
-// Set initial locale from Inertia props if available
 if ((page.props as any).locale) {
     locale.value = (page.props as any).locale as string;
 }
 
-// Reference to the menu
 const menu = ref<any>(null);
 
-// Helper: map language code to a CountryFlags.com image URL
 function getFlagUrl(lang: string): string {
-    // Using round icons from cdn.countryflags.com as requested
     const map: Record<string, string> = {
         it: 'https://cdn.countryflags.com/thumbs/italy/flag-round-250.png',
         en: 'https://cdn.countryflags.com/thumbs/united-kingdom/flag-round-250.png'
@@ -40,7 +34,6 @@ function getFlagUrl(lang: string): string {
     return map[lang] || 'https://cdn.countryflags.com/thumbs/united-nations/flag-round-250.png';
 }
 
-// Menu items for language selection
 interface LanguageItem {
     label: string;
     lang: string;
@@ -61,33 +54,24 @@ const items = computed<LanguageItem[]>(() => {
     }));
 });
 
-// Get language label
 function getLanguageLabel(lang: string): string {
     return languagesMap.value[lang] || lang.toUpperCase();
 }
 
-// Switch language
 function switchLanguage(lang: string): void {
-    // Update the locale in the i18n instance
     locale.value = lang;
 
-    // Inform non-Vue parts (e.g., cookie consent banner) about language change immediately
     try {
         window.dispatchEvent(new CustomEvent('language:changed', { detail: lang }));
-        // Also call updateTexts directly if available (defensive)
         (window as any).laravelCookieConsent?.updateTexts?.(lang);
     } catch {
-        // no-op
     }
 
-    // Determine tenant alias from Inertia props (authoritative)
     const props = page.props as any;
     const alias = props?.tenant?.alias as string | undefined;
 
-    // Construct the appropriate URL based on actual tenant context
     const url = alias ? `/${alias}/settings/language` : '/settings/language';
 
-    // Use Inertia's router to post to the language update endpoint
     router.post(url, {
         locale: lang
     }, {
@@ -97,12 +81,10 @@ function switchLanguage(lang: string): void {
     });
 }
 
-// Toggle menu
 function toggleMenu(event: Event): void {
     (menu.value as any)?.toggle(event);
 }
 
-// Current language flag URL
 const currentFlagUrl = computed<string>(() => getFlagUrl(locale.value));
 </script>
 
@@ -124,5 +106,4 @@ const currentFlagUrl = computed<string>(() => getFlagUrl(locale.value));
 </template>
 
 <style scoped>
-/* Nessun colore personalizzato: lo stile è gestito dal tema */
 </style>

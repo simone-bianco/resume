@@ -14,15 +14,12 @@ const { setDarkMode } = useLayout();
 
 watch(
     () => (page.props as any)?.theme?.dark,
-    // (isDarkMode) => setDarkMode(isDarkMode ?? false),
     () => setDarkMode(true),
     { immediate: true }
 );
 
-// Current route name shared from server for robust active highlighting
 const currentRouteName = computed(() => (page.props as any)?.currentRoute);
 
-// Key to force Menubar re-render on route change
 const menuKey = computed(() => (page as any).url);
 
 

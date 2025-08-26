@@ -14,7 +14,8 @@ export default {
         contactLabel: 'Contact me!',
         imageAlt: 'Simone Bianco',
         githubAriaLabel: 'Github',
-        linkedinAriaLabel: 'Linkedin'
+        linkedinAriaLabel: 'Linkedin',
+        apprenticeshipNotice: 'I fall within the categories envisaged by Legislative Decree 81/2015 for hiring under a professional apprenticeship contract for unemployed individuals, which grants contribution relief to the employer.'
     },
     menu: {
         home: 'Home',
@@ -95,7 +96,7 @@ export default {
     chat: {
         title: 'Chat',
         welcome: 'Hello, nice to meet you! Would you like to ask me something?',
-        error: 'I\'m sorry, an unexpected error occurred 😔',
+        error: "I'm sorry, probably chat tokens limit was reached 😔",
         thinking: 'Thinking...',
         writing: 'Typing...',
         placeholder: 'Type a message to chat',

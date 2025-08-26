@@ -3,7 +3,6 @@ import ProgressSpinner from 'primevue/progressspinner';
 import Image from 'primevue/image';
 import avatar from '@/assets/images/avatar.png';
 
-// Riceve il messaggio e gestisce i suoi diversi stati (text, thinking, error)
 defineProps<{
     message: { type: string, content: string }
 }>();

@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Console\Commands\AfterDeploy;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;

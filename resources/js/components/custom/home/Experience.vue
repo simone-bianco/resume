@@ -187,7 +187,6 @@ const experiences = ref([
     color: var(--text-color);
 }
 
-/* Custom bullets for description list (default left) */
 .description-list li { position: relative; padding-left: 0.75rem; }
 .description-list li::before {
     content: '';
@@ -201,7 +200,6 @@ const experiences = ref([
     opacity: 0.9;
 }
 
-/* Responsive behavior: at 410px and below show only cards (hide timeline) */
 .cards-only { display: none; }
 
 @media screen and (max-width: 410px) {
@@ -209,26 +207,24 @@ const experiences = ref([
     .cards-only { display: block; }
 }
 
-/* From 460px and below: reduce padding and fonts inside cards; tighten description list indent */
 @media screen and (max-width: 460px) {
     .experience-card :deep(.p-card-body) {
-        padding: 0.9rem 1rem; /* slightly reduced */
+        padding: 0.9rem 1rem;
     }
     .experience-card :deep(.p-card-title) {
-        font-size: 1.05rem; /* slightly smaller */
+        font-size: 1.05rem;
     }
     .experience-card :deep(.p-card-subtitle),
     .experience-card .experience-subtitle {
-        font-size: 0.9rem; /* slightly smaller */
+        font-size: 0.9rem;
     }
-    /* Further reduce list indentation on small screens */
     .experience-card .description-list {
-        padding-left: 0.6rem; /* was 1.5rem */
+        padding-left: 0.6rem;
     }
     .experience-card .description-list li {
-        font-size: 0.92rem; /* slightly smaller */
+        font-size: 0.92rem;
         line-height: 1.35;
-        padding-left: 0.5rem; /* was 0.75rem */
+        padding-left: 0.5rem;
     }
 }
 </style>

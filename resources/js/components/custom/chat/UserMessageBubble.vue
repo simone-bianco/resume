@@ -27,11 +27,6 @@ defineProps<{
     gap: 0.5rem;
     max-width: 85%;
 
-    /* --- CORREZIONE QUI --- */
-    /*
-     * Ho sostituito --primary-500 con --p-primary-500, il nome corretto dal tuo tema.
-     * Ho usato --surface-0 (bianco) per il testo, garantendo il massimo contrasto.
-    */
     background-color: dodgerblue;
     color: var(--surface-0);
 
