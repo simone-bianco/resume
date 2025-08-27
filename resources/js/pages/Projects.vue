@@ -130,7 +130,7 @@ const sections = [
                                     <div class="project-footer">
                                         <a v-if="p.link" :href="p.link" target="_blank" rel="noopener noreferrer"
                                            class="project-link">{{ p.link }}</a>
-                                        <span v-else class="project-link-placeholder">{{ t(p.linkPlaceholderKey) }}</span>
+                                        <span v-else class="project-link-placeholder">{{ t(p.linkPlaceholderKey as string) }}</span>
                                     </div>
                                 </template>
                             </Card>

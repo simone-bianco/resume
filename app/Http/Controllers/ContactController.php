@@ -29,7 +29,7 @@ class ContactController extends Controller
             'last_name'  => ['required', 'string', 'max:120'],
             'email'      => ['required', 'email', 'max:255'],
             'phone'      => ['nullable', 'string', 'max:60'],
-            'message'    => ['required', 'string', 'max:5000'],
+            'message'    => ['required', 'string', 'max:3000'],
         ]);
 
         $chatId = config('telegram.chat_id');
