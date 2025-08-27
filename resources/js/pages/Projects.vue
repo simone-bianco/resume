@@ -89,6 +89,12 @@ const projects = [
         linkPlaceholderKey: 'projects.linkPlaceholder.legacy'
     },
 ];
+
+const sections = [
+    { key: 'dnafactory', titleKey: 'projects.groupTitles.dnafactory' },
+    { key: 'personal', titleKey: 'projects.groupTitles.personal' },
+    { key: 'universita', titleKey: 'projects.groupTitles.universita' },
+];
 </script>
 
 <template>
@@ -99,29 +105,37 @@ const projects = [
                     <h2 class="text-3xl sm:text-4xl font-bold text-[var(--text-color)]">{{ t('projects.sectionTitle') }}</h2>
                 </div>
 
-                <div class="flex flex-col gap-6">
-                    <Card v-for="(p, idx) in projects" :key="idx"
-                          class="project-card" v-animateonscroll="projectEnter">
-                        <template #title>
-                            {{ t(p.titleKey) }}
-                        </template>
-                        <template #subtitle>
-                            <div class="project-subtitle">
-                                <span>{{ t(`projects.categories.${p.categoryKey}`) }}</span>
-                            </div>
-                            <Divider />
-                        </template>
-                        <template #content>
-                            <p class="project-body">{{ t(p.bodyKey) }}</p>
-                        </template>
-                        <template v-if="p.link || p.linkPlaceholderKey" #footer>
-                            <div class="project-footer">
-                                <a v-if="p.link" :href="p.link" target="_blank" rel="noopener noreferrer"
-                                   class="project-link">{{ p.link }}</a>
-                                <span v-else class="project-link-placeholder">{{ t(p.linkPlaceholderKey) }}</span>
-                            </div>
-                        </template>
-                    </Card>
+                <div v-for="sec in sections" :key="sec.key" class="mb-12">
+                    <div v-if="projects.some(p => p.categoryKey === sec.key)">
+                        <div class="section-title">
+                            <h3 class="text-2xl font-semibold text-[var(--text-color)]">{{ t(sec.titleKey) }}</h3>
+                            <div class="title-underline"></div>
+                        </div>
+                        <div class="flex flex-col gap-6 mt-6">
+                            <Card v-for="(p, idx) in projects.filter(pr => pr.categoryKey === sec.key)" :key="`${sec.key}-${idx}`"
+                                  class="project-card" v-animateonscroll="projectEnter">
+                                <template #title>
+                                    {{ t(p.titleKey) }}
+                                </template>
+                                <template #subtitle>
+                                    <div class="project-subtitle">
+                                        <span>{{ t(`projects.categories.${p.categoryKey}`) }}</span>
+                                    </div>
+                                    <Divider />
+                                </template>
+                                <template #content>
+                                    <p class="project-body">{{ t(p.bodyKey) }}</p>
+                                </template>
+                                <template v-if="p.link || p.linkPlaceholderKey" #footer>
+                                    <div class="project-footer">
+                                        <a v-if="p.link" :href="p.link" target="_blank" rel="noopener noreferrer"
+                                           class="project-link">{{ p.link }}</a>
+                                        <span v-else class="project-link-placeholder">{{ t(p.linkPlaceholderKey) }}</span>
+                                    </div>
+                                </template>
+                            </Card>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -149,4 +163,13 @@ const projects = [
 .project-footer { margin-top: 0.5rem; }
 .project-link { color: var(--primary-color); text-decoration: underline; word-break: break-all; }
 .project-link-placeholder { color: var(--surface-400); font-style: italic; }
+
+.section-title { display: flex; flex-direction: column; gap: 0.35rem; }
+.title-underline {
+    width: 250px;
+    height: 4px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, var(--primary-color), rgba(var(--primary-color-rgb), 0.4));
+    box-shadow: 0 0 14px 2px rgba(var(--primary-color-rgb), 0.35);
+}
 </style>

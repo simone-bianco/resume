@@ -30,56 +30,70 @@ export default {
             dnafactory: 'DNAFactory',
             universita: 'Università',
             personale: 'Personale',
+            personal: 'Personale',
             freelance: 'Freelance',
         },
         linkPlaceholder: {
             private: 'Link privato',
             legacy: 'Progetto legacy (link non disponibile)'
         },
+        groupTitles: {
+            dnafactory: 'DNAFactory',
+            personal: 'Progetti Personali',
+            universita: 'Progetti Universitari'
+        },
         items: {
             ammiraglio: {
                 title: 'Ammiraglio',
-                body: 'Un SaaS multitenant (laravel + laravel nova), il quale permette di sincronizzare gli ordini tra Magento e una vasta gamma di piattaforme e-commerce'
+                body: 'Sviluppato un SaaS multitenant (Laravel, Laravel Nova) per la sincronizzazione degli ordini tra Magento e diverse piattaforme e-commerce, automatizzando e ottimizzando i flussi di lavoro aziendali.'
             },
             dieteincloud: {
                 title: 'Dieteincloud',
-                body: 'Un SaaS multitenant (laravel + livewire + alpinejs), utilizzato da numerosi dietologi per gestire pazienti e diete; ho implementato (personalmente) tutta la parte di sincronizzazione delle fatture (tramite SOAP) sia con il sistema di fatturazione nazionale (TS) che con il sistema di tessera sanitaria (SSN)'
+                body: 'Implementato un sistema di sincronizzazione fatture (via SOAP) per un SaaS multitenant (Laravel, Livewire). Il sistema si interfaccia con il Sistema Tessera Sanitaria (STS) e il Sistema di Interscambio nazionale (SdI), a supporto di numerosi professionisti del settore nutrizionale.'
             },
             gruppoedico: {
                 title: 'Gruppoedico',
-                body: 'Una piattaforma Magento 2 che consente ai partner del consorzio Gruppoedico di gestire le scorte condivise dei loro magazzini e gli ordini provenienti dallo store, al fine di ottimizzare la collaborazione e i profitti dell\'intero collettivo'
+                body: 'Contribuito allo sviluppo di una piattaforma Magento 2 per un consorzio, realizzando funzionalità per la gestione condivisa delle scorte di magazzino e l\'ottimizzazione dei flussi d\'ordine tra i partner.'
             },
             mensa: {
                 title: 'Borse di studio del Mensa Institute',
-                body: 'Piattaforma (laravel + vue.js) usata dal Mensa Institute per gestire le borse di studio degli studenti universitari'
+                body: 'Realizzata una piattaforma web completa (Laravel, Vue.js) per il Mensa Institute, finalizzata alla gestione digitale e semplificata del processo di assegnazione delle borse di studio universitarie.'
             },
             editorial_builder: {
                 title: 'Editorial Builder',
-                body: 'Piattaforma (laravel + vue.js) che consente a agent ai e più persone di collaborare nelle stesse chat'
+                body: 'Progettato e sviluppato una piattaforma collaborativa (Laravel, Vue.js) che abilita l\'interazione sinergica tra agenti di intelligenza artificiale e utenti umani all\'interno di sessioni di chat condivise.'
             },
             efarma: {
                 title: 'Efarma',
-                body: 'Grande e-commerce (basato su Magento 2) che vende farmaci; ho lavorato a un microservizio (laravel + laravel nova) per esternalizzare la gestione delle fatture e a un modulo m2 per gestire queue di processing degli ordini'
+                body: 'Per un grande e-commerce basato su Magento 2, ho sviluppato un microservizio dedicato (Laravel, Nova) per l\'esternalizzazione della gestione fatture e un modulo M2 per l\'elaborazione asincrona degli ordini tramite code.'
             },
             astrolume: {
                 title: 'Astrolume',
-                body: 'SaaS (laravel + alpinejs) con funzionalità di chat avanzate'
+                body: 'Sviluppato un SaaS (Laravel, Alpine.js) dotato di un sistema di chat avanzato, progettato per migliorare l\'interazione e il coinvolgimento degli utenti sulla piattaforma.'
             },
             hrm: {
                 title: 'HRM',
-                body: 'Hybrid Recommender System, architettura basata su Harness + Laravel per raccomandazioni ibride di prodotti tramite filtri ibridi (progetto vecchio di laurea in collaborazione con l\'azienda, tecnologie sorpassate ormai)'
+                body: 'Progettato e implementato un sistema di raccomandazione ibrido (Hybrid Recommender System) in collaborazione con l\'azienda, utilizzando un\'architettura basata su Harness e Laravel per il filtraggio avanzato dei prodotti.'
             },
             blog_suggestions_ai: {
                 title: 'Blog Suggestions AI',
-                body: 'SaaS (laravel + laravel nova) che usa agents + RAG per suggerire prodotti dinamicamente in base al contenuto di pagine web (es. blog)'
+                body: 'Creato un SaaS (Laravel, Nova) che impiega agenti AI e tecniche RAG per analizzare dinamicamente il contenuto di pagine web e fornire suggerimenti di prodotto contestuali e pertinenti.'
             },
             desk_helper_ai: {
                 title: 'Desk Helper AI',
-                body: 'Piattaforma aziendale (laravel + laravel nova) che usa agents + RAG, più altre tecniche avanzate e interazione con N8N, per integrare nella propria KB tutte le conoscenze aziendali (progetti, task, risorse, tickets, codebases, documentazioni, etc...) e fornire supporto, insights e soluzioni'
+                body: 'Sviluppato una piattaforma interna (Laravel, Nova) che integra la knowledge base aziendale tramite agenti AI, RAG e N8N. Il sistema fornisce insight e supporto automatizzato analizzando dati da progetti, task, ticket e documentazione.'
             },
             restaurant_booking_app: {
                 title: 'Applicazione prenotazione ristoranti',
-                body: 'App android per la prenotazione di posti in un ristorante'
+                body: 'Realizzata un\'applicazione Android nativa per la gestione delle prenotazioni di un ristorante, curando l\'intero ciclo di vita del software, dalla progettazione all\'implementazione.'
+            },
+            resume_ai: {
+                title: 'Resume AI',
+                body: 'Sviluppato un curriculum vitae interattivo che integra una chatbot, basata su un mio avatar virtuale, per offrire un\'esperienza di candidatura dinamica e innovativa.'
+            },
+            laravel_rules: {
+                title: 'Laravel Rules',
+                body: 'Progettato un pacchetto open-source per la gestione centralizzata, dinamica e basata su cache delle regole di validazione di Laravel, migliorando la manutenibilità del codice e la developer experience.'
             }
         }
     },
@@ -114,7 +128,6 @@ export default {
         dnafactory: {
             company: 'DNAFactory',
             title: 'Ingegnere Software Backend',
-            date: 'Giugno 2019 - Luglio 2025',
             desc1: 'Sviluppo di microservizi con Laravel',
             desc2: 'Sviluppo SaaS con stack VILT e Multitenancy',
             desc3: 'Progettazione UML',
@@ -133,20 +146,17 @@ export default {
         masters: {
             title: 'Laurea Magistrale in Ingegneria Informatica',
             institution: 'Università degli Studi di Napoli Federico II',
-            date: '2019 - 2022',
             desc1: 'Corsi a scelta in Intelligenza Artificiale e specializzazione in IT Management',
             desc2: 'Tesi sperimentale in Big Data: "Progettazione e Implementazione di un Sistema di Raccomandazione Ibrido" in collaborazione con DNAFactory',
         },
         freelance: {
             title: 'Web Developer',
             company: 'Freelance',
-            date: '2017 - 2022',
             desc1: 'Sviluppo di applicazioni web',
         },
         diploma: {
             title: 'Diploma in Informatica – Perito Informatico',
             institution: 'Istituto Galileo Ferraris, Napoli',
-            date: '2010',
             desc1: 'Consolidamento delle competenze di programmazione fondamentali',
             desc2: 'C++, HTML, PHP, CSS, Javascript, Java, MySQL',
         },

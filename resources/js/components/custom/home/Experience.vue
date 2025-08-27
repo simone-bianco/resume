@@ -12,7 +12,6 @@ const experiences = ref([
     {
         titleKey: 'experience.dnafactory.title',
         companyKey: 'experience.dnafactory.company',
-        dateKey: 'experience.dnafactory.date',
         descriptionKeys: [
             'experience.dnafactory.desc1', 'experience.dnafactory.desc2', 'experience.dnafactory.desc3',
             'experience.dnafactory.desc4', 'experience.dnafactory.desc5', 'experience.dnafactory.desc6',
@@ -26,7 +25,6 @@ const experiences = ref([
     {
         titleKey: 'experience.masters.title',
         companyKey: 'experience.masters.institution',
-        dateKey: 'experience.masters.date',
         descriptionKeys: [
             'experience.masters.desc1',
             'experience.masters.desc2',
@@ -37,7 +35,6 @@ const experiences = ref([
     {
         titleKey: 'experience.freelance.title',
         companyKey: 'experience.freelance.company',
-        dateKey: 'experience.freelance.date',
         descriptionKeys: [ 'experience.freelance.desc1' ],
         icon: 'pi pi-user',
         color: '#182bfc'
@@ -45,7 +42,6 @@ const experiences = ref([
     {
         titleKey: 'experience.diploma.title',
         companyKey: 'experience.diploma.institution',
-        dateKey: 'experience.diploma.date',
         descriptionKeys: [
             'experience.diploma.desc1',
             'experience.diploma.desc2',
@@ -78,8 +74,6 @@ const experiences = ref([
                         <template #subtitle>
                             <div class="experience-subtitle">
                                 <span class="company">{{ t(slotProps.item.companyKey) }}</span>
-                                <span class="separator"> | </span>
-                                <span class="date">{{ t(slotProps.item.dateKey) }}</span>
                             </div>
                             <Divider />
                         </template>
@@ -103,7 +97,6 @@ const experiences = ref([
                             <div class="experience-subtitle">
                                 <span class="company">{{ t(exp.companyKey) }}</span>
                                 <span class="separator"> | </span>
-                                <span class="date">{{ t(exp.dateKey) }}</span>
                             </div>
                             <Divider />
                         </template>

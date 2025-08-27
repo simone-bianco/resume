@@ -30,56 +30,70 @@ export default {
             dnafactory: 'DNAFactory',
             universita: 'University',
             personale: 'Personal',
+            personal: 'Personal',
             freelance: 'Freelance',
         },
         linkPlaceholder: {
             private: 'Private link',
             legacy: 'Legacy project (link unavailable)'
         },
+        groupTitles: {
+            dnafactory: 'DNAFactory',
+            personal: 'Personal Projects',
+            universita: 'University Projects'
+        },
         items: {
             ammiraglio: {
                 title: 'Ammiraglio',
-                body: 'A multitenant SaaS (Laravel + Laravel Nova) that synchronizes orders between Magento and a wide range of e-commerce platforms'
+                body: 'Engineered a multitenant SaaS platform using Laravel and Laravel Nova to synchronize orders between Magento and various e-commerce platforms, automating and optimizing business workflows.'
             },
             dieteincloud: {
                 title: 'Dieteincloud',
-                body: 'A multitenant SaaS (Laravel + Livewire + Alpine.js) used by many dietitians to manage patients and diets; I personally implemented invoice synchronization (via SOAP) with both the national invoicing system (TS) and the health card system (SSN)'
+                body: 'Implemented a robust invoice synchronization system (via SOAP) for a multitenant SaaS (Laravel, Livewire). The system interfaces with the national health card (SSN) and invoicing (TS) systems, serving numerous nutrition professionals.'
             },
             gruppoedico: {
                 title: 'Gruppoedico',
-                body: 'A Magento 2 platform enabling Gruppoedico consortium partners to manage shared warehouse stock and orders to optimize collaboration and overall profits',
+                body: 'Contributed to a Magento 2 platform for a business consortium by developing features for shared warehouse stock management and order flow optimization, enhancing collaboration and profitability among partners.'
             },
             mensa: {
                 title: 'Mensa Institute Scholarships',
-                body: 'Platform (Laravel + Vue.js) used by the Mensa Institute to manage university students\' scholarships',
+                body: 'Built a comprehensive web platform (Laravel, Vue.js) for the Mensa Institute to digitally manage and streamline the university scholarship application and award process.'
             },
             editorial_builder: {
                 title: 'Editorial Builder',
-                body: 'Platform (Laravel + Vue.js) that allows AI agents and multiple people to collaborate in the same chats'
+                body: 'Designed and developed a collaborative platform (Laravel, Vue.js) enabling synergistic interaction between AI agents and human users within shared chat sessions.'
             },
             efarma: {
                 title: 'Efarma',
-                body: 'Large e-commerce (based on Magento 2) selling medicines; I worked on a microservice (Laravel + Laravel Nova) to externalize invoice management and on an M2 module to manage order processing queues'
+                body: 'For a large Magento 2 e-commerce site, I developed a dedicated microservice (Laravel, Nova) to externalize invoice management and an M2 module to handle asynchronous order processing through queues.'
             },
             astrolume: {
                 title: 'Astrolume',
-                body: 'SaaS (Laravel + Alpine.js) with advanced chat features'
+                body: 'Developed a SaaS application (Laravel, Alpine.js) featuring an advanced chat system designed to enhance user interaction and engagement on the platform.'
             },
             hrm: {
                 title: 'HRM',
-                body: 'Hybrid Recommender System, an architecture based on Harness + Laravel for hybrid product recommendations through hybrid filters (old thesis project with the company, now outdated technologies)'
+                body: 'Designed and implemented a Hybrid Recommender System as part of a university-company collaboration, leveraging a Harness and Laravel architecture for advanced product filtering.'
             },
             blog_suggestions_ai: {
                 title: 'Blog Suggestions AI',
-                body: 'SaaS (Laravel + Laravel Nova) using agents + RAG to suggest products dynamically based on the content of web pages (e.g., blog)'
+                body: 'Created a SaaS product (Laravel, Nova) that employs AI agents and RAG techniques to dynamically analyze web page content and provide relevant, context-aware product suggestions.'
             },
             desk_helper_ai: {
                 title: 'Desk Helper AI',
-                body: 'Company platform (Laravel + Laravel Nova) that uses agents + RAG, plus other advanced techniques and integration with N8N, to ingest all company knowledge (projects, tasks, resources, tickets, codebases, documentation, etc.) and provide support, insights, and solutions'
+                body: 'Developed an internal enterprise platform (Laravel, Nova) integrating the company\'s knowledge base using AI agents, RAG, and N8N. The system provides automated support by analyzing data from projects, tasks, and documentation.'
             },
             restaurant_booking_app: {
-                title: 'Restaurant booking app',
-                body: 'Android app for reserving tables at a restaurant'
+                title: 'Restaurant Booking App',
+                body: 'Developed a native Android application for managing restaurant reservations, overseeing the entire software development lifecycle from design to implementation.'
+            },
+            resume_ai: {
+                title: 'Resume AI',
+                body: 'Created an interactive resume featuring an integrated chatbot powered by a virtual avatar of myself, offering a dynamic and innovative candidate experience.'
+            },
+            laravel_rules: {
+                title: 'Laravel Rules',
+                body: 'Engineered an open-source package for centralized, dynamic, and cached management of Laravel validation rules, improving code maintainability and the overall developer experience.'
             }
         }
     },
@@ -106,7 +120,7 @@ export default {
         },
         locales: {
             title: 'Languages',
-            items: 'Italiano (native), English (Advanced B2)',
+            items: 'Italian (native), English (Advanced B2)',
         },
     },
     experience: {
@@ -114,7 +128,6 @@ export default {
         dnafactory: {
             company: 'DNAFactory',
             title: 'Backend Software Engineer',
-            date: 'June 2019 - July 2025',
             desc1: 'Microservices development with Laravel',
             desc2: 'SaaS development with VILT stack and Multitenancy',
             desc3: 'UML design',
@@ -125,7 +138,7 @@ export default {
             desc8: 'Deployment automation and management (Nginx, Apache2, Forge, Envoyer)',
             desc9: 'REST services',
             desc10: 'Automation of business processes using N8N + AI',
-            desc11: 'Integration of OpenaiAI and Ollama APIs agents in SaaS',
+            desc11: 'Integration of OpenAI and Ollama APIs agents in SaaS',
             desc12: 'ChatGPT and Gemini prompt engineering',
             desc13: 'AI coding tools (Jetbrain Junie, Github Copilot, Suna, GeminiCLI) integrated with MCP servers',
             desc14: 'RAGS built using vectorial databases',
@@ -133,20 +146,17 @@ export default {
         masters: {
             title: 'Master’s Degree in Computer Engineering',
             institution: 'University of Naples Federico II',
-            date: '2019 - 2022',
             desc1: 'Elective courses in AI and specialization in IT Management',
             desc2: 'Experimental thesis in Big Data: "Design and Implementation of a Hybrid Recommender System" in collaboration with DNAFactory',
         },
         freelance: {
             title: 'Web Developer',
             company: 'Freelance',
-            date: '2017 - 2022',
             desc1: 'Development of web applications',
         },
         diploma: {
             title: 'Diploma in Computer Science – IT Specialist',
             institution: 'Galileo Ferraris Institute, Naples',
-            date: '2010',
             desc1: 'Strengthening of fundamental coding skills',
             desc2: 'C++, HTML, PHP, CSS, Javascript, Java, MySQL',
         },
