@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { computed, watch, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 import { router } from '@inertiajs/vue3';
 import { useI18n } from 'vue-i18n';
 import { route } from 'ziggy-js';
 import LanguageSwitcher from '@/components/custom/inputs/Switchers/LanguageSwitcher.vue';
-import { useLayout } from '@/layouts/composables/layout';
 import Menubar from 'primevue/menubar';
 import Drawer from 'primevue/drawer';
 import Chat from '@/components/custom/chat/Chat.vue';
@@ -13,7 +12,24 @@ import SiteFooter from '@/components/custom/common/SiteFooter.vue';
 import { ChatMessage } from '@/types/dto';
 import { useHead } from '@unhead/vue';
 
+const page = usePage();
+
+const siteName = (import.meta as any).env?.VITE_APP_NAME || 'Simone Bianco | Backend Software Engineer | Resume';
+const scripts: any[] = [];
+const analyticsSrc = (import.meta as any).env?.VITE_ANALYTICS_SRC;
+const chatSrc = (import.meta as any).env?.VITE_CHAT_WIDGET_SRC;
+if (analyticsSrc) {
+    scripts.push({ src: analyticsSrc, async: true, tagPosition: 'bodyClose' } as any);
+}
+if (chatSrc) {
+    scripts.push({ src: chatSrc, defer: true, tagPosition: 'bodyClose' } as any);
+}
+
+
 useHead({
+    // Global title template as a function to avoid literal placeholders
+    titleTemplate: (chunk?: string) => (chunk && String(chunk).trim().length ? `${chunk} · ${siteName}` : siteName),
+    // Global assets and meta
     link: [
         { rel: 'manifest', href: '/manifest.json' },
     ],
@@ -21,18 +37,17 @@ useHead({
         { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' },
         { name: 'theme-color', content: '#222222', media: '(prefers-color-scheme: dark)' },
     ],
+    // Non-critical scripts loaded at the end of body when configured
+    script: scripts,
+    // Dynamic classes on <html>
+    htmlAttrs: {
+        class: {
+            dark: true,
+        }
+    }
 });
 
 const { t } = useI18n();
-const page = usePage();
-
-const { setDarkMode } = useLayout();
-
-watch(
-    () => (page.props as any)?.theme?.dark,
-    () => setDarkMode(true),
-    { immediate: true }
-);
 
 const currentRouteName = computed(() => (page.props as any)?.currentRoute);
 

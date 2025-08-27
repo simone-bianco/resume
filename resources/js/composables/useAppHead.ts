@@ -34,9 +34,9 @@ export function useAppHead(input: AppHeadInput) {
 
   // Usiamo 'computed' per rendere i valori reattivi.
   // Se passi un ref(), si aggiornerà automaticamente.
-  const pageTitle = computed(() => {
+  const rawTitle = computed(() => {
     const ti = unref(input.title);
-    return ti ? `${ti} | ${appName}` : appName;
+    return ti || undefined;
   });
   const pageDescription = computed(() => {
     const desc = unref(input.description);
@@ -47,7 +47,7 @@ export function useAppHead(input: AppHeadInput) {
     if (img) return img;
     const origin = typeof window !== 'undefined' && (window as any).location?.origin
       ? (window as any).location.origin
-      : 'https://simone-bianco.dev';
+      : 'https://simone-bianco-resume.it/';
     return `${origin}/default-social-image.jpg`;
   });
   const pageUrl = computed(() => {
@@ -60,7 +60,7 @@ export function useAppHead(input: AppHeadInput) {
 
   // useHead per i tag generici
   useHead({
-    title: pageTitle,
+    title: rawTitle,
     link: [
       {
         rel: 'canonical',
@@ -78,7 +78,7 @@ export function useAppHead(input: AppHeadInput) {
     description: pageDescription,
 
     // Open Graph
-    ogTitle: pageTitle,
+    ogTitle: computed(() => rawTitle.value || appName),
     ogDescription: pageDescription,
     ogImage: pageImage,
     ogUrl: pageUrl,
@@ -88,7 +88,7 @@ export function useAppHead(input: AppHeadInput) {
 
     // Twitter Cards
     twitterCard: 'summary_large_image',
-    twitterTitle: pageTitle,
+    twitterTitle: computed(() => rawTitle.value || appName),
     twitterDescription: pageDescription,
     twitterImage: pageImage,
   });
