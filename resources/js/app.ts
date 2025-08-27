@@ -16,6 +16,8 @@ import messages from './i18n/messages';
 import preset from '@/theme/preset';
 import 'primeicons/primeicons.css';
 
+import { createHead } from '@unhead/vue/client';
+
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 import AnimateOnScroll from 'primevue/animateonscroll';
 import { definePreset } from '@primeuix/themes';
@@ -40,6 +42,7 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         const app = createApp({ render: () => h(App, props) });
 
+        const head = createHead();
         // Use plugins
         app.use(plugin);
         app.use(ZiggyVue);
@@ -52,6 +55,7 @@ createInertiaApp({
                 }
             }
         });
+        app.use(head);
         app.use(ToastService);
         app.use(i18n);
         app.directive('animateonscroll', AnimateOnScroll);

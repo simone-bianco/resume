@@ -726,7 +726,7 @@ const messages = {
   en,
   it
 };
-const appName = "Simone Bianco CV";
+const appName = "Simone Bianco | Backend Software Engineer | Resume";
 createServer(
   (page) => createInertiaApp({
     page,

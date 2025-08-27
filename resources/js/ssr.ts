@@ -9,7 +9,7 @@ import { createI18n } from 'vue-i18n';
 // Import i18n messages
 import messages from './i18n/messages';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Simone Bianco CV';
+const appName = import.meta.env.VITE_APP_NAME || 'Simone Bianco | Backend Software Engineer | Resume';
 
 createServer((page) =>
     createInertiaApp({

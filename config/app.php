@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Simone Bianco CV'),
+    'name' => env('APP_NAME', 'Simone Bianco | Backend Software Engineer | Resume'),
 
     /*
     |--------------------------------------------------------------------------
