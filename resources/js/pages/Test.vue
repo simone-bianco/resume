@@ -14,6 +14,13 @@ useHead({
   ],
 });
 
+// Remove chat widget script on this page via key-based deduplication
+useHead({
+  script: [
+    { key: 'chat-widget' }
+  ]
+});
+
 // Utility to build a scale array like 0, 50, 100..950
 const scaleSteps = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 

@@ -1,0 +1,21 @@
+/* Critical CSS (above-the-fold minimal styles)
+   Note: Replace/extend this with output from a critical CSS generator for best results.
+*/
+
+/* Enforce dark background immediately to avoid flash */
+html, body { height: 100%; }
+html.dark { background-color: #0b1220; color-scheme: dark; }
+body { background-color: #0b1220; color: #e5e7eb; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Top fixed header backdrop (matches layout bar) */
+.fixed.top-0 { backdrop-filter: blur(6px); background-color: rgba(2,6,23,0.8); }
+
+/* Basic link visibility on dark */
+a { color: #60a5fa; }
+a:hover { color: #93c5fd; }
+
+/* Container padding to prevent content jump under fixed header */
+main, .pt-16 { padding-top: 4rem; }
+
+/* Minimal button reset for menu toggle visibility */
+button { color: inherit; background: transparent; }

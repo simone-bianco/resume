@@ -2,6 +2,7 @@
 import { useHead, useSeoMeta } from '@unhead/vue';
 import { computed, unref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { usePage } from '@inertiajs/vue3';
 
 // Definiamo un tipo per i dati che la nostra funzione accetterà
 export interface AppHeadInput {
@@ -28,35 +29,99 @@ function toOgLocale(locale: string): string {
   return map[locale] || `${locale}_${locale.toUpperCase()}`;
 }
 
+function ensureAbsolute(baseOrigin: string, urlish: string): string {
+  if (!urlish) return '';
+  if (/^https?:\/\//i.test(urlish)) return urlish;
+  const path = urlish.startsWith('/') ? urlish : `/${urlish}`;
+  return `${baseOrigin}${path}`;
+}
+
 export function useAppHead(input: AppHeadInput) {
-  const appName = (import.meta as any).env?.VITE_APP_NAME || 'Simone Bianco';
-  const { t, locale } = useI18n();
+  const appName = (import.meta as any).env?.VITE_APP_NAME as string | undefined;
+  if (!appName) {
+    console.error('[Head] VITE_APP_NAME is not defined. og:site_name and title branding may be incomplete.');
+  }
+  const { locale } = useI18n();
+  const inertiaPage = usePage();
+
+  const baseOrigin = computed(() => {
+    const ziggyUrl = (((inertiaPage.props as any)?.ziggy?.url as string) || (typeof window !== 'undefined' ? window.location.origin : '')) as string;
+    return String(ziggyUrl).replace(/\/+$/, '');
+  });
+
+  const currentPath = computed(() => {
+    const p = (inertiaPage as any)?.url as string | undefined;
+    if (typeof p === 'string' && p.length > 0) {
+      return p.split('#')[0];
+    }
+    const zigLoc = ((inertiaPage.props as any)?.ziggy?.location as string) || '';
+    if (zigLoc) {
+      try { return new URL(zigLoc).pathname; } catch { /* ignore */ }
+    }
+    if (typeof window !== 'undefined') {
+      return window.location.pathname + window.location.search + window.location.hash;
+    }
+    return '/';
+  });
 
   // Usiamo 'computed' per rendere i valori reattivi.
   // Se passi un ref(), si aggiornerà automaticamente.
   const rawTitle = computed(() => {
-    const ti = unref(input.title);
-    return ti || undefined;
+    const ti = (unref(input.title) ?? '').toString().trim();
+    if (!ti) {
+      console.error('[Head] Missing page title in useAppHead input.');
+      return undefined;
+    }
+    return ti;
   });
   const pageDescription = computed(() => {
-    const desc = unref(input.description);
-    return desc || t('meta.default_description');
+    const desc = (unref(input.description) ?? '').toString().trim();
+    if (desc) return desc;
+    const l = String((locale as any).value || '').toLowerCase();
+    const def = l.startsWith('it')
+      ? 'Curriculum e portfolio di Simone Bianco: esperienze, competenze e progetti nel mondo del software backend.'
+      : 'Curriculum and portfolio of Simone Bianco: experience, skills, and backend software projects.';
+    return def;
   });
   const pageImage = computed(() => {
-    const img = unref(input.image);
-    if (img) return img;
-    const origin = typeof window !== 'undefined' && (window as any).location?.origin
-      ? (window as any).location.origin
-      : 'https://simone-bianco-resume.it/';
-    return `${origin}/default-social-image.jpg`;
+    let img = (unref(input.image) ?? '').toString().trim();
+    const envOg = ((import.meta as any).env?.VITE_OG_IMAGE as string | undefined) || '';
+    if (!img && envOg) {
+      img = envOg;
+    }
+    if (!img) {
+      console.error('[Head] Missing social image URL (og/twitter). Define input.image or VITE_OG_IMAGE in your environment.');
+      return undefined;
+    }
+    return ensureAbsolute(baseOrigin.value, img);
   });
   const pageUrl = computed(() => {
-    const url = unref(input.canonicalUrl);
-    return url || (typeof window !== 'undefined' ? window.location.href : '');
+    const url = (unref(input.canonicalUrl) ?? '').toString().trim();
+    if (url) {
+      return ensureAbsolute(baseOrigin.value, url);
+    }
+    // Derive absolute canonical from Inertia/Ziggy without logging an error
+    const pathOnly = currentPath.value.split('#')[0];
+    const normalized = pathOnly.startsWith('/') ? pathOnly : `/${pathOnly}`;
+    return `${baseOrigin.value}${normalized}`;
   });
 
-  const htmlLang = computed(() => toHtmlLang(String((locale as any).value || 'en')));
-  const ogLocale = computed(() => toOgLocale(String((locale as any).value || 'en')));
+  const htmlLang = computed(() => {
+    const l = String((locale as any).value || '');
+    if (!l) {
+      console.error('[Head] Missing locale; html lang attribute will be omitted.');
+      return undefined;
+    }
+    return toHtmlLang(l);
+  });
+  const ogLocale = computed(() => {
+    const l = String((locale as any).value || '');
+    if (!l) {
+      console.error('[Head] Missing locale; og:locale will be omitted.');
+      return undefined as unknown as string;
+    }
+    return toOgLocale(l);
+  });
 
   // useHead per i tag generici
   useHead({
@@ -68,7 +133,7 @@ export function useAppHead(input: AppHeadInput) {
       },
     ],
     htmlAttrs: {
-      lang: htmlLang,
+      lang: () => htmlLang.value,
     },
   });
 
@@ -78,17 +143,17 @@ export function useAppHead(input: AppHeadInput) {
     description: pageDescription,
 
     // Open Graph
-    ogTitle: computed(() => rawTitle.value || appName),
+    ogTitle: rawTitle,
     ogDescription: pageDescription,
     ogImage: pageImage,
     ogUrl: pageUrl,
     ogType: 'website',
     ogLocale: ogLocale,
-    ogSiteName: appName,
+    ogSiteName: computed(() => appName || undefined),
 
     // Twitter Cards
     twitterCard: 'summary_large_image',
-    twitterTitle: computed(() => rawTitle.value || appName),
+    twitterTitle: rawTitle,
     twitterDescription: pageDescription,
     twitterImage: pageImage,
   });

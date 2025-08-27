@@ -9,13 +9,25 @@ import { createI18n } from 'vue-i18n';
 // Import i18n messages
 import messages from './i18n/messages';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Simone Bianco | Backend Software Engineer | Resume';
+const appName = import.meta.env.VITE_APP_NAME as string | undefined;
+if (!appName) {
+  // SSR context: log to server console
+  console.error('[SSR] VITE_APP_NAME is not defined. Title branding will be disabled.');
+}
 
 createServer((page) =>
     createInertiaApp({
         page,
         render: renderToString,
-        title: (title) => title ? `${title} - ${appName}` : appName,
+        title: (title) => {
+            if (appName) {
+                return title ? `${title} - ${appName}` : '';
+            }
+            if (!title) {
+                console.error('[SSR] Missing page title and VITE_APP_NAME. Define a page title via useAppHead.');
+            }
+            return title || '';
+        },
         resolve: (name) =>
             resolvePageComponent(
                 `./Pages/${name}.vue`,

@@ -344,7 +344,7 @@ const k = { install(t4, e2) {
   const r2 = (t5, r3, n2, o2 = e2) => T(t5, r3, n2, o2);
   parseInt(t4.version) > 2 ? (t4.config.globalProperties.route = r2, t4.provide("route", r2)) : t4.mixin({ methods: { route: r2 } });
 } };
-const en = {
+const baseEn = {
   hero: {
     name: "Simone Bianco",
     title: "Backend Software Engineer",
@@ -533,7 +533,7 @@ const en = {
     }
   }
 };
-const it = {
+const baseIt = {
   hero: {
     name: "Simone Bianco",
     title: "Ingegnere Software Backend",
@@ -722,19 +722,35 @@ const it = {
     }
   }
 };
+const meta$1 = { "default_description": "This is the default description in English.", "home_title": "Homepage" };
+const buttons$1 = { "add_to_cart": "Add to cart" };
+const enJson = {
+  meta: meta$1,
+  buttons: buttons$1
+};
+const meta = { "default_description": "Questa è la descrizione di default in italiano.", "home_title": "Pagina Iniziale" };
+const buttons = { "add_to_cart": "Aggiungi al carrello" };
+const itJson = {
+  meta,
+  buttons
+};
 const messages = {
-  en,
-  it
+  en: { ...baseEn, ...enJson },
+  it: { ...baseIt, ...itJson }
 };
 const appName = "Simone Bianco | Backend Software Engineer | Resume";
 createServer(
   (page) => createInertiaApp({
     page,
     render: renderToString,
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => {
+      {
+        return title ? `${title} - ${appName}` : "";
+      }
+    },
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Contact.vue": () => import("./assets/Contact-CXV6p_1N.js"), "./Pages/Home.vue": () => import("./assets/Home-B0vOvGsh.js"), "./Pages/Projects.vue": () => import("./assets/Projects-C4dr1w3W.js"), "./Pages/Test.vue": () => import("./assets/Test-BNQjLm0-.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Contact.vue": () => import("./assets/Contact-DYZfpqP4.js"), "./Pages/Home.vue": () => import("./assets/Home-DuZlsvlE.js"), "./Pages/Projects.vue": () => import("./assets/Projects-CRoh5Imi.js"), "./Pages/Test.vue": () => import("./assets/Test-Bs77PNem.js") })
     ),
     setup({ App, props, plugin }) {
       const i18n = createI18n({

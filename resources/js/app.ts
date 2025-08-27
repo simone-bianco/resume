@@ -19,7 +19,10 @@ import 'primeicons/primeicons.css';
 
 import { createHead } from '@unhead/vue/client';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME as string | undefined;
+if (!appName) {
+    console.error('[App] VITE_APP_NAME is not defined. Title branding will be disabled.');
+}
 import AnimateOnScroll from 'primevue/animateonscroll';
 import { definePreset } from '@primeuix/themes';
 
@@ -34,7 +37,15 @@ const SBPreset = definePreset(Aura, preset);
 
 
 createInertiaApp({
-    title: (title) => title ? `${title} - ${appName}` : (typeof document !== 'undefined' ? document.title : appName),
+    title: (title) => {
+        if (appName) {
+            return title ? `${title} - ${appName}` : (typeof document !== 'undefined' ? document.title : '');
+        }
+        if (!title) {
+            console.error('[App] Missing page title and VITE_APP_NAME. Define a page title via useAppHead.');
+        }
+        return title || (typeof document !== 'undefined' ? document.title : '');
+    },
     resolve: (name) =>
         resolvePageComponent(
             `./pages/${name}.vue`,

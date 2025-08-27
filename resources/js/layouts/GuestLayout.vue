@@ -11,27 +11,57 @@ import Chat from '@/components/custom/chat/Chat.vue';
 import SiteFooter from '@/components/custom/common/SiteFooter.vue';
 import { ChatMessage } from '@/types/dto';
 import { useHead } from '@unhead/vue';
+import { useGoogleAnalytics } from '@/composables/useGoogleAnalytics';
+import criticalCSS from '@/../css/critical.css?raw';
+import appCssUrl from '@/../css/app.css?url';
 
 const page = usePage();
 
-const siteName = (import.meta as any).env?.VITE_APP_NAME || 'Simone Bianco | Backend Software Engineer | Resume';
-const scripts: any[] = [];
-const analyticsSrc = (import.meta as any).env?.VITE_ANALYTICS_SRC;
-const chatSrc = (import.meta as any).env?.VITE_CHAT_WIDGET_SRC;
-if (analyticsSrc) {
-    scripts.push({ src: analyticsSrc, async: true, tagPosition: 'bodyClose' } as any);
+const siteName = (import.meta as any).env?.VITE_APP_NAME as string | undefined;
+if (!siteName) {
+    console.error('[Head] VITE_APP_NAME is not defined. Title branding disabled.');
 }
+const scripts: any[] = [];
+const chatSrc = (import.meta as any).env?.VITE_CHAT_WIDGET_SRC;
 if (chatSrc) {
-    scripts.push({ src: chatSrc, defer: true, tagPosition: 'bodyClose' } as any);
+    scripts.push({ src: chatSrc, defer: true, tagPosition: 'bodyClose', key: 'chat-widget' } as any);
 }
 
+// Activate Google Analytics (no-op if VITE_GA_ID not set)
+useGoogleAnalytics();
+
+// Build links, adding CSS preload in production
+const links: any[] = [
+    { rel: 'manifest', href: '/manifest.json' },
+];
+if ((import.meta as any).env?.PROD && appCssUrl) {
+    links.push({
+        rel: 'preload',
+        href: appCssUrl as string,
+        as: 'style',
+        onload: "this.onload=null;this.rel='stylesheet'",
+        key: 'app-css-preload',
+    } as any);
+}
 
 useHead({
-    // Global title template as a function to avoid literal placeholders
-    titleTemplate: (chunk?: string) => (chunk && String(chunk).trim().length ? `${chunk} · ${siteName}` : siteName),
+    // Global title template with safety when env site name is missing
+    titleTemplate: (chunk?: string) => {
+        const c = chunk && String(chunk).trim().length ? String(chunk) : '';
+        if (siteName) {
+            return c ? `${c} · ${siteName}` : siteName;
+        }
+        if (c) return c;
+        console.error('[Head] Missing title and VITE_APP_NAME. Define a page title via useAppHead and set VITE_APP_NAME.');
+        return '';
+    },
     // Global assets and meta
-    link: [
-        { rel: 'manifest', href: '/manifest.json' },
+    link: links,
+    style: [
+        {
+            textContent: criticalCSS as string,
+            key: 'critical-css',
+        }
     ],
     meta: [
         { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' },
