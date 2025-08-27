@@ -5,12 +5,12 @@ import Card from 'primevue/card';
 const { t } = useI18n();
 
 const skillAnimations = [
-    { enterClass: 'animate-enter fade-in-10 spin-in-[-45deg] slide-in-from-t-12 animate-duration-1000', leaveClass: 'animate-leave fade-out-0' },
-    { enterClass: 'animate-enter fade-in-10 zoom-in-50 slide-in-from-t-20 animate-duration-1000', leaveClass: 'animate-leave fade-out-0' },
-    { enterClass: 'animate-enter fade-in-10 spin-in-[45deg] slide-in-from-t-16 animate-duration-1000', leaveClass: 'animate-leave fade-out-0' },
-    { enterClass: 'animate-enter fade-in-10 spin-in-45 slide-in-from-b-12 animate-duration-1000', leaveClass: 'animate-leave fade-out-0' },
-    { enterClass: 'animate-enter fade-in-10 zoom-in-50 slide-in-from-b-20 animate-duration-1000', leaveClass: 'animate-leave fade-out-0' },
-    { enterClass: 'animate-enter fade-in-10 spin-in-[-45deg] slide-in-from-b-16 animate-duration-1000', leaveClass: 'animate-leave fade-out-0' },
+    { enterClass: 'animate-enter fade-in-10 spin-in-[-45deg] slide-in-from-t-12 animate-duration-1000' },
+    { enterClass: 'animate-enter fade-in-10 zoom-in-50 slide-in-from-t-20 animate-duration-1000' },
+    { enterClass: 'animate-enter fade-in-10 spin-in-[45deg] slide-in-from-t-16 animate-duration-1000' },
+    { enterClass: 'animate-enter fade-in-10 spin-in-45 slide-in-from-b-12 animate-duration-1000' },
+    { enterClass: 'animate-enter fade-in-10 zoom-in-50 slide-in-from-b-20 animate-duration-1000' },
+    { enterClass: 'animate-enter fade-in-10 spin-in-[-45deg] slide-in-from-b-16 animate-duration-1000' },
 ];
 
 const skillsData = [

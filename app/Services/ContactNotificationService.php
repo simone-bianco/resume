@@ -43,6 +43,8 @@ class ContactNotificationService
                 ];
             }
 
+            Log::debug('conversation', $conversation);
+
             $user = User::find(1);
             if (!$user) {
                 Log::error('[ContactNotificationService] User with id 1 not found.');
@@ -50,9 +52,7 @@ class ContactNotificationService
             }
 
             $sentAt = Carbon::now();
-            $recap = ChatRecapAgent::for(Str::uuid())
-                ->message(json_encode($conversation, JSON_PRETTY_PRINT))
-                ->respond();
+            $recap = ChatRecapAgent::for(Str::uuid())->respond(json_encode($conversation));
 
             // TODO::email su digitalocean non funzionano, riattivare dopo migrazione su hetzner
 //            $user->notify(new ContactRecapEmail(

@@ -7,9 +7,13 @@ import { route } from 'ziggy-js';
 import LanguageSwitcher from '@/components/custom/inputs/Switchers/LanguageSwitcher.vue';
 import { useLayout } from '@/layouts/composables/layout';
 import Menubar from 'primevue/menubar';
+import Chat from '@/components/custom/chat/Chat.vue';
+import SiteFooter from '@/components/custom/common/SiteFooter.vue';
+import { ChatMessage } from '@/types/dto';
 
 const { t } = useI18n();
 const page = usePage();
+
 const { setDarkMode } = useLayout();
 
 watch(
@@ -29,6 +33,12 @@ const menuItems = computed(() => [
         routeName: 'home',
         label: t('menu.home'),
         command: () => router.get(route('home')),
+    },
+    {
+        key: 'projects',
+        routeName: 'projects',
+        label: t('menu.projects'),
+        command: () => router.get(route('projects')),
     },
     {
         key: 'resume',
@@ -82,6 +92,9 @@ const pt = {
         <div class="relative z-10 w-full px-4 pb-8 sm:px-6">
             <slot />
         </div>
+
+        <Chat :chatHistory="page.props.chatHistory as ChatMessage[]" class="mb-10" />
+        <SiteFooter />
     </div>
 </template>
 

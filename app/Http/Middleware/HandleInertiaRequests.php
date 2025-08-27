@@ -2,8 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\AiAgents\AvatarChatAgent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -34,6 +38,22 @@ class HandleInertiaRequests extends Middleware
         // Determine theme preference (user settings take precedence over session)
         $isDark = (bool) ($request->user()?->settings?->dark_theme ?? $request->session()->get('theme.dark', false));
 
+
+        $historyMessages = array_filter(AvatarChatAgent::for(Session::id())->chatHistory()->getMessages(), function ($message) {
+            return in_array($message->role, ['user', 'assistant']);
+        });
+
+
+        $historyMessages = array_values(Arr::map($historyMessages, function ($message) {
+            $content = $message->getContent();
+            return [
+                'id' => Str::uuid(),
+                'author' => $message->role,
+                'type' => 'text',
+                'content' => is_string($content) ? $content : $content[0]['text']
+            ];
+        }));
+
         $data = [
             ...parent::share($request),
             'auth' => [
@@ -55,6 +75,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'data' => [],
             'currentRoute' => Route::currentRouteName(),
+            'chatHistory' => $historyMessages
         ];
 
         return $data;

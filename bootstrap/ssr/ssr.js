@@ -375,7 +375,7 @@ const en = {
     },
     tools: {
       title: "Tools & Platforms",
-      items: "Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack"
+      items: "Docker, Git, Nginx, OpenAI API, Junie, MCP Servers, Slack"
     },
     architectures: {
       title: "Architectures",
@@ -472,7 +472,7 @@ const it = {
     },
     tools: {
       title: "Strumenti e Piattaforme",
-      items: "Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack"
+      items: "Docker, Git, Nginx, OpenAI API, Junie, MCP Servers, Slack"
     },
     architectures: {
       title: "Architetture",
@@ -512,7 +512,7 @@ const it = {
       desc2: 'Tesi sperimentale in Big Data: "Progettazione e Implementazione di un Sistema di Raccomandazione Ibrido" in collaborazione con DNAFactory'
     },
     freelance: {
-      title: "Ingegnere Web",
+      title: "Web Developer",
       company: "Freelance",
       date: "2017 - 2022",
       desc1: "Sviluppo di applicazioni web"

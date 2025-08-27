@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ChatResetController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\Settings\LanguageController;
 use App\Http\Controllers\Settings\ThemeController;
 use App\Http\Controllers\ResumeController;
@@ -14,6 +15,7 @@ Route::group([
     'middleware' => ['web'],
 ], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
     Route::get('/resume', [ResumeController::class, 'show'])->name('resume');
 
     Route::get('/thesis', [ThesisController::class, 'show'])->name('thesis');

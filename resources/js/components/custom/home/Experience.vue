@@ -6,9 +6,7 @@ import { Divider, Card, Timeline } from 'primevue';
 const { t } = useI18n();
 
 const experienceAnimation = {
-    enterClass: 'animate-enter fade-in-10 zoom-in-50 slide-in-from-l-20 animate-duration-1000',
-    leaveClass: 'animate-leave fade-out-0'
-};
+    enterClass: 'animate-enter fade-in-10 zoom-in-50 slide-in-from-l-20 animate-duration-1000' };
 
 const experiences = ref([
     {

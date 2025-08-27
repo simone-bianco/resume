@@ -9,12 +9,10 @@ const { t } = useI18n();
 
 const heroCardAnimation = {
     enterClass: 'animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000',
-    leaveClass: 'animate-leave fade-out-0'
 };
 
 const heroImageAnimation = {
     enterClass: 'animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000',
-    leaveClass: 'animate-leave fade-out-0'
 };
 </script>
 
@@ -61,12 +59,6 @@ const heroImageAnimation = {
                                         size="small" />
                             </a>
                         </div>
-                        <div class="mt-4 flex items-start gap-2 text-xs sm:text-sm opacity-80">
-                            <i class="pi pi-info-circle mt-0.5 sm:mt-1 text-primary-300" aria-hidden="true"></i>
-                            <p class="leading-snug">
-                                {{ t('hero.apprenticeshipNotice') }}
-                            </p>
-                        </div>
                     </div>
                 </template>
             </Card>
@@ -101,10 +93,6 @@ const heroImageAnimation = {
 .hero-image-container:hover>div {
     box-shadow: 0 0 50px 20px rgba(var(--primary-color-rgb), 0.3);
     transition: box-shadow var(--hover-transition-duration) ease-out;
-}
-
-.hero-image-container:hover :deep(.hero-image) {
-    transform: scale(var(--hover-image-scale)) ;
 }
 
 @media (max-width: 389px) {

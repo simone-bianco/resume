@@ -282,9 +282,11 @@ async function resetChat() {
                         <Textarea
                             v-model="userInput"
                             :placeholder="t('chat.placeholder')"
-                            rows="3"
                             maxlength="300"
                             class="flex-grow !shadow-none"
+                            rows="1"
+                            style="border-radius: 20px; min-height: 40px; max-height: 100px"
+                            :auto-resize="true"
                             autofocus
                             @keydown.enter.exact.prevent="sendMessage"
                         />

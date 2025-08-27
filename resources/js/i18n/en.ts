@@ -19,8 +19,68 @@ export default {
     },
     menu: {
         home: 'Home',
+        projects: 'Projects',
         thesis: 'Thesis',
         resume: 'Resume',
+    },
+    projects: {
+        sectionTitle: 'Projects',
+        categories: {
+            dnafactory: 'DNAFactory',
+            universita: 'University',
+            personale: 'Personal',
+            freelance: 'Freelance',
+        },
+        linkPlaceholder: {
+            private: 'Private link',
+            legacy: 'Legacy project (link unavailable)'
+        },
+        items: {
+            ammiraglio: {
+                title: 'Ammiraglio',
+                body: 'A multitenant SaaS (Laravel + Laravel Nova) that synchronizes orders between Magento and a wide range of e-commerce platforms'
+            },
+            dieteincloud: {
+                title: 'Dieteincloud',
+                body: 'A multitenant SaaS (Laravel + Livewire + Alpine.js) used by many dietitians to manage patients and diets; I personally implemented invoice synchronization (via SOAP) with both the national invoicing system (TS) and the health card system (SSN)'
+            },
+            gruppoedico: {
+                title: 'Gruppoedico',
+                body: 'A Magento 2 platform enabling Gruppoedico consortium partners to manage shared warehouse stock to optimize collaboration and overall profits'
+            },
+            mensa: {
+                title: 'Mensa Institute Scholarships',
+                body: 'Platform (Laravel + Vue.js) used by the Mensa Institute to manage university students\' scholarships'
+            },
+            editorial_builder: {
+                title: 'Editorial Builder',
+                body: 'Platform (Laravel + Vue.js) that allows AI agents and multiple people to collaborate in the same chats'
+            },
+            efarma: {
+                title: 'Efarma',
+                body: 'Large e-commerce (based on Magento 2) selling medicines; I worked on a microservice (Laravel + Laravel Nova) to externalize invoice management and on an M2 module to manage order processing queues'
+            },
+            astrolume: {
+                title: 'Astrolume',
+                body: 'SaaS (Laravel + Alpine.js) with advanced chat features'
+            },
+            hrm: {
+                title: 'HRM',
+                body: 'Hybrid Recommender System, an architecture based on Harness + Laravel for hybrid product recommendations through hybrid filters (old thesis project with the company, now outdated technologies)'
+            },
+            blog_suggestions_ai: {
+                title: 'Blog Suggestions AI',
+                body: 'SaaS (Laravel + Laravel Nova) using agents + RAG to suggest products dynamically based on the content of web pages (e.g., blog)'
+            },
+            desk_helper_ai: {
+                title: 'Desk Helper AI',
+                body: 'SaaS (Laravel + Laravel Nova) that uses agents + RAG, plus other advanced techniques and integration with N8N, to ingest all company knowledge (projects, tasks, resources, tickets, codebases, documentation, etc.) and provide support, insights, and solutions'
+            },
+            restaurant_booking_app: {
+                title: 'Restaurant booking app',
+                body: 'Android app for reserving tables at a restaurant'
+            }
+        }
     },
     skills: {
         languages: {
@@ -37,7 +97,7 @@ export default {
         },
         tools: {
             title: 'Tools & Platforms',
-            items: 'Docker, Git, Nginx, OpenAI API, Gemini, MCP Servers, Slack',
+            items: 'Docker, Git, Nginx, OpenAI API, Junie, MCP Servers, Slack',
         },
         architectures: {
             title: 'Architectures',
