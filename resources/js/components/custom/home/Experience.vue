@@ -136,7 +136,6 @@ const experiences = ref([
 
 
 .experience-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(var(--primary-color-rgb), 0.2);
     border-color: var(--primary-color);
 }

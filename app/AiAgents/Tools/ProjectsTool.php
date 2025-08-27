@@ -26,7 +26,7 @@ class ProjectsTool extends Tool
 * **Astrolume**: SaaS (laravel + alpinejs) con funzionalità di chat avanzate
 * **HRM**: Hybrid Recommender System, architettura basata su Harness + Laravel per raccomandazioni ibride di prodotti tramite filtri ibridi (progetto vecchio di laurea in collaborazione con l'azienda, tecnologie sorpassate ormai)
 * **Blog Suggestions AI**: SaaS (laravel + laravel nova) che usa agents + RAG per suggerire prodotti dinamicamente in base al contenuto di pagine web (es. blog)
-* **Desk Helper AI**: SaaS (laravel + laravel nova) che usa agents + RAG, più altre tecniche avanzate e interazione con N8N, per integrare nella propria KB tutte le conoscenze aziendali (progetti, task, risorse, tickets, codebases, documentazioni, etc...) e fornire supporto, insights e soluzioni
+* **Desk Helper AI**: Piattaforma aziendale (laravel + laravel nova) che usa agents + RAG, più altre tecniche avanzate e interazione con N8N, per integrare nella propria KB tutte le conoscenze aziendali (progetti, task, risorse, tickets, codebases, documentazioni, etc...) e fornire supporto, insights e soluzioni
 * **Applicazione prenotazione ristoranti**: App android per la prenotazione di posti in un ristorante
 ISTRUZIONI;
     }

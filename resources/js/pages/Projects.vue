@@ -3,6 +3,7 @@ import GuestLayout from '@/layouts/GuestLayout.vue';
 import Card from 'primevue/card';
 import { Divider } from 'primevue';
 import { useI18n } from 'vue-i18n';
+import { route } from 'ziggy-js';
 
 const { t } = useI18n();
 
@@ -27,12 +28,14 @@ const projects = [
         titleKey: 'projects.items.gruppoedico.title',
         categoryKey: 'dnafactory',
         bodyKey: 'projects.items.gruppoedico.body',
+        link: 'https://www.gruppoedico.it/',
         linkPlaceholderKey: 'projects.linkPlaceholder.private'
     },
     {
         titleKey: 'projects.items.mensa.title',
         categoryKey: 'dnafactory',
         bodyKey: 'projects.items.mensa.body',
+        link: 'https://institute.mensa.it/',
         linkPlaceholderKey: 'projects.linkPlaceholder.private'
     },
     {
@@ -49,33 +52,41 @@ const projects = [
     },
     {
         titleKey: 'projects.items.astrolume.title',
-        categoryKey: 'personale',
+        categoryKey: 'dnafactory',
+        link: 'https://astrolume.ai',
         bodyKey: 'projects.items.astrolume.body',
         linkPlaceholderKey: 'projects.linkPlaceholder.private'
     },
     {
-        titleKey: 'projects.items.hrm.title',
-        categoryKey: 'universita',
-        bodyKey: 'projects.items.hrm.body',
-        linkPlaceholderKey: 'projects.linkPlaceholder.legacy'
-    },
-    {
         titleKey: 'projects.items.blog_suggestions_ai.title',
-        categoryKey: 'personale',
+        categoryKey: 'dnafactory',
         bodyKey: 'projects.items.blog_suggestions_ai.body',
         linkPlaceholderKey: 'projects.linkPlaceholder.private'
     },
     {
         titleKey: 'projects.items.desk_helper_ai.title',
-        categoryKey: 'personale',
+        categoryKey: 'dnafactory',
         bodyKey: 'projects.items.desk_helper_ai.body',
         linkPlaceholderKey: 'projects.linkPlaceholder.private'
     },
     {
-        titleKey: 'projects.items.restaurant_booking_app.title',
-        categoryKey: 'freelance',
-        bodyKey: 'projects.items.restaurant_booking_app.body',
-        linkPlaceholderKey: 'projects.linkPlaceholder.private'
+        titleKey: 'projects.items.resume_ai.title',
+        categoryKey: 'personal',
+        bodyKey: 'projects.items.resume_ai.body',
+        link: 'https://github.com/simone-bianco/resume'
+    },
+    {
+        titleKey: 'projects.items.laravel_rules.title',
+        categoryKey: 'personal',
+        bodyKey: 'projects.items.laravel_rules.body',
+        link: 'https://github.com/simone-bianco/laravel-rules'
+    },
+    {
+        titleKey: 'projects.items.hrm.title',
+        categoryKey: 'universita',
+        bodyKey: 'projects.items.hrm.body',
+        link: route('thesis'),
+        linkPlaceholderKey: 'projects.linkPlaceholder.legacy'
     },
 ];
 </script>

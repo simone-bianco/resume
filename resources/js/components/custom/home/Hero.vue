@@ -50,7 +50,7 @@ const heroImageAnimation = {
                                 <Button icon="pi pi-github" severity="secondary" text rounded
                                         :aria-label="t('hero.githubAriaLabel')" />
                             </a>
-                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/simone-b-bb6761200/" target="_blank" rel="noopener noreferrer">
                                 <Button icon="pi pi-linkedin" severity="secondary" text rounded
                                         :aria-label="t('hero.linkedinAriaLabel')" />
                             </a>

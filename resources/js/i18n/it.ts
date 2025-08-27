@@ -25,7 +25,7 @@ export default {
         contact: 'Contattami',
     },
     projects: {
-        sectionTitle: 'Progetti',
+        sectionTitle: 'Ho Lavorato a...',
         categories: {
             dnafactory: 'DNAFactory',
             universita: 'Università',
@@ -47,7 +47,7 @@ export default {
             },
             gruppoedico: {
                 title: 'Gruppoedico',
-                body: 'Una piattaforma Magento 2 che consente ai partner del consorzio Gruppoedico di gestire le scorte condivise dei loro magazzini, al fine di ottimizzare la collaborazione e i profitti dell\'intero collettivo'
+                body: 'Una piattaforma Magento 2 che consente ai partner del consorzio Gruppoedico di gestire le scorte condivise dei loro magazzini e gli ordini provenienti dallo store, al fine di ottimizzare la collaborazione e i profitti dell\'intero collettivo'
             },
             mensa: {
                 title: 'Borse di studio del Mensa Institute',
@@ -75,7 +75,7 @@ export default {
             },
             desk_helper_ai: {
                 title: 'Desk Helper AI',
-                body: 'SaaS (laravel + laravel nova) che usa agents + RAG, più altre tecniche avanzate e interazione con N8N, per integrare nella propria KB tutte le conoscenze aziendali (progetti, task, risorse, tickets, codebases, documentazioni, etc...) e fornire supporto, insights e soluzioni'
+                body: 'Piattaforma aziendale (laravel + laravel nova) che usa agents + RAG, più altre tecniche avanzate e interazione con N8N, per integrare nella propria KB tutte le conoscenze aziendali (progetti, task, risorse, tickets, codebases, documentazioni, etc...) e fornire supporto, insights e soluzioni'
             },
             restaurant_booking_app: {
                 title: 'Applicazione prenotazione ristoranti',
@@ -161,5 +161,27 @@ export default {
         thinking: 'Sto pensando...',
         writing: 'Sto scrivendo...',
         placeholder: 'Scrivi un messaggio per chattare',
+    },
+    contact: {
+        sectionTitle: 'Contattami',
+        labels: {
+            firstName: 'Nome',
+            lastName: 'Cognome',
+            email: 'Email',
+            phone: 'Telefono',
+            message: 'Messaggio',
+        },
+        placeholders: {
+            firstName: 'Il tuo nome',
+            lastName: 'Il tuo cognome',
+            email: 'tua@email.com',
+            phone: '+39 333 1234567',
+            message: 'Scrivi qui il tuo messaggio...'
+        },
+        actions: { submit: 'Invia' },
+        flash: {
+            success: 'Grazie! Il tuo messaggio è stato inviato con successo ✅',
+            error: 'Ops! Si è verificato un errore durante l\'invio del messaggio. Riprova più tardi.'
+        }
     }
 };

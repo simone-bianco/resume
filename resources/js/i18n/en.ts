@@ -25,7 +25,7 @@ export default {
         contact: 'Contact me',
     },
     projects: {
-        sectionTitle: 'Projects',
+        sectionTitle: 'I Worked on...',
         categories: {
             dnafactory: 'DNAFactory',
             universita: 'University',
@@ -47,11 +47,11 @@ export default {
             },
             gruppoedico: {
                 title: 'Gruppoedico',
-                body: 'A Magento 2 platform enabling Gruppoedico consortium partners to manage shared warehouse stock to optimize collaboration and overall profits'
+                body: 'A Magento 2 platform enabling Gruppoedico consortium partners to manage shared warehouse stock and orders to optimize collaboration and overall profits',
             },
             mensa: {
                 title: 'Mensa Institute Scholarships',
-                body: 'Platform (Laravel + Vue.js) used by the Mensa Institute to manage university students\' scholarships'
+                body: 'Platform (Laravel + Vue.js) used by the Mensa Institute to manage university students\' scholarships',
             },
             editorial_builder: {
                 title: 'Editorial Builder',
@@ -75,7 +75,7 @@ export default {
             },
             desk_helper_ai: {
                 title: 'Desk Helper AI',
-                body: 'SaaS (Laravel + Laravel Nova) that uses agents + RAG, plus other advanced techniques and integration with N8N, to ingest all company knowledge (projects, tasks, resources, tickets, codebases, documentation, etc.) and provide support, insights, and solutions'
+                body: 'Company platform (Laravel + Laravel Nova) that uses agents + RAG, plus other advanced techniques and integration with N8N, to ingest all company knowledge (projects, tasks, resources, tickets, codebases, documentation, etc.) and provide support, insights, and solutions'
             },
             restaurant_booking_app: {
                 title: 'Restaurant booking app',
@@ -161,5 +161,27 @@ export default {
         thinking: 'Thinking...',
         writing: 'Typing...',
         placeholder: 'Type a message to chat',
+    },
+    contact: {
+        sectionTitle: 'Contact me',
+        labels: {
+            firstName: 'First name',
+            lastName: 'Last name',
+            email: 'Email',
+            phone: 'Phone',
+            message: 'Message',
+        },
+        placeholders: {
+            firstName: 'Your first name',
+            lastName: 'Your last name',
+            email: 'your@email.com',
+            phone: '+39 333 1234567',
+            message: 'Write your message here...'
+        },
+        actions: { submit: 'Send' },
+        flash: {
+            success: 'Thanks! Your message has been sent successfully ✅',
+            error: 'Oops! Something went wrong while sending your message. Please try again later.'
+        }
     }
 };

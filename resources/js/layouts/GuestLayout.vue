@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue';
+import { computed, watch, ref } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 import { router } from '@inertiajs/vue3';
 import { useI18n } from 'vue-i18n';
@@ -7,6 +7,7 @@ import { route } from 'ziggy-js';
 import LanguageSwitcher from '@/components/custom/inputs/Switchers/LanguageSwitcher.vue';
 import { useLayout } from '@/layouts/composables/layout';
 import Menubar from 'primevue/menubar';
+import Drawer from 'primevue/drawer';
 import Chat from '@/components/custom/chat/Chat.vue';
 import SiteFooter from '@/components/custom/common/SiteFooter.vue';
 import { ChatMessage } from '@/types/dto';
@@ -25,7 +26,6 @@ watch(
 const currentRouteName = computed(() => (page.props as any)?.currentRoute);
 
 const menuKey = computed(() => (page as any).url);
-
 
 const menuItems = computed(() => [
     {
@@ -56,9 +56,18 @@ const menuItems = computed(() => [
         key: 'contact',
         routeName: 'contact',
         label: t('menu.contact'),
-        command: () => window.open(route('thesis'), '_blank'),
+        command: () => router.get(route('contact')),
     },
 ]);
+
+// Drawer visibility
+const drawerVisible = ref(false);
+
+// Helper to check active route (reused in Drawer items)
+const isRouteActive = (itemRoute?: string) => {
+    if (!itemRoute) return false;
+    return currentRouteName.value ? currentRouteName.value === itemRoute : route().current(itemRoute);
+};
 
 const pt = {
     root: { class: 'dark:bg-transparent dark:border-none p-0' },
@@ -83,28 +92,66 @@ const pt = {
 <template>
     <div class="relative flex min-h-screen flex-col bg-surface-950">
         <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-1 sm:px-6 bg-surface-950/80 backdrop-blur-sm border-surface-800">
-            <div>
+            <div class="flex items-center">
+                <!-- Drawer toggle button (visible on <= 510px) -->
+                <button
+                    type="button"
+                    class="menu-toggle inline-flex items-center justify-center rounded-full p-2 text-surface-200 hover:bg-surface-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    aria-label="Open menu"
+                    @click="drawerVisible = true"
+                >
+                    <span class="pi pi-bars text-lg"></span>
+                </button>
             </div>
 
             <div class="flex menubar">
                 <Menubar :key="menuKey" :model="menuItems" :pt="pt" :breakpoint="'275px'" />
             </div>
 
-            <div class="flex items-center w-20">
+            <div class="flex items-center w-20 justify-end">
                 <LanguageSwitcher />
             </div>
         </div>
 
-        <div class="relative z-10 w-full px-4 pb-8 sm:px-6">
+        <!-- Drawer for small screens -->
+        <Drawer v-model:visible="drawerVisible" position="left" :dismissable="true" :showCloseIcon="true" :blockScroll="true" header="Menu">
+            <nav class="mt-2">
+                <ul class="flex flex-col gap-2">
+                    <li v-for="item in menuItems" :key="item.key">
+                        <button
+                            type="button"
+                            @click="item.command(); drawerVisible = false"
+                            :aria-current="isRouteActive(item.routeName) ? 'page' : undefined"
+                            :class="[
+                                'w-full text-left transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium',
+                                isRouteActive(item.routeName) ? 'text-surface-0 bg-surface-800' : 'text-surface-400 hover:text-surface-100'
+                            ]"
+                        >
+                            {{ item.label }}
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </Drawer>
+
+        <div class="relative z-10 w-full flex-grow px-4 pt-16 pb-8 sm:px-6">
             <slot />
         </div>
 
         <Chat :chatHistory="page.props.chatHistory as ChatMessage[]" class="mb-10" />
+
         <SiteFooter />
     </div>
 </template>
 
 <style>
+.menu-toggle { display: none; }
+
+@media (max-width: 510px) {
+    .menubar { display: none; }
+    .menu-toggle { display: inline-flex; }
+}
+
 @media (max-width: 380px) {
     .menubar {
         font-size: x-small;

@@ -4,6 +4,7 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ChatResetController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Settings\LanguageController;
 use App\Http\Controllers\Settings\ThemeController;
 use App\Http\Controllers\ResumeController;
@@ -19,6 +20,10 @@ Route::group([
     Route::get('/resume', [ResumeController::class, 'show'])->name('resume');
 
     Route::get('/thesis', [ThesisController::class, 'show'])->name('thesis');
+
+    // Contact me
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
     Route::post('/settings/language', [LanguageController::class, 'update'])
         ->name('tenant.language.update');
