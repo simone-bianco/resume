@@ -52,6 +52,12 @@ const menuItems = computed(() => [
         label: t('menu.thesis'),
         command: () => window.open(route('thesis'), '_blank'),
     },
+    {
+        key: 'contact',
+        routeName: 'contact',
+        label: t('menu.contact'),
+        command: () => window.open(route('thesis'), '_blank'),
+    },
 ]);
 
 const pt = {
@@ -84,7 +90,7 @@ const pt = {
                 <Menubar :key="menuKey" :model="menuItems" :pt="pt" :breakpoint="'275px'" />
             </div>
 
-            <div class="flex items-center gap-2">
+            <div class="flex items-center w-20">
                 <LanguageSwitcher />
             </div>
         </div>

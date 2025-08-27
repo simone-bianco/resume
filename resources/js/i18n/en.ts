@@ -22,6 +22,7 @@ export default {
         projects: 'Projects',
         thesis: 'Thesis',
         resume: 'Resume',
+        contact: 'Contact me',
     },
     projects: {
         sectionTitle: 'Projects',

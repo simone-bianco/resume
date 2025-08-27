@@ -22,6 +22,7 @@ export default {
         projects: 'Progetti',
         thesis: 'Tesi di Laurea',
         resume: 'Curriculum',
+        contact: 'Contattami',
     },
     projects: {
         sectionTitle: 'Progetti',

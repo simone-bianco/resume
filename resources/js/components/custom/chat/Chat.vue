@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, nextTick, onMounted, computed, watch } from 'vue';
+import { ref, nextTick, onMounted, onUnmounted, computed, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import axios from 'axios';
 import { route } from 'ziggy-js';
@@ -55,6 +55,26 @@ const toggleMinimize = async () => {
         chatWindowState.value = ChatState.minimized;
     }
 }
+
+const isSmallScreen = ref(false);
+function updateSmallScreen() {
+    if (typeof window !== 'undefined') {
+        isSmallScreen.value = window.matchMedia('(max-width: 410px)').matches;
+    }
+}
+
+onMounted(() => {
+    updateSmallScreen();
+    if (typeof window !== 'undefined') {
+        window.addEventListener('resize', updateSmallScreen);
+    }
+});
+
+onUnmounted(() => {
+    if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updateSmallScreen);
+    }
+});
 
 const chatHistoryElement = ref<HTMLElement | null>(null);
 async function scrollToBottom() {
@@ -208,14 +228,14 @@ async function resetChat() {
 <template>
     <div v-bind="$attrs">
         <ChatBubble
-            v-show="chatWindowState === ChatState.closed"
+            v-show="chatWindowState === ChatState.closed || (isSmallScreen && chatWindowState === ChatState.minimized)"
             class="fixed-chat-element"
             :style="{ bottom: bubbleBottom, right: bubbleRight }"
             @open-chat="chatWindowState = ChatState.open"
         />
         <div
             class="fixed-chat-element chat-window-container"
-            v-show="chatWindowState !== ChatState.closed"
+            v-show="chatWindowState !== ChatState.closed && !(isSmallScreen && chatWindowState === ChatState.minimized)"
             :style="{ bottom: windowBottom, right: windowRight }"
         >
             <div
