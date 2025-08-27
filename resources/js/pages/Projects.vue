@@ -9,8 +9,7 @@ import { useAppHead } from '@/composables/useAppHead';
 const { t } = useI18n();
 
 useAppHead({
-    title: 'Progetti',
-    description: 'Selezione di progetti professionali e personali curati da Simone Bianco: soluzioni backend, integrazioni e applicazioni su larga scala.',
+    title: t('menu.projects') as unknown as string,
 });
 
 const projectEnter = {

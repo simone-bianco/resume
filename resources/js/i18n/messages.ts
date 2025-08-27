@@ -1,7 +1,9 @@
-import en from './en';
-import it from './it';
+import baseEn from './en';
+import baseIt from './it';
+import enJson from './locales/en.json';
+import itJson from './locales/it.json';
 
 export default {
-    en,
-    it
+    en: { ...baseEn, ...enJson },
+    it: { ...baseIt, ...itJson },
 };

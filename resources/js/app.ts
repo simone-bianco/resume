@@ -2,6 +2,7 @@ import '../css/app.css';
 import './bootstrap.ts';
 
 import { createInertiaApp } from '@inertiajs/vue3';
+import { router } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, DefineComponent, h } from 'vue';
 import { ZiggyVue } from 'ziggy-js';
@@ -65,6 +66,18 @@ createInertiaApp({
         if (typeof initialLocale === 'string' && initialLocale.length > 0) {
             (i18n.global.locale as any).value = initialLocale;
         }
+
+        // Update locale on Inertia navigations
+        router.on('success', (event: any) => {
+            try {
+                const loc = (event?.detail?.page?.props as any)?.locale as string | undefined;
+                if (typeof loc === 'string' && loc.length > 0) {
+                    (i18n.global.locale as any).value = loc;
+                }
+            } catch {
+                // no-op
+            }
+        });
 
         // Register components
         app.component('Toast', Toast);

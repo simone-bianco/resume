@@ -1,36 +1,62 @@
 // resources/js/Composables/useAppHead.ts
 import { useHead, useSeoMeta } from '@unhead/vue';
-import { computed } from 'vue';
+import { computed, unref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 // Definiamo un tipo per i dati che la nostra funzione accetterà
 export interface AppHeadInput {
-  title?: string;
-  description?: string;
-  image?: string; // URL completo dell'immagine per i social
-  canonicalUrl?: string;
+  title?: import('vue').MaybeRef<string | undefined>;
+  description?: import('vue').MaybeRef<string | undefined>;
+  image?: import('vue').MaybeRef<string | undefined>; // URL completo dell'immagine per i social
+  canonicalUrl?: import('vue').MaybeRef<string | undefined>;
+}
+
+function toHtmlLang(locale: string): string {
+  if (!locale) return 'en-US';
+  if (locale.includes('-')) return locale;
+  const map: Record<string, string> = { it: 'it-IT', en: 'en-US' };
+  return map[locale] || `${locale}-${locale.toUpperCase()}`;
+}
+
+function toOgLocale(locale: string): string {
+  if (!locale) return 'en_US';
+  if (locale.includes('-')) {
+    const [l, r] = locale.split('-');
+    return `${l}_${r.toUpperCase()}`;
+  }
+  const map: Record<string, string> = { it: 'it_IT', en: 'en_US' };
+  return map[locale] || `${locale}_${locale.toUpperCase()}`;
 }
 
 export function useAppHead(input: AppHeadInput) {
   const appName = (import.meta as any).env?.VITE_APP_NAME || 'Simone Bianco';
+  const { t, locale } = useI18n();
 
   // Usiamo 'computed' per rendere i valori reattivi.
   // Se passi un ref(), si aggiornerà automaticamente.
-  const pageTitle = computed(() => (input.title ? `${input.title} | ${appName}` : appName));
-  const pageDescription = computed(
-    () =>
-      input.description ||
-      'Simone Bianco — Backend Software Engineer. Portfolio, progetti, competenze e contatti.'
-  );
+  const pageTitle = computed(() => {
+    const ti = unref(input.title);
+    return ti ? `${ti} | ${appName}` : appName;
+  });
+  const pageDescription = computed(() => {
+    const desc = unref(input.description);
+    return desc || t('meta.default_description');
+  });
   const pageImage = computed(() => {
-    if (input.image) return input.image;
+    const img = unref(input.image);
+    if (img) return img;
     const origin = typeof window !== 'undefined' && (window as any).location?.origin
       ? (window as any).location.origin
       : 'https://simone-bianco.dev';
     return `${origin}/default-social-image.jpg`;
   });
-  const pageUrl = computed(
-    () => input.canonicalUrl || (typeof window !== 'undefined' ? window.location.href : '')
-  );
+  const pageUrl = computed(() => {
+    const url = unref(input.canonicalUrl);
+    return url || (typeof window !== 'undefined' ? window.location.href : '');
+  });
+
+  const htmlLang = computed(() => toHtmlLang(String((locale as any).value || 'en')));
+  const ogLocale = computed(() => toOgLocale(String((locale as any).value || 'en')));
 
   // useHead per i tag generici
   useHead({
@@ -42,7 +68,7 @@ export function useAppHead(input: AppHeadInput) {
       },
     ],
     htmlAttrs: {
-      lang: 'it-IT',
+      lang: htmlLang,
     },
   });
 
@@ -57,7 +83,7 @@ export function useAppHead(input: AppHeadInput) {
     ogImage: pageImage,
     ogUrl: pageUrl,
     ogType: 'website',
-    ogLocale: 'it_IT',
+    ogLocale: ogLocale,
     ogSiteName: appName,
 
     // Twitter Cards

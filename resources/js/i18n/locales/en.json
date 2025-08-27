@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "default_description": "This is the default description in English.",
+    "home_title": "Homepage"
+  },
+  "buttons": {
+    "add_to_cart": "Add to cart"
+  }
+}

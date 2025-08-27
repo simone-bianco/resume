@@ -15,8 +15,7 @@ import { useAppHead } from '@/composables/useAppHead';
 const { t } = useI18n();
 
 useAppHead({
-    title: 'Contatti',
-    description: 'Contatta Simone Bianco per collaborazioni, consulenze o informazioni: inviami un messaggio e ti risponderò al più presto.',
+    title: t('menu.contact') as unknown as string,
 });
 
 const page = usePage();

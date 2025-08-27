@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "default_description": "Questa è la descrizione di default in italiano.",
+    "home_title": "Pagina Iniziale"
+  },
+  "buttons": {
+    "add_to_cart": "Aggiungi al carrello"
+  }
+}
