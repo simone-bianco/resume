@@ -305,7 +305,8 @@ async function resetChat() {
                             maxlength="300"
                             class="flex-grow !shadow-none"
                             rows="1"
-                            style="border-radius: 20px; min-height: 40px; max-height: 100px"
+                            style="border-radius: 20px; max-height: 100px"
+                            size="large"
                             :auto-resize="true"
                             autofocus
                             @keydown.enter.exact.prevent="sendMessage"

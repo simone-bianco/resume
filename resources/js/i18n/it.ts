@@ -184,7 +184,7 @@ export default {
         placeholders: {
             firstName: 'Il tuo nome',
             lastName: 'Il tuo cognome',
-            email: 'tua@email.com',
+            email: 'La tua email',
             phone: '+39 333 1234567',
             message: 'Scrivi qui il tuo messaggio...'
         },
