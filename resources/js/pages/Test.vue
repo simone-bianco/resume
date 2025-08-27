@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { onMounted, reactive, computed } from 'vue';
+import { useAppHead } from '@/composables/useAppHead';
+import { useHead } from '@unhead/vue';
+
+useAppHead({
+  title: 'Pagina di test',
+  description: 'Pagina di prova per verifiche tema e variabili UI. Non indicizzare.',
+});
+
+useHead({
+  meta: [
+    { name: 'robots', content: 'noindex, nofollow' },
+  ],
+});
 
 // Utility to build a scale array like 0, 50, 100..950
 const scaleSteps = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];

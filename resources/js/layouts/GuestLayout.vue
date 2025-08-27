@@ -11,6 +11,17 @@ import Drawer from 'primevue/drawer';
 import Chat from '@/components/custom/chat/Chat.vue';
 import SiteFooter from '@/components/custom/common/SiteFooter.vue';
 import { ChatMessage } from '@/types/dto';
+import { useHead } from '@unhead/vue';
+
+useHead({
+    link: [
+        { rel: 'manifest', href: '/manifest.json' },
+    ],
+    meta: [
+        { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' },
+        { name: 'theme-color', content: '#222222', media: '(prefers-color-scheme: dark)' },
+    ],
+});
 
 const { t } = useI18n();
 const page = usePage();

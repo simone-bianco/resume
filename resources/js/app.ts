@@ -33,7 +33,7 @@ const SBPreset = definePreset(Aura, preset);
 
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => title ? `${title} - ${appName}` : (typeof document !== 'undefined' ? document.title : appName),
     resolve: (name) =>
         resolvePageComponent(
             `./pages/${name}.vue`,

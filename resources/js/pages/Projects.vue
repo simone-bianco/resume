@@ -4,8 +4,14 @@ import Card from 'primevue/card';
 import { Divider } from 'primevue';
 import { useI18n } from 'vue-i18n';
 import { route } from 'ziggy-js';
+import { useAppHead } from '@/composables/useAppHead';
 
 const { t } = useI18n();
+
+useAppHead({
+    title: 'Progetti',
+    description: 'Selezione di progetti professionali e personali curati da Simone Bianco: soluzioni backend, integrazioni e applicazioni su larga scala.',
+});
 
 const projectEnter = {
     enterClass: 'animate-enter fade-in-10 slide-in-from-b-12 animate-duration-1000'

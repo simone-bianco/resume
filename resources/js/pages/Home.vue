@@ -3,10 +3,11 @@ import GuestLayout from '@/layouts/GuestLayout.vue';
 import Hero from '@/components/custom/home/Hero.vue';
 import Skills from '@/components/custom/home/Skills.vue';
 import Experience from '@/components/custom/home/Experience.vue';
-import { useHead } from '@unhead/vue';
+import { useAppHead } from '@/composables/useAppHead';
 
-useHead({
+useAppHead({
     title: 'Curriculum',
+    description: 'Curriculum e portfolio di Simone Bianco: esperienze, competenze e progetti nel mondo del software backend.',
 });
 
 </script>

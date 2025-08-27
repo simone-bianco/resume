@@ -10,8 +10,15 @@ import Textarea from 'primevue/textarea';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { route } from 'ziggy-js';
+import { useAppHead } from '@/composables/useAppHead';
 
 const { t } = useI18n();
+
+useAppHead({
+    title: 'Contatti',
+    description: 'Contatta Simone Bianco per collaborazioni, consulenze o informazioni: inviami un messaggio e ti risponderò al più presto.',
+});
+
 const page = usePage();
 
 const projectEnter = {
