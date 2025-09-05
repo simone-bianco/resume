@@ -1,10 +1,10 @@
 {
   "\u0000plugin-vue:export-helper": [
-    "/build/assets/useAppHead-Crun1gLC.js"
+    "/build/assets/useAppHead-CPQM58xJ.js"
   ],
   "node_modules/laravel-vite-plugin/inertia-helpers/index.js": [],
   "resources/css/app.css?transform-only": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -15,7 +15,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/css/app.css?url": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -26,7 +26,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/css/critical.css?raw": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -37,7 +37,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/assets/images/avatar.png": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -48,7 +48,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/Chat.vue": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -59,7 +59,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/Chat.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -70,7 +70,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/Chat.vue?vue&type=style&index=0&scoped=98e816c9&lang.css": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -81,7 +81,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/ChatBubble.vue": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -92,7 +92,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/ChatBubble.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -103,7 +103,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/ChatBubble.vue?vue&type=style&index=0&scoped=bd4edc4a&lang.css": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -114,7 +114,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/InterlocutorMessageBubble.vue": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -125,7 +125,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/InterlocutorMessageBubble.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -136,7 +136,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/InterlocutorMessageBubble.vue?vue&type=style&index=0&scoped=0d9f2022&lang.css": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -147,7 +147,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/UserMessageBubble.vue": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -158,7 +158,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/UserMessageBubble.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -169,7 +169,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/chat/UserMessageBubble.vue?vue&type=style&index=0&scoped=ba8b2cf1&lang.css": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -180,7 +180,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/common/SiteFooter.vue": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -191,7 +191,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/common/SiteFooter.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -202,7 +202,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/common/SiteFooter.vue?vue&type=style&index=0&scoped=5cc648b3&lang.css": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -213,43 +213,43 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/home/Experience.vue": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Experience.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Experience.vue?vue&type=style&index=0&scoped=c8fc8bec&lang.css": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Hero.vue": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Hero.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Hero.vue?vue&type=style&index=0&scoped=dd9970b9&lang.css": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Skills.vue": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Skills.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/home/Skills.vue?vue&type=style&index=0&scoped=9eeb7da8&lang.css": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/components/custom/inputs/Switchers/LanguageSwitcher.vue": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -260,7 +260,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/components/custom/inputs/Switchers/LanguageSwitcher.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -271,10 +271,10 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/composables/useAppHead.ts": [
-    "/build/assets/useAppHead-Crun1gLC.js"
+    "/build/assets/useAppHead-CPQM58xJ.js"
   ],
   "resources/js/composables/useGoogleAnalytics.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -290,7 +290,7 @@
   "resources/js/i18n/locales/it.json": [],
   "resources/js/i18n/messages.ts": [],
   "resources/js/layouts/GuestLayout.vue": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -301,7 +301,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/layouts/GuestLayout.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -312,7 +312,7 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/layouts/GuestLayout.vue?vue&type=style&index=0&lang.css": [
-    "/build/assets/GuestLayout-BTGcygxk.js",
+    "/build/assets/GuestLayout-nrOv4QR7.js",
     "/build/assets/GuestLayout-DpobflNY.css",
     "/build/assets/avatar-C7D1tYvk.png",
     "/build/assets/primeicons-DMOk5skT.eot",
@@ -323,47 +323,47 @@
     "/build/assets/app-CTpmM31_.css"
   ],
   "resources/js/pages/Contact.vue": [
-    "/build/assets/Contact-DYZfpqP4.js",
+    "/build/assets/Contact-CuihzbzY.js",
     "/build/assets/Contact-CEuOyGjI.css"
   ],
   "resources/js/pages/Contact.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Contact-DYZfpqP4.js",
+    "/build/assets/Contact-CuihzbzY.js",
     "/build/assets/Contact-CEuOyGjI.css"
   ],
   "resources/js/pages/Contact.vue?vue&type=style&index=0&scoped=6882b47d&lang.css": [
-    "/build/assets/Contact-DYZfpqP4.js",
+    "/build/assets/Contact-CuihzbzY.js",
     "/build/assets/Contact-CEuOyGjI.css"
   ],
   "resources/js/pages/Home.vue": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/pages/Home.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Home-DuZlsvlE.js",
+    "/build/assets/Home-8XJlFv8c.js",
     "/build/assets/Home-BCbQYtps.css"
   ],
   "resources/js/pages/Projects.vue": [
-    "/build/assets/Projects-CRoh5Imi.js",
+    "/build/assets/Projects-CLJfA30O.js",
     "/build/assets/Projects-CfaSY7cb.css"
   ],
   "resources/js/pages/Projects.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Projects-CRoh5Imi.js",
+    "/build/assets/Projects-CLJfA30O.js",
     "/build/assets/Projects-CfaSY7cb.css"
   ],
   "resources/js/pages/Projects.vue?vue&type=style&index=0&scoped=4d42c161&lang.css": [
-    "/build/assets/Projects-CRoh5Imi.js",
+    "/build/assets/Projects-CLJfA30O.js",
     "/build/assets/Projects-CfaSY7cb.css"
   ],
   "resources/js/pages/Test.vue": [
-    "/build/assets/Test-Bs77PNem.js",
+    "/build/assets/Test-DKO9LyZT.js",
     "/build/assets/Test-CexDNVlZ.css"
   ],
   "resources/js/pages/Test.vue?vue&type=script&setup=true&lang.ts": [
-    "/build/assets/Test-Bs77PNem.js",
+    "/build/assets/Test-DKO9LyZT.js",
     "/build/assets/Test-CexDNVlZ.css"
   ],
   "resources/js/pages/Test.vue?vue&type=style&index=0&scoped=e3f64687&lang.css": [
-    "/build/assets/Test-Bs77PNem.js",
+    "/build/assets/Test-DKO9LyZT.js",
     "/build/assets/Test-CexDNVlZ.css"
   ],
   "resources/js/ssr.ts": [],

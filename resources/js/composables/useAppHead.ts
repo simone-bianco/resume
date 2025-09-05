@@ -85,7 +85,13 @@ export function useAppHead(input: AppHeadInput) {
   });
   const pageImage = computed(() => {
     let img = (unref(input.image) ?? '').toString().trim();
-    const envOg = ((import.meta as any).env?.VITE_OG_IMAGE as string | undefined) || '';
+    let envOg = ((import.meta as any).env?.VITE_OG_IMAGE as string | undefined) || 'https://media.licdn.com/dms/image/v2/D4E03AQHhj7pqmUFcLA/profile-displayphoto-shrink_800_800/B4EZNpAFmiG8Ac-/0/1732633451311?e=1759363200&v=beta&t=9_MkmK6rIOX2WUXz_vGPo41y2TOBPIMVaiBLx6WTc4w';
+    if (envOg) {
+      envOg = envOg.trim();
+      if ((envOg.startsWith('"') && envOg.endsWith('"')) || (envOg.startsWith('\'') && envOg.endsWith('\''))) {
+        envOg = envOg.slice(1, -1);
+      }
+    }
     if (!img && envOg) {
       img = envOg;
     }

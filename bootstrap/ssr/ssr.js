@@ -750,7 +750,7 @@ createServer(
     },
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Contact.vue": () => import("./assets/Contact-DYZfpqP4.js"), "./Pages/Home.vue": () => import("./assets/Home-DuZlsvlE.js"), "./Pages/Projects.vue": () => import("./assets/Projects-CRoh5Imi.js"), "./Pages/Test.vue": () => import("./assets/Test-Bs77PNem.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Contact.vue": () => import("./assets/Contact-CuihzbzY.js"), "./Pages/Home.vue": () => import("./assets/Home-8XJlFv8c.js"), "./Pages/Projects.vue": () => import("./assets/Projects-CLJfA30O.js"), "./Pages/Test.vue": () => import("./assets/Test-DKO9LyZT.js") })
     ),
     setup({ App, props, plugin }) {
       const i18n = createI18n({
