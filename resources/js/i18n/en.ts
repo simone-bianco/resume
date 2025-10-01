@@ -1,9 +1,9 @@
 export default {
     hero: {
         name: 'Simone Bianco',
-        title: 'Backend Software Engineer',
+        title: 'Full Stack Software Engineer',
         bio:
-            'Backend software engineer with over 5 years of ' +
+            'Full Stack software engineer with over 5 years of ' +
             'experience in building scalable applications and ' +
             'microservices. Specialized in the Laravel framework ' +
             'with experience in Vuejs, and a strong background in ' +
@@ -126,22 +126,14 @@ export default {
     experience: {
         sectionTitle: 'Job Experience',
         dnafactory: {
-            company: 'DNAFactory',
-            title: 'Backend Software Engineer',
-            desc1: 'Microservices development with Laravel',
-            desc2: 'SaaS development with VILT stack and Multitenancy',
-            desc3: 'UML design',
-            desc4: 'Relational (MySQL), non-relational (MongoDB), and vector databases (Typesense)',
-            desc5: 'Web scraping (Selenium + Python)',
-            desc6: 'Magento 2 development',
-            desc7: 'Version control (GitHub and Bitbucket)',
-            desc8: 'Deployment automation and management (Nginx, Apache2, Forge, Envoyer)',
-            desc9: 'REST services',
-            desc10: 'Automation of business processes using N8N + AI',
-            desc11: 'Integration of OpenAI and Ollama APIs agents in SaaS',
-            desc12: 'ChatGPT and Gemini prompt engineering',
-            desc13: 'AI coding tools (Jetbrain Junie, Github Copilot, Suna, GeminiCLI) integrated with MCP servers',
-            desc14: 'RAGS built using vectorial databases',
+            company: "DNAFactory",
+            title: "Full Stack Software Engineer",
+            desc1: "Full Stack Design & Development: Engineered complex web applications and multi-tenant SaaS platforms using the VILT stack (Vue, Inertia, Laravel, Tailwind).",
+            desc2: "Advanced Data Architecture: Managed and optimized relational (MySQL), NoSQL (MongoDB), and vector (Typesense) databases to power Retrieval-Augmented Generation (RAG) systems.",
+            desc3: "Artificial Intelligence Integration: Developed and integrated AI agents (OpenAI, Ollama) and automation workflows (N8N) to streamline business processes and enhance application features.",
+            desc4: "DevOps & Automation: Managed the complete software lifecycle, from version control (Git) to automated deployment and server configuration (Nginx, Apache2, Forge, Envoyer).",
+            desc5: "Prompt Engineering & AI Coding: Optimized interactions with LLM models (ChatGPT, Gemini) and leveraged AI coding tools (GitHub Copilot, JetBrains AI) to boost development efficiency.",
+            desc6: "E-commerce Development & Web Scraping: Maintained and developed solutions on Magento 2 and performed automated data extraction using Selenium and Python."
         },
         masters: {
             title: 'Master’s Degree in Computer Engineering',

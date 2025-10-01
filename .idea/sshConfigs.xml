@@ -2,8 +2,8 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig host="128.199.48.56" id="1c41a67c-bf38-42a0-92dd-098635b768b1" keyPath="C:\.ssh\simonebianco.ppk" port="22" nameFormat="DESCRIPTIVE" username="www-data" useOpenSSHConfig="true" />
-      <sshConfig host="128.199.48.56" id="a30714a8-9b02-4d48-9a82-35aa04cf074b" keyPath="C:\.ssh\simonebianco.ppk" port="22" customName="root@128.199.48.56:22" nameFormat="CUSTOM" username="root" useOpenSSHConfig="true">
+      <sshConfig host="135.181.87.5" id="1c41a67c-bf38-42a0-92dd-098635b768b1" keyPath="C:\.ssh\simonebianco.ppk" port="22" nameFormat="DESCRIPTIVE" username="www-data" useOpenSSHConfig="true" />
+      <sshConfig host="135.181.87.5" id="a30714a8-9b02-4d48-9a82-35aa04cf074b" keyPath="C:\.ssh\simonebianco.ppk" port="22" customName="root@128.199.48.56:22" nameFormat="CUSTOM" username="root" useOpenSSHConfig="true">
         <option name="customName" value="root@128.199.48.56:22" />
       </sshConfig>
     </configs>

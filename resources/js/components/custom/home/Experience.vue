@@ -15,9 +15,6 @@ const experiences = ref([
         descriptionKeys: [
             'experience.dnafactory.desc1', 'experience.dnafactory.desc2', 'experience.dnafactory.desc3',
             'experience.dnafactory.desc4', 'experience.dnafactory.desc5', 'experience.dnafactory.desc6',
-            'experience.dnafactory.desc7', 'experience.dnafactory.desc8', 'experience.dnafactory.desc9',
-            'experience.dnafactory.desc10', 'experience.dnafactory.desc11', 'experience.dnafactory.desc12',
-            'experience.dnafactory.desc13',
         ],
         icon: 'pi pi-briefcase',
         color: '#FCC018'

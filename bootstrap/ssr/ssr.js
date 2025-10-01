@@ -347,8 +347,8 @@ const k = { install(t4, e2) {
 const baseEn = {
   hero: {
     name: "Simone Bianco",
-    title: "Backend Software Engineer",
-    bio: "Backend software engineer with over 5 years of experience in building scalable applications and microservices. Specialized in the Laravel framework with experience in Vuejs, and a strong background in REST architectures. Knowledge of state of art techniques for prompt engineering and coding AI tools. Excellent ability to work in a team and a strong focus on achieving project goals.",
+    title: "Full Stack Software Engineer",
+    bio: "Full Stack software engineer with over 5 years of experience in building scalable applications and microservices. Specialized in the Laravel framework with experience in Vuejs, and a strong background in REST architectures. Knowledge of state of art techniques for prompt engineering and coding AI tools. Excellent ability to work in a team and a strong focus on achieving project goals.",
     contactLabel: "Contact me!",
     imageAlt: "Simone Bianco",
     githubAriaLabel: "Github",
@@ -465,21 +465,13 @@ const baseEn = {
     sectionTitle: "Job Experience",
     dnafactory: {
       company: "DNAFactory",
-      title: "Backend Software Engineer",
-      desc1: "Microservices development with Laravel",
-      desc2: "SaaS development with VILT stack and Multitenancy",
-      desc3: "UML design",
-      desc4: "Relational (MySQL), non-relational (MongoDB), and vector databases (Typesense)",
-      desc5: "Web scraping (Selenium + Python)",
-      desc6: "Magento 2 development",
-      desc7: "Version control (GitHub and Bitbucket)",
-      desc8: "Deployment automation and management (Nginx, Apache2, Forge, Envoyer)",
-      desc9: "REST services",
-      desc10: "Automation of business processes using N8N + AI",
-      desc11: "Integration of OpenAI and Ollama APIs agents in SaaS",
-      desc12: "ChatGPT and Gemini prompt engineering",
-      desc13: "AI coding tools (Jetbrain Junie, Github Copilot, Suna, GeminiCLI) integrated with MCP servers",
-      desc14: "RAGS built using vectorial databases"
+      title: "Full Stack Software Engineer",
+      desc1: "Full Stack Design & Development: Engineered complex web applications and multi-tenant SaaS platforms using the VILT stack (Vue, Inertia, Laravel, Tailwind).",
+      desc2: "Advanced Data Architecture: Managed and optimized relational (MySQL), NoSQL (MongoDB), and vector (Typesense) databases to power Retrieval-Augmented Generation (RAG) systems.",
+      desc3: "Artificial Intelligence Integration: Developed and integrated AI agents (OpenAI, Ollama) and automation workflows (N8N) to streamline business processes and enhance application features.",
+      desc4: "DevOps & Automation: Managed the complete software lifecycle, from version control (Git) to automated deployment and server configuration (Nginx, Apache2, Forge, Envoyer).",
+      desc5: "Prompt Engineering & AI Coding: Optimized interactions with LLM models (ChatGPT, Gemini) and leveraged AI coding tools (GitHub Copilot, JetBrains AI) to boost development efficiency.",
+      desc6: "E-commerce Development & Web Scraping: Maintained and developed solutions on Magento 2 and performed automated data extraction using Selenium and Python."
     },
     masters: {
       title: "Master’s Degree in Computer Engineering",
@@ -536,8 +528,8 @@ const baseEn = {
 const baseIt = {
   hero: {
     name: "Simone Bianco",
-    title: "Ingegnere Software Backend",
-    bio: "Ingegnere del software backend con oltre 5 anni di esperienza nella creazione di applicazioni scalabili e microservizi. Specializzato nel framework Laravel con conoscenze di Vue.js e un solido background in architetture REST. Adozione di tecniche all'avanguardia dell'ingegneria dei prompt e integrazione di tool di coding AI. Eccellente capacità di lavorare in team e forte orientamento al raggiungimento degli obiettivi di progetto.",
+    title: "Ingegnere Software Full Stack",
+    bio: "Ingegnere del software Full Stack con oltre 5 anni di esperienza nella creazione di applicazioni scalabili e microservizi. Specializzato nel framework Laravel con conoscenze di Vue.js e un solido background in architetture REST. Adozione di tecniche all'avanguardia dell'ingegneria dei prompt e integrazione di tool di coding AI. Eccellente capacità di lavorare in team e forte orientamento al raggiungimento degli obiettivi di progetto.",
     contactLabel: "Contattami!",
     imageAlt: "Simone Bianco",
     githubAriaLabel: "Github",
@@ -654,21 +646,12 @@ const baseIt = {
     sectionTitle: "Esperienza Lavorativa e Educazione",
     dnafactory: {
       company: "DNAFactory",
-      title: "Ingegnere Software Backend",
-      desc1: "Sviluppo di microservizi con Laravel",
-      desc2: "Sviluppo SaaS con stack VILT e Multitenancy",
-      desc3: "Progettazione UML",
-      desc4: "Database relazionali (MySQL), non relazionali (MongoDB) e vettoriali (Typesense)",
-      desc5: "Web scraping (Selenium + Python)",
-      desc6: "Sviluppo Magento 2",
-      desc7: "Controllo di versione (GitHub e Bitbucket)",
-      desc8: "Automazione e gestione del deployment (Nginx, Apache2, Forge, Envoyer)",
-      desc9: "Servizi REST",
-      desc10: "Automazione di processi di business usando N8N + AI",
-      desc11: "Integrazione di agenti API OpenAI e Ollama in SaaS",
-      desc12: "Ingegneria di prompt per ChatGPT e Gemini",
-      desc13: "Tool di AI coding (Jetbrain Junie, Github Copilot, Suna, GeminiCLI) integrati con server MCP",
-      desc14: "Sviluppo di RAGS (Retrieval-Augmented Generation) utilizzando database vettoriali"
+      desc1: "Progettazione e Sviluppo Full Stack: Realizzazione di applicazioni web e piattaforme SaaS multitenancy complesse utilizzando lo stack VILT (Vue, Inertia, Laravel, Tailwind).",
+      desc2: "Architettura Dati Avanzata: Gestione e ottimizzazione di database relazionali (MySQL), NoSQL (MongoDB) e vettoriali (Typesense) per sistemi RAG (Retrieval-Augmented Generation).",
+      desc3: "Integrazione di Intelligenza Artificiale: Sviluppo e integrazione di agenti AI (OpenAI, Ollama) e automazioni (N8N) per ottimizzare i processi di business e arricchire le funzionalità delle applicazioni.",
+      desc4: "DevOps e Automazione: Gestione completa del ciclo di vita del software, dal versioning (Git) al deployment automatizzato e alla configurazione di server (Nginx, Apache2, Forge, Envoyer).",
+      desc5: "Prompt Engineering e AI Coding: Ottimizzazione dell'interazione con modelli LLM (ChatGPT, Gemini) e utilizzo di tool di AI coding (GitHub Copilot, JetBrains AI) per aumentare l'efficienza dello sviluppo.",
+      desc6: "Sviluppo E-commerce e Web Scraping: Manutenzione e sviluppo di soluzioni su Magento 2 ed estrazione dati automatizzata tramite Selenium e Python."
     },
     masters: {
       title: "Laurea Magistrale in Ingegneria Informatica",
@@ -738,7 +721,7 @@ const messages = {
   en: { ...baseEn, ...enJson },
   it: { ...baseIt, ...itJson }
 };
-const appName = "Simone Bianco | Backend Software Engineer | Resume";
+const appName = "Simone Bianco | Full-Stack Software Engineer | Resume";
 createServer(
   (page) => createInertiaApp({
     page,
@@ -750,7 +733,7 @@ createServer(
     },
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Contact.vue": () => import("./assets/Contact-CuihzbzY.js"), "./Pages/Home.vue": () => import("./assets/Home-8XJlFv8c.js"), "./Pages/Projects.vue": () => import("./assets/Projects-CLJfA30O.js"), "./Pages/Test.vue": () => import("./assets/Test-DKO9LyZT.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Contact.vue": () => import("./assets/Contact-DvXW7NTT.js"), "./Pages/Home.vue": () => import("./assets/Home-DikvHgbi.js"), "./Pages/Projects.vue": () => import("./assets/Projects-zRiF47Av.js"), "./Pages/Test.vue": () => import("./assets/Test-K1OiIh_K.js") })
     ),
     setup({ App, props, plugin }) {
       const i18n = createI18n({

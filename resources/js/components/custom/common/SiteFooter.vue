@@ -35,7 +35,7 @@ onUnmounted(() => {
                     <a href="https://www.linkedin.com/in/simone-b-bb6761200/" target="_blank" rel="noopener noreferrer" :aria-label="t('hero.linkedinAriaLabel')">
                         <Button icon="pi pi-linkedin" severity="secondary" text rounded />
                     </a>
-                    <a href="mailto:simone9292@live.com" :aria-label="t('hero.contactLabel')">
+                    <a href="mailto:simone.bianco.sweng@gmail.com" :aria-label="t('hero.contactLabel')">
                         <Button icon="pi pi-envelope" severity="secondary" text rounded />
                     </a>
 

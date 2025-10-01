@@ -1,9 +1,9 @@
 export default {
     hero: {
         name: 'Simone Bianco',
-        title: 'Ingegnere Software Backend',
+        title: 'Ingegnere Software Full Stack',
         bio:
-            'Ingegnere del software backend con oltre 5 anni di ' +
+            'Ingegnere del software Full Stack con oltre 5 anni di ' +
             'esperienza nella creazione di applicazioni scalabili e ' +
             'microservizi. Specializzato nel framework Laravel ' +
             'con conoscenze di Vue.js e un solido background in ' +
@@ -127,21 +127,12 @@ export default {
         sectionTitle: 'Esperienza Lavorativa e Educazione',
         dnafactory: {
             company: 'DNAFactory',
-            title: 'Ingegnere Software Backend',
-            desc1: 'Sviluppo di microservizi con Laravel',
-            desc2: 'Sviluppo SaaS con stack VILT e Multitenancy',
-            desc3: 'Progettazione UML',
-            desc4: 'Database relazionali (MySQL), non relazionali (MongoDB) e vettoriali (Typesense)',
-            desc5: 'Web scraping (Selenium + Python)',
-            desc6: 'Sviluppo Magento 2',
-            desc7: 'Controllo di versione (GitHub e Bitbucket)',
-            desc8: 'Automazione e gestione del deployment (Nginx, Apache2, Forge, Envoyer)',
-            desc9: 'Servizi REST',
-            desc10: 'Automazione di processi di business usando N8N + AI',
-            desc11: 'Integrazione di agenti API OpenAI e Ollama in SaaS',
-            desc12: 'Ingegneria di prompt per ChatGPT e Gemini',
-            desc13: 'Tool di AI coding (Jetbrain Junie, Github Copilot, Suna, GeminiCLI) integrati con server MCP',
-            desc14: 'Sviluppo di RAGS (Retrieval-Augmented Generation) utilizzando database vettoriali',
+            desc1: "Progettazione e Sviluppo Full Stack: Realizzazione di applicazioni web e piattaforme SaaS multitenancy complesse utilizzando lo stack VILT (Vue, Inertia, Laravel, Tailwind).",
+            desc2: "Architettura Dati Avanzata: Gestione e ottimizzazione di database relazionali (MySQL), NoSQL (MongoDB) e vettoriali (Typesense) per sistemi RAG (Retrieval-Augmented Generation).",
+            desc3: "Integrazione di Intelligenza Artificiale: Sviluppo e integrazione di agenti AI (OpenAI, Ollama) e automazioni (N8N) per ottimizzare i processi di business e arricchire le funzionalità delle applicazioni.",
+            desc4: "DevOps e Automazione: Gestione completa del ciclo di vita del software, dal versioning (Git) al deployment automatizzato e alla configurazione di server (Nginx, Apache2, Forge, Envoyer).",
+            desc5: "Prompt Engineering e AI Coding: Ottimizzazione dell'interazione con modelli LLM (ChatGPT, Gemini) e utilizzo di tool di AI coding (GitHub Copilot, JetBrains AI) per aumentare l'efficienza dello sviluppo.",
+            desc6: "Sviluppo E-commerce e Web Scraping: Manutenzione e sviluppo di soluzioni su Magento 2 ed estrazione dati automatizzata tramite Selenium e Python.",
         },
         masters: {
             title: 'Laurea Magistrale in Ingegneria Informatica',

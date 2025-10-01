@@ -22,7 +22,7 @@ class SendTestEmail extends Command
      */
     public function handle()
     {
-        $to = $this->argument('to') ?: 'simone9292@live.com';
+        $to = $this->argument('to') ?: 'simone.bianco.sweng@gmail.com';
         $subject = $this->option('subject') ?: 'SMTP Test - ' . config('app.name', 'Laravel');
         $fromAddress = $this->option('from') ?: (string) (config('mail.from.address') ?? 'no-reply@localhost');
         $fromName = (string) (config('mail.from.name') ?? config('app.name', 'Laravel'));

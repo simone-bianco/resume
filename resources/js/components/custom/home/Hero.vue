@@ -54,7 +54,7 @@ const heroImageAnimation = {
                                 <Button icon="pi pi-linkedin" severity="secondary" text rounded
                                         :aria-label="t('hero.linkedinAriaLabel')" />
                             </a>
-                            <a href="mailto:simone9292@live.com">
+                            <a href="mailto:simone.bianco.sweng@gmail.com">
                                 <Button :label="t('hero.contactLabel')" icon="pi pi-envelope" severity="primary"
                                         size="small" />
                             </a>

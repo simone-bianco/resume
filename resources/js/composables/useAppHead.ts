@@ -79,8 +79,8 @@ export function useAppHead(input: AppHeadInput) {
     if (desc) return desc;
     const l = String((locale as any).value || '').toLowerCase();
     const def = l.startsWith('it')
-      ? 'Curriculum e portfolio di Simone Bianco: esperienze, competenze e progetti nel mondo del software backend.'
-      : 'Curriculum and portfolio of Simone Bianco: experience, skills, and backend software projects.';
+      ? 'Curriculum e portfolio di Simone Bianco: esperienze, competenze e progetti nel mondo del software Full Stack.'
+      : 'Curriculum and portfolio of Simone Bianco: experience, skills, and Full Stack software projects.';
     return def;
   });
   const pageImage = computed(() => {
